@@ -1,0 +1,197 @@
+@import '../../rules/scss/variables.scss';
+@import '../../rules/scss/themes.scss';
+
+.inputrange {
+	& input[type="range"] {
+        appearance: none;
+        -moz-appearance: none;
+        -webkit-appearance: none;
+
+        background: transparent;
+        width: 100%;
+    }
+
+    display: flex;
+    align-items: center;
+    gap: $padding * 4;
+
+    width: 100%;
+
+    & .inputrange-wrapper {
+        width: 100%;
+        position: relative;
+
+        transform: translateY(-8px);
+    }
+
+    & .inputrange-phonecounter {
+        position: relative;
+
+        border: 2px solid $theme-bg-opacity;
+        padding: $padding * 1.5 $padding * 2;
+        
+        border-radius: $borderRadius / 1.5;
+
+        & span {
+            &:first-child {
+                opacity: 0;
+                visibility: hidden;
+                z-index: -1;
+            }
+            &:last-child {
+                position: absolute;
+
+                top: 50%;
+                left: $padding * 1.5;
+
+                transform: translateY(-50%);
+
+                font-weight: 600;
+                color: $theme-txt-opacity;
+            }
+        }
+
+        &.multi {
+            & span:last-child {
+                right: $padding;
+                left: auto;
+            }
+        }
+    }
+
+    & .inputrange-bg {
+        width: 100%;
+        height: 10px;
+
+        background: $theme-bg-opacity;
+        border-radius: $borderRadius * 2;
+
+        position: relative;
+        overflow: hidden;
+
+        transform: translateY(8px);
+
+        & .inputrange-fill {
+            position: absolute;
+
+            top: 0;
+            left: 0;
+
+            background: $theme-color-gradient;
+            height: 100%;
+
+            transition: 0;
+        }
+    }
+
+    & .inputrange-slider {
+        position: absolute;
+
+        bottom: 0;
+        left: 0;
+
+        width: 100%;
+        height: 100%;
+
+        & input[type="range"] {
+            cursor: pointer;
+
+            pointer-events: none;
+            position: relative;
+
+            z-index: 2;
+
+            &::-webkit-slider-thumb {
+                appearance: none;
+                -moz-appearance: none;
+                -webkit-appearance: none;
+
+                width: 26px;
+                height: 26px;
+
+                border-radius: 50%;
+
+                background: $theme-color;
+                box-shadow: $theme-shadow;
+
+                pointer-events: all;
+
+                position: relative;
+                z-index: 2;
+            }
+
+            &:hover ~ .inputrange-slider-count-wrap .inputrange-slider-count:not(.null) {
+                display: flex;
+            }
+        }
+
+        &.inputrange-slider-multi {
+            z-index: 1;
+            & .inputrange-slider-count {
+                z-index: 1;
+            }
+        }
+
+        & .inputrange-slider-count-wrap {
+            position: relative;
+
+            width: calc(100% + $padding * 2);
+            transform: translateX(-$padding * .4);
+        }
+
+        & .inputrange-slider-count {
+            position: absolute;
+            z-index: 2;
+
+            background: $theme-color;
+
+            width: 30px;
+            height: 30px;
+
+            border-radius: 50%;
+
+            top: calc(100% + 10px);
+            &.inputrange-top {
+                top: auto;
+                bottom: calc(100% + 40px);
+
+                &:before {
+                    top: auto;
+                    bottom: -3px;
+                }
+            }
+
+            display: none;
+            align-items: center;
+            justify-content: center;
+
+            & span {
+                font-size: $fontsize - 3px;
+                font-weight: 600;
+                color: $theme-txt-reverse;
+
+                position: relative;
+                z-index: 1;
+            }
+
+            &.null {
+                display: none;
+            }
+
+            &:before {
+                position: absolute;
+
+                display: block;
+                content: "";
+
+                width: 16px;
+                height: 16px;
+
+                background: inherit;
+                transform: rotate(45deg);
+
+                top: -3px;
+            }
+        }
+    }
+}

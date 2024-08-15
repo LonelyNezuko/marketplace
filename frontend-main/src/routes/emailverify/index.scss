@@ -1,0 +1,60 @@
+@import '../../rules/scss/themes.scss';
+@import '../../rules/scss/variables.scss';
+
+.route#routeEmailVerify {
+    width: 100%;
+    height: 100%;
+
+    overflow: hidden;
+
+    display: flex;
+    justify-content: center;
+
+    & .block {
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        gap: $padding * 4;
+
+        & .icon {
+            width: 30%;
+
+            & img {
+                width: 100%;
+                height: auto;
+            }
+        }
+        & .title {
+            font-size: $fontsize + 16px;
+            font-weight: 800;
+
+            color: $theme-color;
+        }
+        & .description {
+            font-size: $fontsize + 2px;
+            font-weight: 600;
+        }
+        & a {
+            display: block;
+            margin-top: $margin * 4;
+
+            & .button {
+                
+            }
+        }
+
+        &.loaderblock {
+            margin-top: $margin * 20;
+
+            & .loader {
+                margin-bottom: $margin * 2;
+            }
+        }
+
+        &.expiresoutblock {
+            & .title {
+                color: $theme-color-red;
+            }
+        }
+    }
+}

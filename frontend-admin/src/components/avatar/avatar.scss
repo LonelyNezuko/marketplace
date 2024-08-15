@@ -1,0 +1,126 @@
+.avatar {
+    width: 50px;
+    min-width: 50px;
+    height: 50px;
+
+    border-radius: 10px;
+
+    display: flex;
+    align-items: center;
+    justify-content: center;
+
+    position: relative;
+    user-select: none;
+
+    &.circle {
+        border-radius: 50%;
+    }
+
+    & .avatarWrapper {
+        width: 100%;
+        height: 100%;
+
+        overflow: hidden;
+        border-radius: inherit;
+
+        display: flex;
+        align-items: center;
+        justify-content: center;
+
+        position: relative;
+
+        & img {
+            width: 100%;
+            height: 100%;
+    
+            position: absolute;
+            object-fit: cover;
+        }
+    }
+
+    &.avatar-medium {
+        width: 70px;
+        min-width: 70px;
+        height: 70px;
+
+        &.onlinestatus-true:before {
+            right: 2px;
+            top: 2px;
+
+            width: 16px;
+            height: 16px;
+        }
+    }
+    &.avatar-big {
+        width: 120px;
+        min-width: 120px;
+        height: 120px;
+
+        &.onlinestatus-true:before {
+            right: 8px;
+            top: 8px;
+
+            width: 20px;
+            height: 20px;
+        }
+    }
+    &.avatar-megabig {
+        width: 160px;
+        min-width: 160px;
+        height: 160px;
+
+        &.onlinestatus-true:before {
+            right: 10px;
+            top: 10px;
+
+            width: 28px;
+            height: 28px;
+        }
+    }
+    &.avatar-ultrabig {
+        width: 240px;
+        min-width: 240px;
+        height: 240px;
+
+        &.onlinestatus-true:before {
+            right: 20px;
+            top: 20px;
+
+            width: 32px;
+            height: 32px;
+        }
+    }
+    &.avatar-min {
+        width: 30px;
+        min-width: 30px;
+        height: 30px;
+
+        &.onlinestatus-true:before {
+            top: 0;
+            right: 0;
+
+            width: 10px;
+            height: 10px;
+        }
+    }
+
+
+    &.onlinestatus-true {
+        &:before {
+            position: absolute;
+            z-index: 2;
+
+            top: -6px;
+            right: -6px;
+
+            display: block;
+            content: "";
+
+            width: 14px;
+            height: 14px;
+
+            background: #31E74E;
+            border-radius: 50%;
+        }
+    }
+}

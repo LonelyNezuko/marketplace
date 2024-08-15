@@ -1,0 +1,52 @@
+@import '../../rules/scss/themes.scss';
+@import '../../rules/scss/variables.scss';
+
+.errorInnerBlock {
+    position: absolute;
+    z-index: $zindex_wrapper;
+
+    bottom: 0;
+    left: 0;
+
+    background: $theme-color-red;
+
+    width: 100%;
+    padding: $padding * 3;
+
+    display: flex;
+    align-items: center;
+    gap: $padding * 3;
+
+    transform: translateY(150%);
+    transition: $transition transform;
+
+    &.show {
+        transform: none;
+    }
+    &.warning {
+        background: $theme-color-orange;
+    }
+
+    & .errorInnerBlockIcon {
+        & svg {
+            font-size: $fontsize + 20px;
+            
+            color: white;
+            fill: white;
+        }
+    }
+    & .errorInnerBlockTitle, & .errorInnerBlockDesc {
+        color: white;
+
+        &.errorInnerBlockTitle {
+            font-size: $fontsize + 2px;
+            font-weight: 600;
+        }
+        &.errorInnerBlockDesc {
+            display: inline-block;
+            margin-top: $margin;
+
+            font-size: $fontsize - 2px;
+        }
+    }   
+}

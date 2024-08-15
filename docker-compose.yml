@@ -1,0 +1,92 @@
+services:
+    database:
+        container_name: iboot_docker_database
+        image: mariadb:10.4
+        restart: always
+        environment:
+            MARIADB_RANDOM_ROOT_PASSWORD: 1
+            MARIADB_ALLOW_EMPTY_ROOT_PASSWORD: 0
+        ports:
+            - 23306:3306
+        command: --init-file /usr/src/iboot/docker/databaseinit.sql
+        volumes:
+            - data_database:/var/lib/mysql
+            - ./docker/databaseInit.sql:/usr/src/iboot/docker/databaseinit.sql
+        
+            
+    phpmyadmin:
+        container_name: iboot_docker_phpmyadmin
+        image: phpmyadmin
+        restart: always
+        ports:
+            - 24020:80
+        environment:
+            - PMA_HOST=iboot_docker_database
+            - UPLOAD_LIMIT=50M
+        depends_on:
+            - database
+
+    backend:
+        container_name: iboot_docker_backend
+        build: 
+            dockerfile: DockerFile
+            context: ./backend
+        restart: always
+        ports:
+            - 12000:12000 # main port
+            - 12030:12030 # gateway port
+        env_file:
+            - ./backend/.production.env
+        depends_on:
+            - database
+        volumes:
+            - data_backend_storage:/usr/src/iboot/backend/storage
+            - data_backend_nodemodules:/usr/src/iboot/backend/node_modules
+
+    frontendmain:
+        container_name: iboot_docker_frontend_main
+        build:
+            dockerfile: DockerFile
+            context: ./frontend/main
+        restart: always
+        ports:
+            - 12006:12006
+        depends_on:
+            - backend
+        volumes:
+            - iboot_frontend_main_nodemodules:/usr/src/iboot/frontend/main/node_modules
+
+    frontendadmin:
+        container_name: iboot_docker_frontend_admin
+        build:
+            dockerfile: DockerFile
+            context: ./frontend/admin
+        restart: always
+        ports:
+            - 12007:12007
+        depends_on:
+            - backend
+        volumes:
+            - iboot_frontend_admin_nodemodules:/usr/src/iboot/frontend/admin/node_modules
+
+    frontendmoderation:
+        container_name: iboot_docker_frontend_moderation
+        build:
+            dockerfile: DockerFile
+            context: ./frontend/moderation
+        restart: always
+        ports:
+            - 12005:12005
+        depends_on:
+            - backend
+        volumes:
+            - iboot_frontend_moderation_nodemodules:/usr/src/iboot/frontend/moderation/node_modules
+        
+
+volumes:
+    data_database: null
+    data_backend_nodemodules: null
+    data_backend_storage: null
+    iboot_frontend_main_nodemodules: null
+    iboot_frontend_admin_nodemodules: null
+    iboot_frontend_moderation_nodemodules: null

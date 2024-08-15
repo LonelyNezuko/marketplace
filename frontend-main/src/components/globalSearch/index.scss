@@ -1,0 +1,196 @@
+@import '../../rules/scss/variables.scss';
+@import '../../rules/scss/themes.scss';
+
+#globalSearch {
+    &.active {
+        & .input {
+            position: relative;
+            z-index: $zindex_notify;
+
+            & .inputWrapper {
+                border-bottom-left-radius: 0;
+                border-bottom-right-radius: 0;
+
+                border-bottom: 0;
+            }
+        }
+    }
+
+    width: 100%;
+    height: 100%;
+
+    & #globalSearchInput {
+        height: 100%;
+    }
+
+    & .input {
+        height: 100%;
+        & .inputWrapper {
+            background: $theme-bg;
+            transition: none;
+        }
+    }
+
+    & #globalSearchModal {
+        position: fixed;
+        z-index: $zindex_modal;
+
+        top: 0;
+        left: 0;
+
+        width: 100%;
+        height: 100%;
+
+        background: $theme-modal-fullbg;
+
+        & .modalWrapper {
+            background: $theme-bg-color;
+            box-shadow: $theme-shadow;
+
+            position: relative;
+            padding: $padding * 4;
+
+            border: 2px solid $theme-color;
+            border-top: 0;
+
+            border-radius: 0 0 $borderRadius * 2 $borderRadius * 2;
+
+            overflow: auto;
+            max-height: 85%;
+        }
+    }
+
+    & .blockListText, & .blockList {
+        & .blockTitle {
+            font-size: $fontsize + 2px;
+            font-weight: 700;
+
+            color: $theme-txt-opacity;
+        }
+    }
+
+    & .blockList {
+        & .blockList_List {
+            display: flex;
+            flex-wrap: wrap;
+            gap: $padding * 3;
+
+            & .adcart {
+                width: calc(100% / 3 - $padding * 2.3);
+                min-width: calc(100% / 3 - $padding * 2.3);
+            }
+        }
+    }
+
+    & .blockListText {
+        & + .blockListText, & + .blockList {
+            margin-top: $margin * 3;
+        }
+        width: 100%;
+
+        &.searchHistory {
+            & .blockList_List .blockListElem {
+                & span {
+                    color: $theme-color;
+                    padding: $padding * 4 0;
+                }
+
+                padding-top: 0;
+                padding-bottom: 0;
+            }
+        }
+        &.searchValues {
+            & .blockList_List .blockListElem span {
+                width: auto;
+
+                & span {
+                    color: $theme-color;
+                    margin: 0;
+                }
+            }
+        }
+
+        & .blockList_List {
+            margin-top: $margin * 3;
+
+            display: flex;
+            flex-direction: column;
+
+            width: 100%;
+
+            & .blockListElem {
+                display: flex;
+                align-items: center;
+                justify-content: space-between;
+                gap: $padding * 3;
+
+                width: 100%;
+                padding: $padding * 2;
+
+                cursor: pointer;
+                transition: $transition;
+
+                border-radius: $borderRadius;
+                user-select: none;
+
+                &:hover {
+                    background: $theme-bg-select-hover;
+                }
+
+                & span {
+                    white-space: pre-wrap;
+
+                    overflow: hidden;
+                    text-overflow: ellipsis;
+
+                    font-weight: 600;
+                    margin-left: $margin;
+
+                    padding: $padding 0;
+                    width: 100%;
+                }
+                & .delete {
+                    & .button {
+                        padding: $padding * 2;
+
+                        & .buttonIcon svg {
+                            font-size: $fontsize + 2px;
+                        }
+                    }
+                }
+            }
+        }
+    }
+}
+
+
+.isPhone #globalSearch {
+    & .input {
+        height: auto;
+
+        & .inputWrapper {
+            background: transparent !important;
+        }
+    }
+
+    & #globalSearchModal {
+        position: static !important;
+
+        background: transparent !important;
+
+        width: 100% !important;
+        height: auto !important;
+
+        margin-top: $margin * 4;
+
+        & .modalWrapper {
+            position: static !important;
+            border: none !important;
+
+            background: transparent !important;
+            box-shadow: none !important;
+
+            padding: 0 !important;
+        }
+    }
+}

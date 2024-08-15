@@ -1,0 +1,9 @@
+FROM node:20.11.1
+
+COPY ./build ./usr/src/iboot/frontend/main/build
+WORKDIR /usr/src/iboot/frontend/main
+
+EXPOSE 12006
+
+RUN npm install -g serve
+CMD [ "serve", "-s", "build", "-l", "12006" ]

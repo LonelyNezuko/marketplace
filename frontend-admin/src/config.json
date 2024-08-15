@@ -1,0 +1,125 @@
+{
+    "mbtobyte": 1048576,
+    "maxFileSizeToUpload": 31457280,
+
+    "enumProductStatus": {
+        "PRODUCT_STATUS_ACTIVE": 0,
+        "PRODUCT_STATUS_CLOSED": 1,
+        "PRODUCT_STATUS_FORGOT": 2,
+        "PRODUCT_STATUS_BANNED": 3,
+        "PRODUCT_STATUS_DELETED": 4
+    },
+    "enumProductModerationStatus": {
+        "PRODUCT_MODERATION_STATUS_VERIFYING": 0,
+        "PRODUCT_MODERATION_STATUS_VERIFIED": 1,
+        "PRODUCT_MODERATION_STATUS_PROBLEM": 2
+    },
+
+    "enumReportsStatus": {
+        "REPORTS_STATUS_WAITING": 0,
+        "REPORTS_STATUS_VERIFYING": 1,
+        "REPORTS_STATUS_VERIFIED": 2
+    },
+
+    "defaultTitleName": "IBoot - Admin Panel",
+    "siteName": "admin.iboot.uk",
+
+    "maxProductCartPreviewImages": 5,
+    "maxSigninSaveAccounts": 5,
+
+    "moderationPanelLink": "https://moder.iboot.uk",
+    "mainLink": "https://iboot.uk",
+
+    "categoryIconMaxSizeMB": 4,
+    "categoryBackgroundMaxSizeMB": 12,
+
+    "verifycodesDefaultCodeLength": 10,
+
+    "serviceStorageLinkList": [ "://localhost:7000/defaultapi/service/storage/", "://api.iboot.uk/defaultapi/service/storage/" ],
+    "notificationsViewAtMinBetween": 86400000,
+
+
+    "rolePrivileges": [
+        { "groupName": "ROLE_PRIVILEGES_GROUP_NAME_MAIN", "list": [
+            { "name": "ROLE_PRIVILEGES_GROUP_LIST_MAIN_ACCESSMODERATION", "desc": "ROLE_PRIVILEGES_GROUP_LIST_MAIN_ACCESSMODERATION_DESC", "path": "/moderation/*" },
+            { "name": "ROLE_PRIVILEGES_GROUP_LIST_MAIN_ACCESSADMIN", "desc": "ROLE_PRIVILEGES_GROUP_LIST_MAIN_ACCESSADMIN_DESC", "path": "/admin/*" }
+        ] },
+        { "groupName": "ROLE_PRIVILEGES_GROUP_NAME_ADMIN_CATEGORIES", "list": [
+            { "name": "ROLE_PRIVILEGES_GROUP_LIST_ADMIN_CATEGORIES_CREATE", "desc": "ROLE_PRIVILEGES_GROUP_LIST_ADMIN_CATEGORIES_CREATE_DESC", "path": "/admin/category/create" },
+            { "name": "ROLE_PRIVILEGES_GROUP_LIST_ADMIN_CATEGORIES_UPDATE", "desc": "ROLE_PRIVILEGES_GROUP_LIST_ADMIN_CATEGORIES_UPDATE_DESC", "path": "/admin/category/update" },
+            { "name": "ROLE_PRIVILEGES_GROUP_LIST_ADMIN_CATEGORIES_DELETE", "desc": "ROLE_PRIVILEGES_GROUP_LIST_ADMIN_CATEGORIES_DELETE_DESC", "path": "/admin/category/delete", "important": true, "importantText": "ROLE_PRIVILEGES_GROUP_LIST_ADMIN_CATEGORIES_DELETE_IMPORTANT" }
+        ] },
+        { "groupName": "ROLE_PRIVILEGES_GROUP_NAME_ADMIN_ROLES", "list": [
+            { "name": "ROLE_PRIVILEGES_GROUP_LIST_ADMIN_ROLES_VIEW", "desc": "ROLE_PRIVILEGES_GROUP_LIST_ADMIN_ROLES_VIEW_DESC", "path": "/role" },
+            { "name": "ROLE_PRIVILEGES_GROUP_LIST_ADMIN_ROLES_NEW", "desc": "ROLE_PRIVILEGES_GROUP_LIST_ADMIN_ROLES_NEW_DESC", "path": "/role/create", "important": true, "importantText": "ROLE_PRIVILEGES_GROUP_LIST_ADMIN_ROLES_NEW_IMPORTANT" },
+            { "name": "ROLE_PRIVILEGES_GROUP_LIST_ADMIN_ROLES_UPDATE", "desc": "ROLE_PRIVILEGES_GROUP_LIST_ADMIN_ROLES_UPDATE_DESC", "path": "/role/update", "important": true, "importantText": "ROLE_PRIVILEGES_GROUP_LIST_ADMIN_ROLES_UPDATE_IMPORTANT" },
+            { "name": "ROLE_PRIVILEGES_GROUP_LIST_ADMIN_ROLES_CHANGEORDER", "desc": "ROLE_PRIVILEGES_GROUP_LIST_ADMIN_ROLES_CHANGEORDER_DESC", "path": "/role/update/index", "important": true, "importantText": "ROLE_PRIVILEGES_GROUP_LIST_ADMIN_ROLES_CHANGEORDER_IMPORTANT" },
+            { "name": "ROLE_PRIVILEGES_GROUP_LIST_ADMIN_ROLES_DELETE", "desc": "ROLE_PRIVILEGES_GROUP_LIST_ADMIN_ROLES_DELETE_DESC", "path": "/role/delete", "important": true, "importantText": "ROLE_PRIVILEGES_GROUP_LIST_ADMIN_ROLES_DELETE_IMPORTANT" },
+            { "name": "ROLE_PRIVILEGES_GROUP_LIST_ADMIN_ROLES_USER_SET", "desc": "ROLE_PRIVILEGES_GROUP_LIST_ADMIN_ROLES_USER_SET_DESC", "path": "/role/user/set", "important": true, "importantText": "ROLE_PRIVILEGES_GROUP_LIST_ADMIN_ROLES_USER_SET_IMPORTANT" },
+            { "name": "ROLE_PRIVILEGES_GROUP_LIST_ADMIN_ROLES_USER_REMOVE", "desc": "ROLE_PRIVILEGES_GROUP_LIST_ADMIN_ROLES_USER_REMOVE_DESC", "path": "/role/user/remove", "important": true, "importantText": "ROLE_PRIVILEGES_GROUP_LIST_ADMIN_ROLES_USER_REMOVE_IMPORTANT" }
+        ] },
+        { "groupName": "ROLE_PRIVILEGES_GROUP_NAME_ADMIN_STORAGE", "list": [
+            { "name": "ROLE_PRIVILEGES_GROUP_LIST_ADMIN_STORAGE_GET", "desc": "ROLE_PRIVILEGES_GROUP_LIST_ADMIN_STORAGE_GET_DESC", "path": "/admin/storage" },
+            { "name": "ROLE_PRIVILEGES_GROUP_LIST_ADMIN_STORAGE_GET_LIST", "desc": "ROLE_PRIVILEGES_GROUP_LIST_ADMIN_STORAGE_GET_LIST_DESC", "path": "/admin/storage/list" },
+            { "name": "ROLE_PRIVILEGES_GROUP_LIST_ADMIN_STORAGE_CREATE", "desc": "ROLE_PRIVILEGES_GROUP_LIST_ADMIN_STORAGE_CREATE_DESC", "path": "/admin/storage/create", "important": true },
+            { "name": "ROLE_PRIVILEGES_GROUP_LIST_ADMIN_STORAGE_DELETE", "desc": "ROLE_PRIVILEGES_GROUP_LIST_ADMIN_STORAGE_DELETE_DESC", "path": "/admin/storage/delete", "important": true }
+        ] },
+        { "groupName": "ROLE_PRIVILEGES_GROUP_NAME_ADMIN_MAILTEMPLATE", "list": [
+            { "name": "ROLE_PRIVILEGES_GROUP_LIST_ADMIN_MAILTEMPLATE_GET", "desc": "ROLE_PRIVILEGES_GROUP_LIST_ADMIN_MAILTEMPLATE_GET_DESC", "path": "/admin/mailtemplate" },
+            { "name": "ROLE_PRIVILEGES_GROUP_LIST_ADMIN_MAILTEMPLATE_CREATE", "desc": "ROLE_PRIVILEGES_GROUP_LIST_ADMIN_MAILTEMPLATE_CREATE_DESC", "path": "/admin/mailtemplate/create", "important": true },
+            { "name": "ROLE_PRIVILEGES_GROUP_LIST_ADMIN_MAILTEMPLATE_UPDATE", "desc": "ROLE_PRIVILEGES_GROUP_LIST_ADMIN_MAILTEMPLATE_UPDATE_DESC", "path": "/admin/mailtemplate/update", "important": true },
+            { "name": "ROLE_PRIVILEGES_GROUP_LIST_ADMIN_MAILTEMPLATE_DELETE", "desc": "ROLE_PRIVILEGES_GROUP_LIST_ADMIN_MAILTEMPLATE_DELETE_DESC", "path": "/admin/mailtemplate/delete", "important": true }
+        ] },
+        { "groupName": "ROLE_PRIVILEGES_GROUP_NAME_ADMIN_NOTIFICATIONS", "list": [
+            { "name": "ROLE_PRIVILEGES_GROUP_LIST_ADMIN_NOTIFICATIONS_GET", "desc": "ROLE_PRIVILEGES_GROUP_LIST_ADMIN_NOTIFICATIONS_GET_DESC", "path": "/admin/notifications" },
+            { "name": "ROLE_PRIVILEGES_GROUP_LIST_ADMIN_NOTIFICATIONS_CREATE", "desc": "ROLE_PRIVILEGES_GROUP_LIST_ADMIN_NOTIFICATIONS_CREATE_DESC", "path": "/admin/notifications/create", "important": true },
+            { "name": "ROLE_PRIVILEGES_GROUP_LIST_ADMIN_NOTIFICATIONS_DELETE", "desc": "ROLE_PRIVILEGES_GROUP_LIST_ADMIN_NOTIFICATIONS_DELETE_DESC", "path": "/admin/notifications/delete", "important": true }
+        ] },
+        { "groupName": "ROLE_PRIVILEGES_GROUP_NAME_SERVICE_LANGUAGES", "list": [
+            { "name": "ROLE_PRIVILEGES_GROUP_LIST_SERVICE_LANGUAGES_VIEW", "desc": "ROLE_PRIVILEGES_GROUP_LIST_SERVICE_LANGUAGES_VIEW_DESC", "path": "/service/language" },
+            { "name": "ROLE_PRIVILEGES_GROUP_LIST_SERVICE_LANGUAGES_VIEWADMIN", "desc": "ROLE_PRIVILEGES_GROUP_LIST_SERVICE_LANGUAGES_VIEWADMIN_DESC", "path": "/service/language/?admin" },
+            { "name": "ROLE_PRIVILEGES_GROUP_LIST_SERVICE_LANGUAGES_VIEWEXPAMPLE", "desc": "ROLE_PRIVILEGES_GROUP_LIST_SERVICE_LANGUAGES_VIEWEXPAMPLE_DESC", "path": "/service/language/expample" },
+            { "name": "ROLE_PRIVILEGES_GROUP_LIST_SERVICE_LANGUAGES_NEW", "desc": "ROLE_PRIVILEGES_GROUP_LIST_SERVICE_LANGUAGES_NEW_DESC", "path": "/service/language/new" },
+            { "name": "ROLE_PRIVILEGES_GROUP_LIST_SERVICE_LANGUAGES_UPDATE", "desc": "ROLE_PRIVILEGES_GROUP_LIST_SERVICE_LANGUAGES_UPDATE_DESC", "path": "/service/language/update" },
+            { "name": "ROLE_PRIVILEGES_GROUP_LIST_SERVICE_LANGUAGES_DELETE", "desc": "ROLE_PRIVILEGES_GROUP_LIST_SERVICE_LANGUAGES_DELETE_DESC", "path": "/service/language/delete", "important": true, "importantText": "ROLE_PRIVILEGES_GROUP_LIST_SERVICE_LANGUAGES_DELETE_IMPORTANT" }
+        ] },
+        { "groupName": "ROLE_PRIVILEGES_GROUP_NAME_MODERATION_PRODUCTS", "list": [
+            { "name": "ROLE_PRIVILEGES_GROUP_LIST_MODERATION_PRODUCTS_VIEW", "desc": "ROLE_PRIVILEGES_GROUP_LIST_MODERATION_PRODUCTS_VIEW_DESC", "path": "/moderation/product" },
+            { "name": "ROLE_PRIVILEGES_GROUP_LIST_MODERATION_PRODUCTS_VIEW_DELETED", "desc": "ROLE_PRIVILEGES_GROUP_LIST_MODERATION_PRODUCTS_VIEW_DELETED_DESC", "path": "/moderation/product/list/deleted" },
+            { "name": "ROLE_PRIVILEGES_GROUP_LIST_MODERATION_PRODUCTS_VIEW_LIST", "desc": "ROLE_PRIVILEGES_GROUP_LIST_MODERATION_PRODUCTS_VIEW_LIST_DESC", "path": "/moderation/product/list" },
+            { "name": "ROLE_PRIVILEGES_GROUP_LIST_MODERATION_PRODUCTS_VERDICT", "desc": "ROLE_PRIVILEGES_GROUP_LIST_MODERATION_PRODUCTS_VERDICT_DESC", "path": "/moderation/product/verdict" },
+            { "name": "ROLE_PRIVILEGES_GROUP_LIST_MODERATION_PRODUCTS_BAN", "desc": "ROLE_PRIVILEGES_GROUP_LIST_MODERATION_PRODUCTS_BAN_DESC", "path": "/moderation/product/ban" },
+            { "name": "ROLE_PRIVILEGES_GROUP_LIST_MODERATION_PRODUCTS_DELETE", "desc": "ROLE_PRIVILEGES_GROUP_LIST_MODERATION_PRODUCTS_DELETE_DESC", "path": "/moderation/product/delete", "important": true }
+        ] },
+        { "groupName": "ROLE_PRIVILEGES_GROUP_NAME_MODERATION_REPORTS", "list": [
+            { "name": "ROLE_PRIVILEGES_GROUP_LIST_MODERATION_REPORTS_VIEW", "desc": "ROLE_PRIVILEGES_GROUP_LIST_MODERATION_REPORTS_VIEW_DESC", "path": "/moderation/reports" },
+            { "name": "ROLE_PRIVILEGES_GROUP_LIST_MODERATION_REPORTS_MESSAGE", "desc": "ROLE_PRIVILEGES_GROUP_LIST_MODERATION_REPORTS_MESSAGE_DESC", "path": "/moderation/reports/message" },
+            { "name": "ROLE_PRIVILEGES_GROUP_LIST_MODERATION_REPORTS_STATUS", "desc": "ROLE_PRIVILEGES_GROUP_LIST_MODERATION_REPORTS_STATUS_DESC", "path": "/moderation/reports/status" }
+        ] },
+        { "groupName": "ROLE_PRIVILEGES_GROUP_NAME_MODERATION_SUPPORT", "list": [
+            { "name": "ROLE_PRIVILEGES_GROUP_LIST_MODERATION_SUPPORT_VIEW", "desc": "ROLE_PRIVILEGES_GROUP_LIST_MODERATION_SUPPORT_VIEW_DESC", "path": "/moderation/support" },
+            { "name": "ROLE_PRIVILEGES_GROUP_LIST_MODERATION_SUPPORT_MESSAGE", "desc": "ROLE_PRIVILEGES_GROUP_LIST_MODERATION_SUPPORT_MESSAGE_DESC", "path": "/moderation/support/message" },
+            { "name": "ROLE_PRIVILEGES_GROUP_LIST_MODERATION_SUPPORT_STATUS", "desc": "ROLE_PRIVILEGES_GROUP_LIST_MODERATION_SUPPORT_STATUS_DESC", "path": "/moderation/support/status" }
+        ] },
+        { "groupName": "ROLE_PRIVILEGES_GROUP_NAME_MODERATION_USER", "list": [
+            { "name": "ROLE_PRIVILEGES_GROUP_LIST_MODERATION_USER_ACCESS", "desc": "ROLE_PRIVILEGES_GROUP_LIST_MODERATION_USER_ACCESS_DESC", "path": "/moderation/user" },
+            { "name": "ROLE_PRIVILEGES_GROUP_LIST_MODERATION_USER_WARN", "desc": "ROLE_PRIVILEGES_GROUP_LIST_MODERATION_USER_WARN_DESC", "path": "/moderation/user/warn", "important": true },
+            { "name": "ROLE_PRIVILEGES_GROUP_LIST_MODERATION_USER_EMAILSEND", "desc": "ROLE_PRIVILEGES_GROUP_LIST_MODERATION_USER_EMAILSEND_DESC", "path": "/moderation/user/email/sendcode", "important": true },
+            { "name": "ROLE_PRIVILEGES_GROUP_LIST_MODERATION_USER_BAN", "desc": "ROLE_PRIVILEGES_GROUP_LIST_MODERATION_USER_BAN_DESC", "path": "/moderation/user/ban", "important": true },
+            { "name": "ROLE_PRIVILEGES_GROUP_LIST_MODERATION_USER_BAN_REPORT", "desc": "ROLE_PRIVILEGES_GROUP_LIST_MODERATION_USER_BAN_REPORT_DESC", "path": "/moderation/user/ban/report", "important": true }
+        ] }
+    ],
+
+
+    "_comments": {
+        "rolePrivileges": [
+            { "name": "ROLE_PRIVILEGES_GROUP_LIST_MODERATION_PRODUCTS_EDIT", "desc": "ROLE_PRIVILEGES_GROUP_LIST_MODERATION_PRODUCTS_EDIT_DESC", "path": "/moderation/product/edit", "important": true },
+            { "name": "ROLE_PRIVILEGES_GROUP_LIST_MODERATION_PRODUCTS_CHANGESTATUS", "desc": "ROLE_PRIVILEGES_GROUP_LIST_MODERATION_PRODUCTS_CHANGESTATUS_DESC", "path": "/moderation/product/status" },
+            { "groupName": "ROLE_PRIVILEGES_GROUP_NAME_ADMIN_UPDATES", "list": [
+                { "name": "ROLE_PRIVILEGES_GROUP_LIST_ADMIN_UPDATES_GET", "desc": "ROLE_PRIVILEGES_GROUP_LIST_ADMIN_UPDATES_GET_DESC", "path": "/updates/get" },
+                { "name": "ROLE_PRIVILEGES_GROUP_LIST_ADMIN_UPDATES_CREATE", "desc": "ROLE_PRIVILEGES_GROUP_LIST_ADMIN_UPDATES_CREATE_DESC", "path": "/updates/create", "important": true },
+                { "name": "ROLE_PRIVILEGES_GROUP_LIST_ADMIN_UPDATES_UPDATE", "desc": "ROLE_PRIVILEGES_GROUP_LIST_ADMIN_UPDATES_UPDATE_DESC", "path": "/updates/update", "important": true }
+            ] }
+        ]
+    }
+}

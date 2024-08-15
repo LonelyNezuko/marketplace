@@ -1,0 +1,500 @@
+@import '../../../rules/scss/themes.scss';
+@import '../../../rules/scss/variables.scss';
+
+.route#routeAccountMessages {
+    & #emailVerify {
+        margin-top: $margin * 3;
+    }
+
+    & .dialogs {
+        margin-top: $margin * 6;
+
+        & .list {
+            display: flex;
+            flex-direction: column;
+            gap: 0 $padding * 2;
+
+            background: $theme-bg-color;
+            box-shadow: $theme-shadow;
+            border-radius: $borderRadius;
+
+            overflow: hidden;
+
+            & .elem.dialog:not(.unread) + .elem.dialog {
+                border-top: 1px solid $theme-bg-opacity;
+            }
+            & .elem.dialog {
+                display: flex;
+                align-items: flex-start;
+                gap: $padding * 3;
+
+                padding: $padding * 3;
+
+                &.unread {
+                    background: $theme-bg;
+                }
+
+                & .dialogblock {
+                    width: 100%;
+                }
+                & .top {
+                    display: flex;
+                    align-items: center;
+                    justify-content: space-between;
+
+                    & .username {
+                        display: flex;
+                        align-items: center;
+                        gap: $padding * 2;
+
+                        & h1 {
+                            font-weight: 600;
+                        }
+
+                        & .date {
+                            color: $theme-txt-opacity;
+
+                            display: flex;
+                            align-items: center;
+                            gap: $padding * 2;
+
+                            font-size: $fontsize - 2px;
+
+                            &:before {
+                                display: inline;
+                                content: "";
+
+                                width: 6px;
+                                height: 6px;
+
+                                border-radius: 50%;
+                                background: $theme-txt-opacity;
+
+                                opacity: .6;
+                            }
+                        }
+                    }
+
+                    & .readstatus {
+                        height: 16px;
+                        width: 16px;
+
+                        &.unread svg path {
+                            color: $theme-txt-opacity;
+                        }
+                        &.read svg path {
+                            color: $theme-color;
+                        }
+
+                        & svg {
+                            font-size: $fontsize + 2px;
+                        }
+                    }
+                }
+
+                & .message {
+                    margin-top: $margin;
+
+                    & span {
+                        font-size: $fontsize - 1px;
+
+                        display: block;
+
+                        width: 100%;
+                        height: 26px;
+                    }
+
+                    display: flex;
+                    align-items: center;
+
+                    & .newmessagescount {
+                        &:after {
+                            padding: 0;
+
+                            width: 22px;
+                            height: 22px;
+
+                            border-radius: $borderRadius * .7;
+                        }
+
+                        &.hide {
+                            opacity: 0;
+                            visibility: hidden;
+                            z-index: -1;
+                        }
+                    }
+
+                    & .lastmessageunread {
+                        width: 8px;
+                        height: 8px;
+
+                        background: $theme-txt-opacity;
+                        border-radius: 50%;
+
+                        margin-right: $margin * 3;
+                    }
+                }
+            }
+        }
+    }
+}
+
+
+.route#routeAccountMessagesDialog {
+    // height: calc(100vh - 85px - $padding * 16 - 1px);
+    height: 100%;
+    // margin-top: $margin * 4;
+
+    display: flex;
+    flex-direction: column;
+    gap: $padding * 4;
+
+    & header.header {
+        display: flex;
+        align-items: center;
+        justify-content: space-between;
+
+        background: $theme-bg-color;
+        box-shadow: $theme-shadow;
+
+        border-radius: $borderRadius * 2;
+        padding: $padding * 4;
+
+        // height: 82px;
+        // min-height: 82px;
+
+        flex: 0 0 82px;
+
+        & section {
+            display: flex;
+            align-items: center;
+            
+            & .backbtn {
+                background: transparent;
+
+                display: flex;
+                align-items: center;
+                justify-content: center;
+
+                margin: 0 $margin * 1;
+                margin-right: $margin * 4;
+
+                & svg {
+                    font-size: $fontsize + 4px;
+                }
+            }
+
+            & .userinfo {
+                & a, & {
+                    display: flex;
+                    align-items: center;
+                    gap: $padding * 3;
+
+                    & .wrap {
+                        display: flex;
+                        flex-direction: column;
+                        align-items: flex-start;
+                        gap: $padding;
+                    }
+                    & .username {
+                        font-size: $fontsize + 2px;
+                        font-weight: 600;
+                    }
+                }
+            }
+
+            & .actions {
+                display: flex;
+                align-items: center;
+
+                & section {
+                    background: transparent;
+                    position: relative;
+
+                    display: flex;
+                    align-items: center;
+
+                    & .dropdownmenu {
+                        right: 0;
+                        margin-top: $margin;
+                    }
+                }
+
+                & .button {
+                    & svg {
+                        font-size: $fontsize + 6px;
+                    }
+                }
+            }
+        }
+    }
+
+    & .dialogWrapper {
+        height: calc(100%);
+        overflow: hidden;
+
+        display: flex;
+        flex-direction: column;
+        gap: $padding * 4;
+    }
+
+    & .form {
+        width: 100%;
+        position: relative;
+    }
+
+    & .messages {
+        height: 100%;
+        overflow: auto;
+
+        & .list {
+            display: flex;
+            flex-direction: column;
+            gap: $padding * 8;
+
+            height: 100%;
+            overflow: auto;
+
+            padding-right: $padding;
+
+            & .elem.message {
+                &.test {
+                    background: $theme-color-red;
+                }
+
+                & .senderinfo {
+                    display: flex;
+                    align-items: center;
+                    gap: $padding * 3;
+
+                    & .avatar {
+                        width: 40px;
+                        min-width: 40px;
+                        height: 40px;
+                    }
+                    & ._username_ h1 {
+                        font-weight: 600;
+                    }
+                }
+
+                & .messagelist {
+                    margin-left: calc(40px + $padding * 3);
+                }
+
+                & .textWrapper {
+                    display: flex;
+                    align-items: flex-end;
+
+                    &.unread {
+                        
+                    }
+
+                    &.test {
+                        background: $theme-color-red;
+                    }
+
+                    & .readstatus {
+                        margin-bottom: $margin * 4.2;
+                        display: block;
+
+                        width: 10px;
+                        height: 10px;
+
+                        background: $theme-bg-footer;
+                        border-radius: 50%;
+
+                        margin-right: $margin * 3;
+                    }
+
+                    & .sendstatus {
+                        margin-bottom: $margin * 4.2;
+                        margin-right: $margin * 3;
+
+                        & svg {
+                            font-size: $fontsize + 2px;
+                        }
+
+                        &.wait svg {
+                            color: $theme-bg-opacity;
+                            fill: $theme-bg-opacity;
+                        }
+                        &.error svg {
+                            color: $theme-color-red;
+                            fill: $theme-color-red;
+                        }
+
+                        &[data-alt]:before {
+                            background: $theme-color-red;
+                            color: $theme-txt-reverse;
+
+                            left: 0;
+                            right: auto;
+
+                            transform: translateY(50%);
+                        }
+                    }
+                }
+                & .textWrapper + .textWrapper {
+                    margin-top: $margin * 2;
+                }
+                & .text {
+                    max-width: 450px;
+
+                    & span {
+                        display: block;
+
+                        background: $theme-bg;
+                        box-shadow: $theme-shadow;
+
+                        padding: $padding * 3 $padding * 4;
+                        border-radius: $borderRadius * 3;
+
+                        white-space: pre-wrap;
+                        line-height: $fontsize + 4px;
+                    }
+
+                    &:first-child span {
+                        border-top-left-radius: 0;
+                    }
+                }
+                & .image {
+                    border-radius: $borderRadius * 3;
+                    overflow: hidden;
+
+                    & .attachment {
+                        max-width: 450px;
+                        min-width: 200px;
+
+                        max-height: 500px;
+                        min-height: 70px;
+
+                        display: flex;
+                        align-items: center;
+                        justify-content: center;
+
+                        background: $theme-bg-color;
+                        overflow: hidden;
+                    }
+
+                    & img {
+                        width: auto;
+                        height: auto;
+
+                        object-fit: cover;
+                    }
+                    & span {
+                        width: 100%;
+
+                        border-top-right-radius: 0;
+                        border-top-left-radius: 0;
+                    }
+                }
+
+                & .info {
+                    display: flex;
+                    align-items: center;
+                    gap: $padding * 2;
+
+                    margin-top: $margin * 2;
+                    width: 100%;
+
+                    & .date {
+                        font-size: $fontsize - 2px;
+                        color: $theme-txt-opacity;
+                    }
+                    & .readstatus {
+                        & svg path {
+                            color: $theme-txt-opacity;
+                        }
+
+                        &.read svg path {
+                            color: $theme-color;
+                        }
+                    }
+                }
+
+
+                &.reverse {
+                    & .messagelist {
+                        margin: 0;
+
+                        display: flex;
+                        flex-direction: column;
+                        align-items: flex-end;
+                    }
+
+                    & .text {
+                        & span {
+                            background: $theme-color-gradient;
+                            color: $theme-txt-reverse;
+                            box-shadow: none;
+
+                            text-align: left;
+                        }
+
+                        &:not(.image) span {
+                            border-radius: $borderRadius * 3;
+                        }
+                    }
+                    & .image {
+                        & .wrap {
+                            flex-direction: row-reverse;
+                        }
+                    }
+                    & .info {
+                        flex-direction: row-reverse;
+                    }
+
+                    & .sendstatus {
+                        &[data-alt]:before {
+                            left: auto;
+                            right: 0;
+
+                            transform: translateY(50%);
+                        }
+                    }
+                }
+            }
+        }
+    }
+
+
+    & .blocked {
+        display: flex;
+        align-items: center;
+        justify-content: center;
+
+        min-height: 60px;
+        
+        & span {
+            text-align: center;
+            color: $theme-color-red;
+
+            font-size: $fontsize + 2px;
+            font-weight: 600;
+
+            white-space: pre-wrap;
+        }
+    }
+}
+
+
+.isPhone .route#routeAccountMessages {
+    & .dialogs {
+        margin-top: $margin * 2;
+
+        height: calc(100vh - 7vh - 56px - $margin * 2);
+        overflow: auto;
+    }
+}
+.isPhone .route#routeAccountMessagesDialog {
+    gap: 0 !important;
+
+    & .dialogWrapper {
+        gap: 0 !important;
+    }
+    & .messages {
+        margin: 0;
+        padding: $padding * 2 $padding * 3;
+    }
+}

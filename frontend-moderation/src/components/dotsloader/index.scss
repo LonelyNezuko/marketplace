@@ -1,0 +1,127 @@
+@import '../../rules/scss/variables.scss';
+@import '../../rules/scss/themes.scss';
+
+.dotsLoader {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+
+    &.color-white .loader {
+        background: $theme-bg;
+        color: $theme-bg;
+    }
+    &.color-black .loader {
+        background: $theme-txt;
+        color: $theme-txt;
+    }
+    &.color-colorful .loader {
+        background: $theme-color;
+        color: $theme-color;
+    }
+
+    &.size-min {
+        width: calc(10px * 3 + 4px * 3);
+        min-width: calc(10px * 3 + 4px * 3);
+
+        height: 12px;
+        min-height: 12px;
+
+        & .loader {
+            width: 10px;
+            height: 10px;
+        }
+    }
+    &.size-normal {
+        width: calc(24px * 3);
+        min-width: calc(24px * 3);
+
+        height: 26px;
+        min-height: 26px;
+
+        & .loader {
+            width: 24px;
+            height: 24px;
+
+            &:after {
+                transform: translateX(10px);
+            }
+            &:before {
+                transform: translateX(-10px);
+            }
+        }
+    }
+    &.size-medium {
+        width: calc(32px * 3);
+        min-width: calc(32px * 3);
+
+        height: 34px;
+        min-height: 34px;
+
+        & .loader {
+            width: 32px;
+            height: 32px;
+
+            &:after {
+                transform: translateX(20px);
+            }
+            &:before {
+                transform: translateX(-20px);
+            }
+        }
+    }
+    &.size-big {
+        width: calc(46px * 3);
+        min-width: calc(46px * 3);
+
+        height: 48px;
+        min-height: 48px;
+
+        & .loader {
+            width: 46px;
+            height: 46px;
+
+            &:after {
+                transform: translateX(32px);
+            }
+            &:before {
+                transform: translateX(-32px);
+            }
+        }
+    }
+    &.size-ultra {
+        width: calc(64px * 3);
+        min-width: calc(64px * 3);
+
+        height: 66px;
+        min-height: 66px;
+
+        & .loader {
+            width: 64px;
+            height: 64px;
+
+            &:after {
+                transform: translateX(52px);
+            }
+            &:before {
+                transform: translateX(-52px);
+            }
+        }
+    }
+
+    & .loader {
+        border-radius: 50%;
+        animation-duration: 1s;
+        
+        &:before, &:after {
+            width: inherit !important;
+            height: inherit !important;
+
+            border-radius: inherit !important;
+
+            background: inherit !important;
+            color: inherit !important;
+
+            animation-duration: 1s;
+        }
+    }
+}

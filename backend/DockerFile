@@ -1,0 +1,14 @@
+FROM node:21
+
+COPY . ./usr/src/iboot/backend
+WORKDIR /usr/src/iboot/backend
+
+RUN npm install \
+    && printf "npm run migration:generate ./dist/migrations/init\nnpm run migration:run\nnpm run start" > entrypoint.sh
+
+# main port
+EXPOSE 12000
+# gateway port
+EXPOSE 12030
+
+CMD [ "/bin/sh", "entrypoint.sh" ]

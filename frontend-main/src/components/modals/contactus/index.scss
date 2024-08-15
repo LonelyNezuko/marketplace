@@ -1,0 +1,30 @@
+@import '../../../rules/scss/themes.scss';
+@import '../../../rules/scss/variables.scss';
+
+#modalContactUs {
+    & #contactus {
+        width: 500px;
+
+        & .textarea, & .input {
+            & label {
+                font-weight: 600;
+            }
+        }
+
+        & .input {
+
+        }
+        & .textarea {
+            & .textareainput {
+                min-height: calc(22px * 4);
+                max-height: calc(22px * 8);
+            }  
+        }
+    }
+}
+
+.isPhone #modalContactUs {
+    & #contactus {
+        width: auto;
+    }
+}

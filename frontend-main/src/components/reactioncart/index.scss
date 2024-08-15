@@ -1,0 +1,49 @@
+@import '../../rules/scss/themes.scss';
+@import '../../rules/scss/variables.scss';
+
+.reactioncart {
+    width: 100%;
+
+    background: $theme-bg;
+    box-shadow: $theme-shadow;
+
+    padding: $padding * 3;
+    border-radius: $borderRadius * 2;
+    
+    & .reactioncart-top {
+        display: flex;
+        align-items: center;
+        gap: $padding * 3;
+
+        & .title {
+            & .name {
+                & h1 {
+                    font-size: $fontsize + 2px;
+                    font-weight: 600;
+                }
+            }
+            & .date {
+                margin-top: $margin * 2;
+                & h1 {
+                    font-size: $fontsize - 2px;
+                    color: $theme-txt-opacity;
+                }
+            }
+        }
+    }
+    & .reactioncart-description {
+        margin-top: $margin * 2;
+
+        & .reactioncart-description-block {
+            margin-top: $margin * 4;
+
+            & .title {
+                font-weight: 600;
+                margin-bottom: $margin;
+            }
+            & .section {
+                margin-left: $margin * 6;
+            }
+        }
+    }
+}

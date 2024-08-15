@@ -1,0 +1,87 @@
+@import '../../rules/scss/variables.scss';
+@import '../../rules/scss/themes.scss';
+
+.updatesView {
+    border-radius: $borderRadius * 3;
+    overflow: hidden;
+
+    & .updateWrapper {
+        
+    }
+
+    & .updateBackground {
+        background-position: center;
+        background-repeat: no-repeat;
+        background-size: cover;
+
+        width: 100%;
+        height: 220px;
+
+        position: relative;
+
+        & .updateName {
+            position: absolute;
+
+            bottom: $padding * 4;
+            left: $padding * 4;
+
+            background: $theme-modal-fullbg;
+            padding: $padding * 3 $padding * 4;
+
+            border-radius: $borderRadius * 2;
+
+            font-size: $fontsize + 2px;
+            font-weight: 700;
+    
+            display: flex;
+            flex-direction: column;
+
+            color: $theme-txt-reverse;
+    
+            & span {
+                display: inline-block;
+
+                color: $theme-txt-opacity;    
+                font-size: $fontsize - 2px;
+            }
+        }
+    }
+    
+    & .updateBody {
+        background: $theme-bg;
+
+        & .publishDate {
+            display: flex;
+            flex-direction: column;
+            gap: $padding;
+
+            margin-top: $margin * 6;
+
+            padding-bottom: $padding * 4;
+            padding-right: $padding * 4;
+
+            & span {
+                text-align: right;
+                color: $theme-txt-opacity;
+
+                font-size: $fontsize - 2px;
+                font-weight: 600;
+            }
+        }
+
+        & ._textEditor_ {
+            padding: $padding * 4;
+            & img {
+                border-radius: $borderRadius * 1.5;
+                overflow: hidden;
+            }
+        }
+        & .ql-container {
+            height: auto;
+            & .ql-editor {
+                max-height: none;
+                height: auto;
+            }
+        }
+    }
+}

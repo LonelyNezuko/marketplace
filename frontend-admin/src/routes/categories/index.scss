@@ -1,0 +1,72 @@
+@import '../../rules/scss/themes.scss';
+@import '../../rules/scss/variables.scss';
+
+.route#categorieslist {
+
+    & .wrap {
+        display: flex;
+        flex-direction: column;
+    }
+
+    & .header {
+        display: flex;
+        align-items: center;
+        justify-content: space-between;
+
+        height: 50px;
+
+        & .title {
+            & h1 {
+                font-size: $fontsize + 8px;
+                font-weight: 700;
+
+                color: $theme-color-txt;
+            }
+        }
+
+        & .rightblock {
+            display: flex;
+            align-items: center;
+            gap: $padding * 3;
+
+            height: 40px;
+            min-height: 40px;
+
+            height: 100%;
+
+            & .search {
+                height: 100%;
+                & .input {
+                    height: 100%;
+
+                    & .inputWrapper {
+                        padding: $padding * 2 $padding * 3;
+
+                        & .icon {
+                            margin-right: $margin * 3;
+                        }
+                    }
+                }
+            }
+
+            & .actions {
+                display: flex;
+                align-items: center;
+                gap: $padding * 2;
+
+                height: 100%;
+
+                & .btn {
+                    height: 100%;
+                    &, & span {
+                        white-space: nowrap;
+                    }
+                }
+            }
+        }
+    }
+
+    & .list {
+        // margin-top: $margin * 8;
+    }
+}

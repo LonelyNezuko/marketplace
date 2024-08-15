@@ -1,0 +1,122 @@
+@import '../../rules/scss/themes.scss';
+@import '../../rules/scss/variables.scss';
+
+#bottomNavigate {
+    // position: fixed;
+    // z-index: $zindex_wrapper;
+
+    // bottom: 0;
+    // left: 0;
+
+    background: $theme-bg;
+    border-top: 2px solid $theme-bg-silver;
+
+    height: 7vh;
+    width: 100%;
+
+    & .list {
+        display: flex;
+        align-items: center;
+        justify-content: space-between;
+
+        height: 100%;
+
+        & .elem {
+            width: calc(100% / 4);
+            height: 100%;
+
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            justify-content: center;
+            gap: $padding * 1.5;
+
+            & .title {
+                font-size: 2vw;
+                font-weight: 700;
+
+                color: $theme-txt-opacity;
+                display: none;
+            }
+            & .icon {
+                display: flex;
+                align-items: center;
+                justify-content: center;
+
+                height: 100%;
+
+                & svg {
+                    font-size: 6vw;
+
+                    color: $theme-txt-opacity;
+                    fill: $theme-txt-opacity;
+                }
+            }
+
+            &.selected {
+                // background: $theme-color;
+
+                & .title, & .icon svg {
+                    color: $theme-color;
+                    fill: $theme-color;
+                }
+            }
+
+            &.menu {
+                &.accountyes .icon {
+                    width: 46px;
+                    height: 46px;
+
+                    background: $theme-bg;
+                    border-radius: 50%;
+                }
+
+                & .avatar {
+                    &:before {
+                        background: $theme-color-red !important;
+
+                        top: auto;
+
+                        right: -2px;
+                        bottom: -2px;
+                    }
+                }
+
+                & .icon .avatar {
+                    width: 40px;
+                    height: 40px;
+
+                    min-width: 40px;
+                    min-height: 40px;
+                }
+            }
+
+            &.placead {
+                & .icon {
+                    & svg {
+                        font-size: 8vw;
+                    }
+                }
+
+                background: $theme-color;
+                border-radius: 50%;
+
+                width: calc(100% / 4 - $margin * 4);
+                height: auto;
+                aspect-ratio: 1 / 1;
+
+                margin: 0 $margin * 2;
+
+                position: relative;
+                z-index: $zindex_wrapper;
+
+                transform: translateY(-2vw);
+
+                & .icon svg {
+                    color: $theme-txt-reverse;
+                    fill: $theme-txt-reverse;
+                }
+            }
+        }
+    }
+}

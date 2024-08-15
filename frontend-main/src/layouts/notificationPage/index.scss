@@ -1,0 +1,80 @@
+@import '../../rules/scss/themes.scss';
+@import '../../rules/scss/variables.scss';
+
+#notificationPage {
+    position: fixed;
+    z-index: $zindex_notify;
+
+    bottom: $padding * 6;
+    left: $padding * 6;
+
+    display: flex;
+    flex-direction: column-reverse;
+    gap: $padding * 2;
+
+    width: 360px;
+    max-height: 70vh;
+
+    & .elem {
+        width: 100%;
+        height: 86px;
+
+        display: flex;
+        align-items: center;
+        gap: $padding * 3;
+
+        background: $theme-modal-fullbg;
+        padding: $padding * 3 $padding * 2;
+
+        border-radius: $borderRadius * 2;
+
+        & .previewAvatar {
+
+        }
+
+        & .info {
+            display: flex;
+            flex-direction: column;
+            gap: $padding * 2;
+
+            height: 100%;
+
+            & .title {
+                font-size: $fontsize + 4px;
+                font-weight: 700;
+
+                color: white;
+            }
+            & .text {
+                display: inline-block;
+
+                width: 100%;
+                height: 100%;
+
+                color: white;
+                opacity: .6;
+
+                font-size: $fontsize - 2px;
+                font-weight: 600;
+
+                overflow: hidden;
+                text-overflow: ellipsis;
+            }
+        }
+
+        position: relative;
+        & .close {
+            position: absolute;
+
+            right: $padding * 2;
+            top: $padding * 2;
+
+            & svg {
+                font-size: $fontsize + 4px;
+                
+                color: white;
+                fill: white;
+            }
+        }
+    }
+}

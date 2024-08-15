@@ -1,0 +1,146 @@
+@import '../../rules/scss/variables.scss';
+@import '../../rules/scss/themes.scss';
+
+.uploadDropFile {
+    // height: 240px;
+    // min-height: 240px;
+
+    border: 2px dashed $theme-bg-opacity;
+
+    width: 100%;
+    height: auto;
+    min-height: 240px;
+
+    position: relative;
+    & .drophere {
+        position: absolute;
+        z-index: $zindex_hover;
+
+        width: 100%;
+        height: 100%;
+    }
+
+    &.dragActive {
+        border-color: $theme-color;
+
+        & .dropimage {
+            display: none;
+        }
+        & .filesDragActive {
+            display: flex;
+        }
+    }
+
+    & .filesDragActive {
+        display: none;
+        justify-content: center;
+        align-items: center;
+        gap: $padding * 6;
+
+        height: 100%;
+        width: 100%;
+
+        padding: $padding * 6;
+
+        position: absolute;
+        top: 0;
+        left: 0;
+
+        & img {
+            width: 100px;
+            height: 100px;
+        }
+        & section {
+            & h1 {
+                font-size: $fontsize + 16px;
+                font-weight: 800;
+                font-family: 'Avenir';
+
+                color: $theme-color-txt;
+            }
+            & span {
+                display: block;
+                margin-top: $margin * 4;
+
+                font-size: $fontsize + 6px;
+                color: $theme-txt-opacity;
+            }
+        }
+    }
+    & .dropimage {
+        height: 100%;
+
+        position: absolute;
+        z-index: 0;
+
+        top: 0;
+        left: 0;
+
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        flex-direction: column;
+        gap: $padding * 6;
+    
+        width: 100%;
+        padding: $padding * 18 0;
+
+        color: $theme-txt-opacity;
+    
+        font-family: 'Avenir';
+    
+        font-size: $fontsize + 2px;
+        font-weight: 600;
+    
+        cursor: copy;
+        &.yes {
+            border-color: $theme-color;
+            color: $theme-color;
+        }
+
+        & .uploadBtn {
+            cursor: copy;
+            & span {
+                padding: $padding * 2 $padding * 3;
+
+                display: flex;
+                align-items: center;
+                justify-content: center;
+            }
+
+            & input[type="file"] {
+                display: none;
+            }
+        }
+    }
+}
+
+
+.uploadDropFileInput {
+    min-height: auto;
+    border: none;
+
+    position: relative;
+
+    height: 38px;
+    min-height: 38px;
+
+    display: flex;
+    align-items: center;
+
+    & input {
+        opacity: 0;
+        visibility: hidden;
+        z-index: -1;
+        position: absolute;
+    }
+
+    & label {
+        width: 100%;
+        height: 100%;
+
+        display: flex;
+        align-items: center;
+        justify-content: center;
+    }
+}

@@ -1,0 +1,99 @@
+@import '../../rules/scss/variables.scss';
+@import '../../rules/scss/themes.scss';
+
+._phoneHeaderTitle_ {
+    width: 100%;
+
+    background: $theme-bg;
+    border-bottom: 2px solid $theme-bg-silver;
+
+    padding: $padding * 4;
+
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    gap: $padding * 3;
+
+    & ._phoneHeaderTitle_Wrap {
+        display: flex;
+        align-items: center;
+        gap: $padding * 2;
+    }
+
+    &.outBodyPadding {
+        width: calc(100% + $padding * 4);
+        position: relative;
+
+        top: -$padding * 4;
+        left: -$padding * 2;
+    }
+
+    & .button {
+        padding: $padding;
+        & .buttonName {
+            color: $theme-txt-opacity;
+        }
+    }
+
+    & h6 {
+        font-size: $fontsize + 8px;
+        font-weight: 700;
+
+        color: $theme-color;
+    }
+    & span {
+        display: inline-block;
+        width: 100%;
+
+        margin-top: $margin;
+        white-space: pre-wrap;
+
+        font-size: $fontsize;
+        font-weight: 600;
+        
+        color: $theme-txt-opacity;
+    }
+
+    &._phoneHeaderTitle__linkswrap {
+        flex-wrap: wrap;
+
+        & ._phoneHeaderTitle_Links {
+            justify-content: center;
+            width: 100%;
+
+            margin-top: $margin * 2;
+        }
+    }
+
+    & ._phoneHeaderTitle_Links {
+        display: flex;
+        align-items: center;
+        gap: $padding * 2;
+
+        & ._phoneHeaderTitle_Link {
+            &, & * {
+                font-size: $fontsize - 2px;
+                font-weight: 600;
+            }
+    
+            color: $theme-txt-opacity;
+
+            display: flex;
+            align-items: center;
+            gap: $padding * 2;
+
+            &:not(:first-child) {
+                &:before {
+                    display: block;
+                    content: "";
+
+                    width: 6px;
+                    height: 6px;
+
+                    border-radius: 50%;
+                    background: $theme-txt-opacity;
+                }
+            }
+        }
+    }
+}

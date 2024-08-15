@@ -1,0 +1,104 @@
+@import '../../../rules/scss/themes.scss';
+@import '../../../rules/scss/variables.scss';
+
+.route#routeContentNotifications {
+
+}
+
+#routeContentNotificationsCreateModal {
+    & .modalWrapper {
+        width: 680px;
+    }
+
+    & .bodypage {
+        display: flex;
+        flex-direction: column;
+        gap: $padding * 2;
+
+        width: 100%;
+
+        & .input, & .textarea {
+            & label {
+                font-weight: 600;
+            }
+        }
+        & .textarea {
+            & .textareainput {
+                min-height: calc(22px * 4);
+                max-height: calc(22px * 8);
+            }
+        }
+
+        & .block.name {
+            display: flex;
+            align-items: center;
+            justify-content: space-between;
+            gap: $padding * 8;
+
+            width: 100%;
+
+            & .previewAvatar {
+                & .uploadDropFileInput {
+                    display: none;
+                }
+
+                display: flex;
+                flex-direction: column;
+                align-items: center;
+                justify-content: center;
+                gap: $padding * 4;
+
+                width: 160px;
+                min-width: 160px;
+
+                cursor: pointer;
+
+                & label {
+                    border-radius: 50%;
+                    cursor: pointer;
+                }
+
+                & .button {
+                    width: 100%;
+
+                    &:not(:disabled) {
+                        background: $theme-color-red;
+                    }
+                }
+            }
+            & .form {
+                width: 100%;
+
+                & .readat {
+                    margin-top: $margin * 4;
+
+                    & .input {
+                        width: 100%;
+
+                        cursor: pointer;
+                        & input {
+                            pointer-events: none;
+                        }
+                    }
+
+                    & .viewatValue {
+                        position: absolute;
+
+                        top: $padding * 10;
+                        left: $padding * 12;
+
+                        cursor: pointer;
+                    }
+
+                    position: relative;
+                    & .readatCalendar {
+                        position: fixed;
+                        z-index: $zindex_hoverModal;
+
+                        transform: translateY($padding);
+                    }
+                }
+            }
+        }
+    }
+}

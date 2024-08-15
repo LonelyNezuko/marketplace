@@ -1,0 +1,134 @@
+@import '../../../rules/scss/themes.scss';
+@import '../../../rules/scss/variables.scss';
+
+.route#routeAccountSavedaccounts {
+    & header.header {
+        display: flex;
+        align-items: center;
+        justify-content: space-between;
+        gap: $padding * 4;
+
+        @media screen and (max-width: 1400px) {
+            flex-wrap: wrap;
+
+            & section:last-child {
+                width: 100%;
+
+                display: flex;
+                align-items: center;
+                justify-content: center;
+            }
+        }
+    }
+
+    & .list {
+        width: 100%;
+        margin-top: $margin * 6;
+
+        display: flex;
+        flex-wrap: wrap;
+        gap: $padding * 3;
+
+        & .elem {
+            width: calc(100% / 2 - $padding * 1.5);
+
+            @media screen and (max-width: 1500px) {
+                width: 100%;
+            }
+        }
+
+        & .nolist {
+            width: 100%;
+            margin-top: $margin * 16;
+            
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            justify-content: center;
+            gap: $padding * 3;
+
+            & h6 {
+                font-size: $fontsize + 6px;
+                font-weight: 700;
+
+                color: $theme-txt-opacity;
+            }
+        }
+    }
+}
+
+.isPhone .route#routeAccountSavedaccounts {
+    & .list {
+        margin: 0;
+    }
+}
+
+.savedaccountelem {
+    width: 100%;
+    
+    background: $theme-bg;
+    box-shadow: $theme-shadow;
+
+    border-radius: $borderRadius * 2;
+    overflow: hidden;
+
+    display: flex;
+    align-items: center;
+    gap: $padding;
+
+    & .leftside {
+        height: 100%;
+
+        padding: $padding * 4 $padding * 8;
+        background: $theme-bg-color;
+
+        display: flex;
+        align-items: center;
+        justify-content: center;
+
+        & .avatar {
+            width: 90px;
+            min-width: 90px;
+
+            height: 90px;
+            min-height: 90px;
+        }
+    }
+    & .rightside {
+        padding: $padding * 4;
+
+        display: flex;
+        flex-direction: column;
+        gap: $padding;
+
+        width: 100%;
+        
+        & .description {
+            display: flex;
+            flex-direction: column;
+            gap: $padding;
+
+            & span {
+                display: inline-block;
+
+                color: $theme-txt-opacity;
+
+                font-size: $fontsize - 2px;
+                font-weight: 600;
+            }
+        }
+
+        & .actions {
+            margin-top: $margin * 2;
+            width: 100%;
+
+            display: flex;
+            align-items: center;
+            gap: $padding * 3;
+
+            & .button {
+                width: 100%;
+            }
+        }
+    }
+}

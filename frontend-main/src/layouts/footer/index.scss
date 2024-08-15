@@ -1,0 +1,32 @@
+@import '../../rules/scss/themes.scss';
+@import '../../rules/scss/variables.scss';
+
+footer#footer {
+    width: 100%;
+    padding: $padding * 4 $padding * 3;
+
+    display: flex;
+    flex-direction: column;
+    gap: $padding * 3;
+
+    & .links {
+        display: flex;
+        flex-wrap: wrap;
+        gap: $padding $padding * 2;
+
+        & a {
+            font-size: $fontsize - 1px;
+            font-weight: 600;
+
+            color: $theme-txt-opacity;
+        }
+    }
+
+    & .copyright {
+        margin-top: $margin;
+        color: $theme-txt-dark;
+
+        font-weight: 700;
+        font-size: $fontsize - 3px;
+    }
+}

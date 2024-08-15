@@ -1,0 +1,248 @@
+@import '../../../rules/scss/themes.scss';
+@import '../../../rules/scss/variables.scss';
+
+.route#routeAccountSessions {
+    & .sessionsBody {
+        margin-top: $margin * 2;
+        & .sessionsblock {
+            margin-top: $margin * 4;
+
+            display: flex;
+            flex-direction: column;
+            gap: $padding * 4;
+
+            & .sessionsblockTitle {
+                font-size: $fontsize + 4px;
+                font-weight: 700;
+
+                color: $theme-txt-opacity;
+            }
+            & .list {
+                
+            }
+        }
+    }
+
+    & .sessionClear {
+        padding: $padding * 4;
+
+        & .button {
+            width: 100%;
+
+            display: flex;
+            flex-direction: column;
+            align-items: flex-start;
+
+            padding: $padding * 2;
+            background: transparent;
+
+            & .buttonWrapper {
+                gap: $padding;
+            }
+
+            & .buttonIcon {
+                & svg {
+                    font-size: $fontsize + 6px;
+
+                    color: $theme-color-darkred;
+                    fill: $theme-color-darkred;
+                }
+            }
+            & .buttonName {
+                font-weight: 700;
+                color: $theme-color-darkred;
+            }
+        }
+    }
+
+    & .sessionElem {
+        display: flex;
+        align-items: center;
+        justify-content: space-between;
+        gap: $padding * 3;
+
+        padding: $padding * 4;
+        border-radius: $borderRadius * 2;
+
+        & .side {
+            display: flex;
+            align-items: center;
+            gap: $padding * 3;
+        }
+
+        &:not(.nohover) {
+            transition: $transition;
+            cursor: pointer;
+
+            &:hover {
+                background: $theme-bg-select-hover;
+            }
+        }
+
+        & .deviceIcon {
+            padding: 0 $padding * 3;
+
+            & svg {
+                font-size: $fontsize + 14px;
+                opacity: .6;
+            }
+        }
+        & .sessionInfo {
+            & .ocname {
+                & span {
+                    font-size: $fontsize + 2px;
+                    font-weight: 700;
+                }
+            }
+            & .entrypoint {
+                margin-top: $margin;
+
+                display: flex;
+                align-items: center;
+                gap: $padding * 2;
+
+                & span {
+                    font-weight: 600;
+
+                    &:last-child {
+                        font-size: $fontsize - 4px;
+                        font-weight: 700;
+
+                        color: $theme-txt-opacity;
+
+                        display: flex;
+                        align-items: center;
+                        gap: $padding * 2;
+
+                        &:before {
+                            display: inline-block;
+                            content: "";
+
+                            width: 4px;
+                            height: 4px;
+
+                            border-radius: 50%;
+                            background: $theme-txt-opacity;
+                        }
+                    }
+                }
+            }
+            & .otherinfo {
+                margin-top: $margin * 2;
+
+                display: flex;
+                align-items: center;
+                gap: $padding * 1.5;
+
+                & .geolocation {
+                    font-size: $fontsize - 2px;
+                    color: $theme-txt-opacity;
+
+                    display: flex;
+                    align-items: center;
+                    gap: $padding * 1.5;
+
+                    &:after {
+                        display: inline-block;
+                        content: "";
+
+                        width: 4px;
+                        height: 4px;
+
+                        background: $theme-txt-opacity;
+                        border-radius: 50%;
+                    }
+                }
+
+                & .isCurrent {
+                    color: $theme-color-darkgreen;
+                    
+                    font-size: $fontsize - 2px;
+                    font-weight: 700;
+                }
+                & .entrytime {
+                    font-size: $fontsize - 2px;
+                    color: $theme-txt-opacity;
+                }
+            }
+        }
+
+        & .actions {
+            & .button {
+                & .buttonName {
+                    color: $theme-color-darkred;
+
+                    font-size: $fontsize;
+                    font-weight: 700;
+                }
+            }
+        }
+    }
+
+    & .deleteSession {
+        width: 550px;
+        margin-top: $margin * 8;
+
+        & .sessionElem {
+            padding: 0;
+
+            width: 100%;
+        }
+    }
+
+    & .sessionsNotfound {
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        justify-content: center;
+        gap: $padding * 5;
+
+        & img {
+            width: 100px;
+            height: auto;
+        }
+        & span {
+            font-size: $fontsize + 2px;
+            font-weight: 700;
+
+            color: $theme-txt-opacity;
+        }
+    }
+}
+
+
+.isPhone .route#routeAccountSessions {
+    & .sessionsBody {
+        margin: 0;
+        
+        & .sessionsblock:first-child {
+            margin: 0;
+        }
+    }
+
+    & .sessionElem {
+        flex-direction: column;
+        align-items: flex-start;
+        justify-content: flex-start;
+        gap: $padding * 6;
+
+        & .side {
+            width: 100%;
+        }
+
+        & .actions {
+            width: 100%;
+
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            flex-wrap: wrap;
+        }
+    }
+
+    & .sessionClear {
+        & .button {
+            align-items: center;
+        }
+    }
+}

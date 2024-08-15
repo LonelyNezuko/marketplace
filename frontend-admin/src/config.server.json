@@ -1,0 +1,4 @@
+{
+    "PROXY_DEFAULTAPI_URL": "https://api.iboot.uk",
+    "GATEWAY_URL": "wss://gateway.iboot.uk"
+}

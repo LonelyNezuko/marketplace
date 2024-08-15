@@ -1,0 +1,131 @@
+@import '../../rules/scss/themes.scss';
+@import '../../rules/scss/variables.scss';
+
+.isPhone .route#routePhoneMenu {
+    padding: $padding * 3;
+
+    height: 100%;
+    overflow: auto;
+
+    & .accountsignin {
+        background: $theme-bg;
+        box-shadow: $theme-shadow;
+
+        display: flex;
+        align-items: center;
+        justify-content: space-between;
+        gap: $padding * 4;
+
+        border-radius: $borderRadius * 2;
+        padding: $padding * 4;
+
+        & .section {
+            display: flex;
+            align-items: center;
+            gap: $padding * 4;
+
+            & h5 {
+                font-size: $fontsize + 2px;
+                font-weight: 700;
+            }
+            & span {
+                font-size: $fontsize - 2px;
+                font-weight: 600;
+
+                color: $theme-txt-opacity;
+                line-height: $fontsize;
+
+                display: inline-block;
+                margin-top: $margin * 2;
+            }
+
+            & .button {
+                & .buttonIcon svg {
+                    font-size: $fontsize + 20px;
+                }
+            }
+        }
+    }
+    & .account {
+        & .accountInfo {
+            margin: 0;
+            width: 100%;
+
+            & * {
+                font-weight: 600;
+            }
+
+            & .avatar {
+                width: 100%;
+                min-width: 100%;
+
+                height: 300px;
+            }
+        }
+    }
+
+    & .accountMenu {
+        width: 100%;
+
+        & .nav {
+            & .li {
+                font-size: $fontsize;
+                padding: $padding * 4 $padding * 6;
+
+                &.blockcount[data-count][data-count="1"]:after,
+                &.blockcount[data-count][data-count="2"]:after, 
+                &.blockcount[data-count][data-count="3"]:after, 
+                &.blockcount[data-count][data-count="4"]:after,
+                &.blockcount[data-count][data-count="5"]:after,
+                &.blockcount[data-count][data-count="6"]:after,
+                &.blockcount[data-count][data-count="7"]:after,
+                &.blockcount[data-count][data-count="8"]:after,
+                &.blockcount[data-count][data-count="9"]:after {
+                    width: 22px;
+                    height: 22px;
+                }
+                
+                &.blockcount[data-count]:after {
+                    right: $padding * 6;
+                    font-size: $fontsize - 2px;
+                }
+
+                &.logout {
+                    color: $theme-color-red;
+                    text-align: center;
+                }
+
+                &.flex {
+                    justify-content: space-between;
+                    font-weight: 600;
+
+                    & span {
+                        text-align: right;
+
+                        font-size: $fontsize - 2px;
+                        font-weight: 600;
+                        
+                        color: $theme-txt-opacity;
+                    }
+                }
+            }
+
+            &.center .li {
+                justify-content: center;
+            }
+        }
+    }
+
+    & .accountNav {
+        margin-top: $margin * 4;
+    }
+
+    & #footer {
+        margin-top: $margin * 4;
+    }
+}
+
+
+.isPhone .route#routePhoneMenuAbout {
+
+}

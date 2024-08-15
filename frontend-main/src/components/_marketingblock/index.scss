@@ -1,0 +1,61 @@
+@import '../../rules/scss/themes.scss';
+@import '../../rules/scss/variables.scss';
+
+._marketingblock {
+	width: 100%;
+	height: 100%;
+
+	& a {
+		display: block;
+	}
+
+	&.empty {
+		& a {
+			display: flex;
+			align-items: center;
+			justify-content: center;
+		}
+
+		& h6 {
+			text-align: center;
+		}
+	}
+
+	&.banner {
+        &.horizontal {
+            height: 150px;
+            width: 100%;
+        }
+        &.vertical {
+            height: 100%;
+            width: 150px;
+        }
+
+		border-radius: $borderRadius * 4;
+		overflow: hidden;
+
+		& a {
+			width: 100%;
+			height: 100%;
+		}
+		& img {
+			width: 100%;
+			height: 100%;
+
+			object-fit: cover;
+		}
+
+		&.empty {
+			background: $theme-bg-color;
+
+			& h6 {
+				font-size: $fontsize + 10px;
+				font-weight: 700;
+				text-transform: uppercase;
+			}
+            &.vertical h6 {
+                width: 80%;
+            }
+		}
+	}
+}

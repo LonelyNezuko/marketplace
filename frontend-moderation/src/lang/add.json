@@ -1,0 +1,47 @@
+{
+    
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+    "ERROR": "Error",
+    "404PAGE_TITLE": "Oops, there is no such page",
+    "404PAGE_BTN": "Go to the dashboard",
+    "404PAGE_TEXT": "Oops, we didn't find what you were looking for.\n\nMaybe we haven't created it yet,maybe it doesn't exist at all.",
+    "500PAGE_TEXT": "Someone spilled soda on the server.\nWait a little bit, we are already wiping",
+    "504PAGE_TEXT": "We lay down to sleep a little, we promise that we will wake up soon.\nJust wait a little, please",
+    "400PAGE_TEXT": "Apparently you did something wrong and damaged something.\nRefresh the page and we will fix everything",
+    "403PAGE_TEXT": "You do not have access to the resource/function/page",
+    "401PAGE_TEXT": "Alas, this page is only available to authorized users.\nbut you can log in to go here"
+}

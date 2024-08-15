@@ -1,0 +1,480 @@
+@import '../../../rules/scss/themes.scss';
+@import '../../../rules/scss/variables.scss';
+
+.route#routeCategoriesManagement {
+    & .button {
+        &.cancel, &.delete {
+            &:not(:disabled) {
+                background: $theme-color-red;
+            }
+        }
+        &.back {
+            &:not(:disabled) {
+                background: $theme-color-orange;
+            }
+        }
+    }
+
+    & header.header {
+        display: flex;
+        align-items: center;
+        justify-content: space-between;
+
+        & .actions {
+            display: flex;
+            align-items: center;
+            gap: $padding * 2;
+        }
+    }
+
+    & .body {
+        margin-top: $margin * 10;
+
+        & .sectionblock + .sectionblock {
+            margin-top: $margin * 6;
+            
+            position: relative;
+            &:before {
+                display: block;
+                content: "";
+
+                position: absolute;
+
+                top: 0;
+                left: 0;
+
+                width: 100%;
+                height: 2px;
+
+                background: $theme-bg-opacity;
+                border-radius: 10px;
+            }
+
+            padding-top: $padding * 6;
+        }
+        & .sectionblock {
+            & .sectionblock-title {
+                font-size: $fontsize + 4px;
+                font-weight: 700;
+
+                display: flex;
+                align-items: center;
+            }
+        }
+
+        & .backgroundwrap {
+            width: 100%;
+
+            & .background {
+                width: 100%;
+
+                & .title {
+                    font-size: $fontsize + 4px;
+                    font-weight: 700;
+                }
+                & .backgroundImage {
+                    width: 100%;
+                    margin-top: $margin * 2;
+
+                    overflow: hidden;
+                    border-radius: $borderRadius;
+
+                    & .imagecover {
+                        
+                    }
+
+                    position: relative;
+                    & .actionPanel {
+                        position: absolute;
+
+                        bottom: $padding * 3;
+                        left: $padding * 3;
+
+                        width: calc(100% - $padding * 6);
+
+                        display: flex;
+                        align-items: center;
+                        justify-content: space-between;
+                        gap: $padding * 4;
+
+                        opacity: 0;
+                        visibility: hidden;
+                        z-index: -1;
+
+                        transition: $transition;
+
+                        & .button {
+                            &.deletecover {
+                                &:not(:disabled) {
+                                    background: $theme-color-red;
+                                    color: white;
+                                    fill: white;
+                                }
+                            }
+                        }
+                    }
+
+                    &:not(.loaderOn):hover {
+                        & .actionPanel {
+                            opacity: 1;
+                            visibility: visible;
+                            z-index: 0;
+                        }
+                    }
+
+                    & .loading {
+                        position: absolute;
+                        z-index: $zindex_wrapper;
+
+                        top: 0;
+                        left: 0;
+
+                        width: 100%;
+                        height: 100%;
+
+                        background: rgba(0, 0, 0, .3);
+
+                        display: flex;
+                        flex-direction: column;
+                        align-items: center;
+                        justify-content: center;
+                        gap: $padding * 8;
+
+                        & h1 {
+                            font-size: $fontsize + 2px;
+                            font-weight: 700;
+
+                            color: white;
+                        }
+                    }
+                }
+            }
+
+            margin-bottom: $margin * 6;
+        }
+
+        & .block-name {
+            & .sectionblock-wrap {
+                width: 1100px;
+                margin: 0 auto;
+
+                display: flex;
+                align-items: flex-start;
+                gap: $padding * 8;
+            }
+
+            & .namewrap {
+                width: 100%;
+
+                display: flex;
+                flex-direction: column;
+                gap: $padding * 6;
+
+                & .name {
+                    & .input label {
+                        font-size: $fontsize + 4px;
+                        font-weight: 700;
+                    }
+                }
+
+                & .parentwrap {
+                    & .table {
+                        margin-top: $margin * 3;
+                        background: $theme-bg-opacity;
+
+                        border-radius: $borderRadius;
+                    }
+
+                    & .noparent {
+                        display: flex;
+                        flex-direction: column;
+                        align-items: center;
+                        justify-content: center;
+                        gap: $padding * 3;
+
+                        margin-top: $margin * 6;
+
+                        & h1 {
+                            font-size: $fontsize + 2px;
+                            font-weight: 600;
+
+                            color: $theme-txt-opacity;
+                        }
+                        & .btn {
+                            
+                        }
+                    }
+                }
+            }
+            & .iconwrap {
+                width: 350px;
+                min-width: 350px;
+
+                & .icon {
+                    width: 100%;
+                    height: 350px;
+
+                    display: flex;
+                    align-items: center;
+                    justify-content: center;
+
+                    position: relative;
+                    background: $theme-bg-opacity;
+
+                    border-radius: $borderRadius * 2;
+                    overflow: hidden;
+
+                    & .image {
+                        width: 100%;
+                        height: 100%;
+
+                        display: flex;
+                        align-items: center;
+                        justify-content: center;
+                    }
+                    & .loading {
+                        position: absolute;
+                        z-index: $zindex_wrapper;
+
+                        top: 0;
+                        left: 0;
+
+                        width: 100%;
+                        height: 100%;
+
+                        background: rgba(0, 0, 0, .3);
+
+                        display: flex;
+                        flex-direction: column;
+                        align-items: center;
+                        justify-content: center;
+                        gap: $padding * 8;
+
+                        & h1 {
+                            font-size: $fontsize + 2px;
+                            font-weight: 700;
+
+                            color: white;
+                        }
+                    }
+
+                    & img {
+                        max-width: 100%;
+                        max-height: 100%;
+
+                        width: auto;
+                        height: auto;
+
+                        object-fit: cover;
+                    }
+                }
+                & .action {
+                    margin-top: $margin * 2;
+
+                    display: flex;
+                    flex-direction: column;
+                    align-items: center;
+                    justify-content: center;
+                    gap: $padding * 3;
+
+                    & .uploadDropFileInput {
+                        width: 100%;
+                        margin-top: $margin * 2;
+                    }
+
+                    & .button {
+                        width: 100%;
+                        padding: $padding * 4;
+                    }
+                    & label.button {
+                        padding: $padding * 6;
+                    }
+                }
+            }
+        }
+
+
+        & .block-forms {
+            width: 100%;
+            
+            & .title {
+                display: flex;
+                align-items: center;
+                gap: $padding * 6;
+
+                & .actions {
+                    display: flex;
+                    align-items: center;
+                    gap: $padding * 2;
+                }
+            }
+            & .sectionblock-wrap {
+                margin-top: $margin * 6;
+                padding: $padding * 8 0;
+
+                width: 100%;
+
+                & .list {
+                    display: flex;
+                    flex-wrap: wrap;
+                    gap: $padding * 10 $padding * 4;
+
+                    width: 100%;
+                    & .elem {
+                        width: calc(100% / 2 - $padding * 2);
+
+                        &:nth-child(even) {
+                            border-left: 2px solid $theme-bg-opacity;
+                            padding-left: $padding * 4;
+                        }
+
+                        &.null:not(:first-child) {
+                            display: flex;
+                            align-items: center;
+                            justify-content: center;
+                        }
+
+                        & .forma {
+                            & .type {
+                                & h1 {
+                                    font-size: $fontsize + 2px;
+                                    font-weight: 600;
+
+                                    & .parentform {
+                                        margin-left: $margin * 3;
+
+                                        color: $theme-color-txt;
+                                        font-weight: 700;
+
+                                        font-size: $fontsize - 2px;
+                                    }
+                                }
+
+                                & .wrap {
+                                    display: flex;
+                                    align-items: center;
+                                    gap: $padding * 2;
+
+                                    margin-top: $margin * 3;
+
+                                    & .select {
+                                        margin: 0;
+                                    }
+                                    & .delete {
+                                        display: flex;
+                                        align-items: center;
+                                        justify-content: center;
+
+                                        width: 44.5px;
+                                        height: 44.5px;
+
+                                        border-radius: $borderRadius;
+                                        background: $theme-color-darkred;
+
+                                        & svg {
+                                            font-size: $fontsize + 8px;
+
+                                            color: white;
+                                            fill: white;
+                                        }
+                                    }
+                                }
+                            }
+                            & .params {
+                                background: $theme-bg-opacity;
+                                margin-top: $margin * 3;
+
+                                padding: $padding * 4;
+
+                                border-radius: $borderRadius;
+
+                                display: flex;
+                                flex-direction: column;
+                                gap: $padding * 6;
+
+                                & .param-elem {
+                                    &, & .param-elem-wrap {
+                                        display: flex;
+                                        align-items: center;
+                                        justify-content: space-between;
+                                        gap: $padding * 8;
+
+                                        &.flexstart {
+                                            align-items: flex-start;
+                                        }
+                                    }
+
+                                    & .param-elem-desc {
+                                        display: block;
+                                        margin-top: $margin * 3;
+
+                                        font-size: $fontsize - 2px;
+                                        color: $theme-txt-opacity;
+
+                                        white-space: pre-wrap;
+                                        line-height: $fontsize + 2px;
+                                    }
+
+                                    & .select {
+                                        margin: 0;
+                                    }
+
+                                    & h1 {
+                                        white-space: nowrap;
+                                    }
+
+                                    & .listenter {
+                                        display: flex;
+                                        flex-wrap: wrap;
+                                        gap: $padding * 2;
+
+                                        width: 100%;
+
+                                        & .input {
+                                            margin: 0;
+                                            width: calc(100% / 2 - $padding * 1.4);
+                                        }
+
+                                        & .add {
+                                            display: flex;
+                                            align-items: center;
+                                            justify-content: center;
+
+                                            width: 52px;
+                                            height: 52px;
+
+                                            border-radius: $borderRadius * 2;
+                                            background: $theme-input-border;
+
+                                            &.add-made {
+                                                background: $theme-color-gradient;
+                                            }
+
+                                            & svg {
+                                                fill: $theme-txt-reverse;
+                                                color: $theme-txt-reverse;
+
+                                                font-size: $fontsize + 8px;
+                                                transform: translateX(2px) translateY(1px);
+                                            }
+                                        }
+                                    }
+                                }
+                            }
+                        }
+                    }
+                }
+            }
+        }
+
+
+        & .block-actions {
+            & .sectionblock-wrap {
+                display: flex;
+                justify-content: flex-end;
+                align-items: center;
+                gap: $padding * 3;
+            }
+        }
+    }
+}

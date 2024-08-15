@@ -1,0 +1,182 @@
+@import '../../rules/scss/themes.scss';
+@import '../../rules/scss/variables.scss';
+
+
+.route#routeRoles {
+    & .header {
+        position: relative;
+
+        display: flex;
+        align-items: center;
+        justify-content: space-between;
+
+        margin-bottom: $margin * 6;
+
+        & .title {
+            & span {
+                display: inline-block;
+                margin-top: $margin;
+
+                font-weight: 700;
+                font-size: $fontsize - 2px;
+
+                color: $theme-txt-opacity;
+            }
+        }
+        & .right {
+            display: flex;
+            align-items: center;
+            gap: $padding * 4;
+
+            & .actions {
+                display: flex;
+                align-items: center;
+                gap: $padding * 3;
+
+                & .button {
+                    height: 45px;
+                    border-radius: $borderRadius;
+
+                    padding: 0 $padding * 6;
+                }
+            }
+        }
+
+        & #roleChangeIndexModal {
+            position: absolute;
+    
+            top: 50%;
+            left: 39%;
+    
+            transform: translate(-50%, -50%);
+        }
+    }
+
+    & #routeRolesTable {
+        margin-top: $margin * 10;
+        &, & * {
+            user-select: none;
+        }
+    }
+
+    & .list {
+        width: 100%;
+
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        gap: $padding * 3;
+        flex-wrap: wrap;
+
+        & .roleelem {
+            width: calc(100% / 5 - $padding * 1.5);
+            min-width: 300px;
+
+            background: $theme-bg;
+            box-shadow: $theme-shadow;
+
+            border-radius: $borderRadius * 2;
+            padding: $padding * 4;
+
+            position: relative;
+            &:hover .actions {
+                display: flex;
+            }
+            & .actions {
+                position: absolute;
+
+                top: $padding * 3;
+                left: $padding * 3;
+
+                width: calc(100% - $padding * 6);
+
+                display: none;
+                align-items: center;
+                justify-content: space-between;
+
+                & .button {
+                    background: transparent;
+
+                    display: flex;
+                    align-items: center;
+                    justify-content: center;
+
+                    & svg {
+                        font-size: $fontsize + 6px;
+                    }
+
+                    &:first-child svg {
+                        color: $theme-color-blue;
+                        fill: $theme-color-blue;
+                    }
+                    &:last-child svg {
+                        color: $theme-color-red;
+                        fill: $theme-color-red;
+                    }
+                }
+            }
+
+            & .userscount {
+                width: 70px;
+                height: 70px;
+                min-width: 70px;
+
+                display: flex;
+                align-items: center;
+                justify-content: center;
+
+                background: $theme-bg-footer;
+                border-radius: 50%;
+
+                box-shadow: $theme-shadow;
+
+                font-weight: 700;
+                font-size: $fontsize + 8px;
+            }
+
+            & .firstuser {
+                display: flex;
+                align-items: center;
+                justify-content: center;
+            }
+            & .title {
+                margin-top: $margin * 3;
+
+                display: flex;
+                align-items: center;
+                justify-content: center;
+                flex-direction: column;
+
+                & span {
+                    display: inline-block;
+                    margin-top: $margin * 2;
+
+                    font-size: $fontsize - 2px;
+                    font-weight: 700;
+                }
+            }
+            & .otherusers {
+                margin-top: $margin * 4;
+
+                display: flex;
+                align-items: center;
+                justify-content: center;
+                gap: $padding * 2;
+
+                & .avatar {
+                    width: 46px;
+                    min-width: 46px;
+                    height: 46px;
+                    min-height: 46px;
+                }
+                & .userscount {
+                    width: 46px;
+                    height: 46px;
+                    min-width: 46px;
+
+                    font-size: $fontsize - 3px;
+                }
+            }
+        }
+    }
+}

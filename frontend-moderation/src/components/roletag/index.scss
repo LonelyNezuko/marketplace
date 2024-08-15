@@ -1,0 +1,58 @@
+@import '../../rules/scss/themes.scss';
+@import '../../rules/scss/variables.scss';
+
+._roletag_ {
+	padding: $padding $padding * 2;
+	border-radius: $borderRadius;
+
+	font-weight: 700;
+	font-size: $fontsize;
+
+	display: inline-block;
+
+	background: $theme-bg;
+	box-shadow: $theme-shadow;
+
+	color: $theme-txt;
+
+	&.big {
+		padding: $padding * 2 $padding * 3.5;
+		font-size: $fontsize + 2px;
+	}
+    &.min {
+        font-size: $fontsize - 2px;
+    }
+
+	position: relative;
+	&::after {
+		display: inline-block;
+		content: attr(data-key);
+
+		position: absolute;
+		z-index: $zindex_hover;
+
+		top: -$padding * 4;
+		left: 50%;
+
+		transform: translateX(-50%);
+
+		background: rgba(0, 0, 0, .5);
+		color: white;
+
+		padding: $padding * .5 $padding;
+		border-radius: $borderRadius / 2;
+
+		font-size: $fontsize - 3px;
+		transition: $transition;
+
+		opacity: 0;
+		visibility: hidden;
+	}
+
+	&:hover::after {
+		top: -$padding * 5;
+
+		opacity: 1;
+		visibility: visible;
+	}
+}

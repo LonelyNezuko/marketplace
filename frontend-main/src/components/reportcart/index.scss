@@ -1,0 +1,46 @@
+@import '../../rules/scss/themes.scss';
+@import '../../rules/scss/variables.scss';
+
+.reportcart {
+    & .report-status {
+        font-weight: 600;
+
+        &.report-status-open {
+            color: $theme-color-darkgreen;
+        }
+        &.report-status-closed {
+            color: $theme-color-darkred;
+        }
+    }
+
+    background: $theme-bg;
+    box-shadow: $theme-shadow;
+
+    border-radius: $borderRadius * 4;
+    padding: $padding * 4;
+
+    & .reportcartWrapper {
+        display: flex;
+        flex-direction: column;
+        gap: $padding;
+
+        & .reportTitle {
+            font-weight: 700;
+        }
+        & .reportStatus {
+            display: flex;
+            align-items: center;
+            gap: $padding;
+
+            & span {
+                &:first-child {
+                    font-weight: 700;
+                    color: $theme-txt-opacity;
+                }
+            }
+        }
+        & .actions {
+            margin-top: $margin * 2;
+        }
+    }
+}

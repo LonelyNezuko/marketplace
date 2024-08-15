@@ -1,0 +1,89 @@
+{
+  "name": "frontend",
+  "version": "0.0.1",
+  "private": true,
+  "dependencies": {
+    "@craco/craco": "^7.1.0",
+    "@ejarnutowski/country-parser": "^0.0.3",
+    "@reduxjs/toolkit": "^2.2.5",
+    "@testing-library/jest-dom": "^5.16.5",
+    "@testing-library/react": "^13.4.0",
+    "@testing-library/user-event": "^13.5.0",
+    "@types/jquery.scrollto": "^1.4.32",
+    "@types/leaflet": "^1.9.8",
+    "@types/sass": "^1.45.0",
+    "colorthief": "^2.4.0",
+    "cross-env": "^7.0.3",
+    "dart-sass": "^1.25.0",
+    "dotenv": "^16.3.1",
+    "html-react-parser": "^5.1.9",
+    "http-proxy-middleware": "^2.0.6",
+    "jquery": "^3.6.4",
+    "jquery-mousewheel": "^3.1.13",
+    "jquery.scrollto": "^2.1.3",
+    "jquery.viewport": "^1.0.1",
+    "leaflet": "^1.9.4",
+    "moment": "^2.29.4",
+    "parse-query": "^0.0.13",
+    "react": "^18.2.0",
+    "react-calendar": "^4.7.0",
+    "react-dom": "^18.2.0",
+    "react-dropzone": "^14.2.3",
+    "react-icons": "^4.8.0",
+    "react-image-file-resizer": "^0.4.8",
+    "react-jsx-parser": "^1.29.0",
+    "react-leaflet": "^4.2.1",
+    "react-moment": "^1.1.3",
+    "react-quick-pinch-zoom": "^5.1.0",
+    "react-quill": "^2.0.0",
+    "react-router-dom": "^6.10.0",
+    "react-scripts": "5.0.1",
+    "react-swipeable": "^7.0.1",
+    "react-zoom-pan-pinch": "^3.4.4",
+    "redux": "^5.0.1",
+    "sass": "^1.61.0",
+    "sass-alias": "^2.0.1",
+    "serve": "^14.2.1",
+    "socket.io-client": "^4.7.2",
+    "three-dots": "^0.3.2",
+    "tsconfig-paths": "^4.2.0",
+    "ua-parser-js": "^1.0.37",
+    "universal-cookie": "^4.0.4",
+    "use-between": "^1.3.5",
+    "use-sound": "^4.0.1",
+    "web-vitals": "^2.1.4"
+  },
+  "devDependencies": {
+    "@babel/plugin-proposal-private-property-in-object": "7.21.11",
+    "@types/node": "^20.11.17",
+    "@types/react-swipeable": "^5.2.0",
+    "@types/ua-parser-js": "^0.7.39",
+    "craco-alias": "^3.0.1",
+    "file-loader": "^6.2.0"
+  },
+  "scripts": {
+    "start": "cross-env PORT=5000 craco start",
+    "build": "craco build",
+    "test": "craco test",
+    "eject": "craco eject",
+    "server": "serve -s build -l 12006"
+  },
+  "eslintConfig": {
+    "extends": [
+      "react-app",
+      "react-app/jest"
+    ]
+  },
+  "browserslist": {
+    "production": [
+      ">0.2%",
+      "not dead",
+      "not op_mini all"
+    ],
+    "development": [
+      "last 1 chrome version",
+      "last 1 firefox version",
+      "last 1 safari version"
+    ]
+  }
+}

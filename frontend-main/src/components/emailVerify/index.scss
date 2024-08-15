@@ -1,0 +1,138 @@
+@import '../../rules/scss/themes.scss';
+@import '../../rules/scss/variables.scss';
+
+#emailVerifyModal {
+    z-index: $zindex_notify;
+    & .modalHeader {
+        margin-bottom: 0;
+    }
+}
+#emailVerify {
+    width: 100%;
+
+    background: $theme-color-red;
+    padding: $padding * 4;
+
+    border-radius: $borderRadius * 3;
+
+    &.modal {
+        padding: 0;
+        border-radius: 0;
+        background: transparent;
+
+        & .emailVerifyDescription {
+            & span {
+                color: $theme-txt;
+            }
+            margin: 0;
+        }
+        & .emailVerifyBlocking {
+            margin-top: $margin * 3;
+            & span {
+                color: $theme-txt-opacity;
+                & span {
+                    color: $theme-txt;
+                }
+            }
+        }
+        & .emailVerifyActions {
+            & h6 {
+                color: $theme-txt-opacity;
+                opacity: 1;
+            }
+        }
+    }
+
+    &.center {
+        & .emailVerifyTitle {
+            & h6 {
+                text-align: center;
+            }
+        }
+        & .emailVerifyDescription {
+            & span {
+                text-align: center;
+                font-size: $fontsize - 2px;
+            }
+        }
+        & .emailVerifyActions {
+            margin-top: $margin * 4;
+
+            display: flex;
+            align-items: center;
+            justify-content: center;
+        }
+        & .emailVerifyBlocking {
+            margin-top: $margin * 4;
+        }
+    }
+
+    & .emailVerifyTitle {
+        & h6 {
+            font-size: $fontsize + 4px;
+            font-weight: 600;
+
+            color: white;
+        }
+    }
+    & .emailVerifyDescription {
+        margin-top: $margin * 3;
+
+        display: flex;
+        flex-direction: column;
+        gap: $padding;
+
+        & span {
+            display: inline-block;
+
+            font-weight: 600;
+            color: white;
+        }
+    }
+    & .emailVerifyActions {
+        margin-top: $margin * 2;
+
+        & .button {
+            & .buttonName {
+                font-weight: 600;
+            }
+        }
+        & h6 {
+            margin-top: $margin * 2;
+            display: inline-block;
+
+            color: white;
+            opacity: .6;
+
+            font-weight: 600;
+        }
+    }
+    & .emailVerifyBlocking {
+        margin-top: $margin * 2;
+
+        & span {
+            color: #ffffff4f;
+            font-weight: 500;
+
+            & span {
+                color: white;
+                font-weight: 600;
+            }
+        }
+    }
+}
+
+.isPhone #emailVerify {
+    & .emailVerifyDescription {
+        gap: $padding * 2;
+        & span {
+            font-size: $fontsize - 2px;
+        }
+    }
+    & .emailVerifyActions h6 {
+        font-size: $fontsize - 2px;
+    }
+    & .emailVerifyBlocking {
+        gap: $padding;
+    }
+}

@@ -1,0 +1,383 @@
+@import '../../../rules/scss/themes.scss';
+@import '../../../rules/scss/variables.scss';
+
+.modal#modalAlbumImages {
+    position: fixed;
+    z-index: $zindex_modal;
+
+    top: 0;
+    left: 0;
+
+    background: black;
+
+    width: 100%;
+    height: 100%;
+
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+
+    user-select: none;
+
+    & .leftSection {
+        width: calc(100% - 400px);
+        height: 100%;
+
+        position: relative;
+
+        & .alertinfo {
+            position: absolute;
+            z-index: $zindex_hoverModal;
+
+            bottom: $padding * 6;
+            left: 50%;
+
+            transform: translateX(-50%);
+
+            background: $theme-color;
+            box-shadow: $theme-shadow;
+
+            padding: $padding * 4;
+            border-radius: $borderRadius * 2;
+
+            display: flex;
+            align-items: flex-start;
+            gap: $padding * 3;
+
+            & .icon {
+                width: 24px;
+                min-width: 24px;
+                height: 24px;
+
+                border-radius: 50%;
+                background: $theme-txt-reverse;
+
+                display: flex;
+                align-items: center;
+                justify-content: center;
+
+                & svg {
+                    font-size: $fontsize;
+                }
+            }
+
+            & .text {
+                color: $theme-txt-reverse;
+                white-space: pre-wrap;
+
+                line-height: $fontsize + 2px;
+            }
+
+            & .close {
+                position: absolute;
+
+                right: $padding;
+                top: $padding;
+
+                & .button {
+                    background: transparent;
+                    & .buttonIcon svg {
+                        color: $theme-txt-reverse;
+                        fill: $theme-txt-reverse;
+                    }
+                }
+            }
+        }
+        & .imagePreview {
+            width: 100%;
+            height: 100%;
+
+            overflow: hidden;
+            position: relative;
+
+            & .arrow {
+                position: absolute;
+                z-index: $zindex_wrapper;
+
+                width: 14%;
+                height: 100%;
+
+                transition: $transition;
+                cursor: pointer;
+
+                top: 0;
+                opacity: 0;
+
+                &:hover {
+                    background-color: rgba(0, 0, 0, 0.3);
+                    opacity: 1;
+                }
+
+                display: flex;
+                align-items: center;
+                justify-content: center;
+
+                & svg {
+                    fill: white;
+                    color: white;
+
+                    font-size: $fontsize + 24px;
+                }
+
+                &.left {
+                    left: 0;
+                }
+                &.right {
+                    right: 0;
+                }
+            }
+
+            & .wrapper {
+                height: 100%;
+                display: flex;
+                transition: $transition;
+
+                & .image {
+                    width: 100%;
+                    min-width: 100%;
+
+                    height: 100%;
+                    & div {
+                        height: 100%;
+                        width: 100%;
+                    }
+
+                    position: relative;
+                    overflow: hidden;
+
+                    display: flex;
+                    align-items: center;
+                    justify-content: center;
+
+                    & img {
+                        height: auto;
+                        width: auto;
+
+                        max-width: 100%;
+                        max-height: 100%;
+
+                        position: relative;
+                        z-index: $zindex_wrapper;
+
+                        &.blured {
+                            width: 100%;
+                            height: 100%;
+
+                            position: absolute;
+                            z-index: $zindex_null;
+
+                            filter: blur(50px);
+                            object-fit: cover;
+                        }
+                    }
+                }
+            }
+        }
+    }
+
+    & .closebtn {
+        position: absolute;
+
+        top: $padding * 2;
+        right: $padding * 2;
+
+        & .button {
+            padding: $padding * 4;
+        }
+    }
+
+    & .rightSection {
+        min-width: 400px;
+        width: 400px;
+
+        height: 100%;
+        background: $theme-bg;
+
+        padding: $padding * 6;
+
+        display: flex;
+        flex-direction: column;
+        gap: $padding * 3;
+
+        position: relative;
+        z-index: $zindex_wrapper;
+
+        & .albumInfo {
+            display: flex;
+            flex-direction: column;
+            gap: $padding * 2;
+
+            & section {
+                display: flex;
+                flex-direction: column;
+                gap: $padding;
+
+                & span {
+                    &:first-child {
+                        font-size: $fontsize - 2px;
+                        font-weight: 600;
+
+                        color: $theme-txt-opacity;
+                    }
+                    &:last-child {
+                        font-weight: 700;
+                    }
+                }
+            }
+        }
+
+        & .imageList {
+            width: 100%;
+            height: 100%;
+
+            overflow: auto;
+
+            display: flex;
+            flex-direction: column;
+            gap: $padding * 2;
+
+            padding-right: $padding;
+
+            & .image {
+                width: 100%;
+                height: auto;
+
+                border: 3px solid transparent;
+                border-radius: $borderRadius * 3;
+
+                padding: $padding * 2;
+
+                cursor: pointer;
+                transition: $transition;
+
+                &.selected {
+                    border-color: $theme-color;
+                    & img {
+                        opacity: 1;
+                    }
+                }
+
+                & img {
+                    width: 100%;
+                    height: auto;
+
+                    border-radius: $borderRadius * 3;
+                    overflow: hidden;
+
+                    opacity: .5;
+                    transition: $transition;
+                }
+            }
+        }
+
+        & .actions {
+            display: flex;
+            align-items: center;
+            flex-direction: column;
+            gap: $padding * 2;
+
+            & .button {
+                width: 100%;
+                padding: $padding * 4;
+            }
+        }
+    }
+}
+
+
+.isPhone .modal#modalAlbumImages {
+    flex-direction: column;
+
+    & .leftSection {
+        height: 100%;
+        width: 100%;
+
+        & header.header {
+            display: flex;
+            align-items: center;
+            justify-content: space-between;
+            gap: $padding * 3;
+
+            background: rgba(255, 255, 255, 0.05);
+
+            & section.section {
+                display: flex;
+                align-items: center;
+                gap: $padding * 2;
+            }
+
+            & .closebtn {
+                position: static;
+                & .button .buttonIcon svg {
+                    color: white;
+                    fill: white;
+                }
+            }
+
+            & .title {
+                & h6 {
+                    color: white;
+
+                    font-size: $fontsize + 4px;
+                    font-weight: 700;
+                }
+            }
+
+            & .actions {
+                & .button {
+                    background: transparent;
+                }
+            }
+        }
+
+        & .alertinfo {
+            width: 90%;
+        }
+
+        & .imagePreview {
+            & .wrapper {
+                & .image {
+                    & div {
+                        
+                    }
+                }
+            }
+        }
+    }
+    & .rightSection {
+        width: 100%;
+        min-width: 100%;
+        
+        height: auto;
+        max-height: 90%;
+
+        position: absolute;
+        z-index: $zindex_modal;
+
+        bottom: 0;
+        left: 0;
+
+        padding-top: $padding * 2;
+        &:not(.show.more) .imageList {
+            flex-direction: row;
+            height: 200px;
+
+            & .image {
+                width: auto;
+                height: 100%;
+
+                & img {
+                    width: auto;
+                    height: 100%;
+                }
+            }
+        }
+
+        bottom: -100%;
+        transition: $transition;
+
+        &.show {
+            bottom: 0;
+        }
+    }
+}

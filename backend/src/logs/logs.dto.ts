@@ -1,0 +1,1 @@
+export type LogsOrigins = "user" //| "role" | "category" | "product" | "reports" | "language" | "storage" | "mailtemplate"

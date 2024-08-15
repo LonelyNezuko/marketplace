@@ -1,0 +1,47 @@
+@import '../../../rules/scss/themes.scss';
+@import '../../../rules/scss/variables.scss';
+
+.modal.setlanguage {
+    position: fixed;
+    z-index: $zindex_modal;
+
+    left: 50%;
+    top: 2%;
+
+    transform: translateX(-50%);
+
+    background: $theme-modal-bg;
+    color: $theme-modal-txt;
+
+    box-shadow: $theme-shadow;
+
+    padding: $padding * 4;
+    border-radius: $borderRadius * 4;
+
+    & .block {
+        & .desc {
+            display: block;
+            margin-top: $margin * 2;
+
+            &, & a {
+                font-size: $fontsize - 2px;
+                font-weight: 400;
+            }
+            & a {
+                font-weight: 500;
+            }
+        }
+    }
+    & .action {
+        display: flex;
+        justify-content: flex-end;
+        align-items: center;
+        gap: $padding * 4;
+
+        margin-top: $margin * 6;
+        
+        & .btn {
+            
+        }
+    }
+}

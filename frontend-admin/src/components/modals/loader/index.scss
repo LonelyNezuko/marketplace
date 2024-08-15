@@ -1,0 +1,51 @@
+@import '../../../rules/scss/themes.scss';
+@import '../../../rules/scss/variables.scss';
+
+.modal.loader {
+    position: fixed;
+    z-index: $zindex_context;
+
+    top: 0;
+    left: 0;
+
+    width: 100vw;
+    height: 100vh;
+
+    background: rgba(0, 0, 0, .4);
+
+    display: flex;
+    align-items: center;
+    justify-content: center;
+
+    &.withtext {
+        & .wrap {
+            width: 200px;
+            height: 200px;
+
+            padding: $padding * 4;
+            gap: $padding * 8;
+        }
+    }
+
+    & .wrap {
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        flex-direction: column;
+
+        width: 140px;
+        height: 140px;
+
+        background: $theme-bg;
+        box-shadow: $theme-shadow;
+
+        border-radius: $borderRadius * 4;
+
+        & .text {
+            text-align: center;
+
+            font-weight: 600;
+            font-size: $fontsize - 1px;
+        }
+    }
+}

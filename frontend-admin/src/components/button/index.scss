@@ -1,0 +1,416 @@
+@import '../../rules/scss/themes.scss';
+@import '../../rules/scss/variables.scss';
+
+.button {
+    user-select: none;
+
+    & .buttonWrapper {
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        gap: $padding * 3;
+    }
+
+    font-family: 'Gotham Pro';
+    cursor: pointer;
+
+    background: $theme-btn-default;
+
+    border: 3px solid transparent;
+
+    &:active {
+        border-color: rgba(0, 0, 0, .4);
+    }
+    &:disabled,
+    &.button-disabled {
+        background: $theme-btn-disabled;
+        border-color: $theme-btn-disabled;
+
+        cursor: not-allowed;
+
+        & .buttonName, & .buttonIcon svg {
+            color: $theme-btn-disabled-txt;
+            fill: $theme-btn-disabled-txt;
+        }
+    }
+
+    transition: .2s;
+
+    & .buttonName {
+        color: $theme-txt;
+        font-weight: 600;
+
+        white-space: nowrap;
+        transition: .2s;
+
+        @media screen and (max-width: 450px) {
+            & {
+                white-space: unset;
+            }
+        }
+
+        text-align: center;
+        margin: 0;
+    }
+
+    & .buttonDescription {
+        text-align: center;
+
+        margin-top: $margin;
+        display: inline-block;
+
+        font-size: $fontsize - 3px;
+        color: $theme-txt-opacity;
+    }
+
+
+    &.button-iconposition-right {
+        & .buttonIcon {
+            order: 1;
+        }    
+    }
+    & .buttonIcon {
+        display: flex;
+        align-items: center;
+
+        & svg {
+            transition: .2s;
+
+            color: $theme-txt;
+            fill: $theme-txt;
+        }
+    }
+
+
+    // types
+    &.button-type-fill {
+        background: $theme-color;
+        color: $theme-btn-txt;
+
+        & .buttonName, & .buttonIcon svg {
+            color: $theme-btn-txt;
+            fill: $theme-btn-txt;
+        }
+        & .buttonDescription {
+            color: $theme-txt-reverse;
+            opacity: .6;
+        }
+
+        &:disabled {
+            background: $theme-btn-disabled;
+            border-color: transparent;
+
+            cursor: not-allowed;
+            color: $theme-btn-disabled-txt;
+
+            & .buttonName, & .buttonIcon svg {
+                color: $theme-btn-disabled-txt;
+                fill: $theme-btn-disabled-txt;
+            }
+        }
+    }
+    &.button-type-border {
+        background: transparent;
+        border: 2px solid $theme-color;
+
+        color: $theme-color;
+
+        & .buttonName, & .buttonIcon svg {
+            color: $theme-color;
+            fill: $theme-color;
+        }
+
+        &:hover, &.button-selected {
+            background: $theme-color;
+            border-color: $theme-color;
+
+            color: $theme-txt-reverse;
+
+            & .buttonName, & .buttonIcon svg {
+                color: $theme-txt-reverse;
+                fill: $theme-txt-reverse;
+            }
+            & .buttonLoader .circleLoader span {
+                border-color: $theme-txt-reverse;
+            }
+            & .buttonDescription {
+                color: $theme-txt-reverse;
+                opacity: .6;
+            }
+        }
+
+        &:active {
+            background: $theme-color-dark;
+            border-color: $theme-color-dark;
+        }
+
+        & .buttonLoader .circleLoader span {
+            border-color: $theme-color;
+        }
+
+        &:disabled {
+            background: $theme-btn-disabled;
+            border-color: transparent;
+
+            color: $theme-btn-disabled-txt;
+    
+            & .buttonName, & .buttonIcon svg {
+                color: $theme-btn-disabled-txt;
+                fill: $theme-btn-disabled-txt;
+            }
+        }
+    }
+    &.button-type-transparent {
+        background: transparent;
+        border: none;
+
+        color: $theme-txt;
+
+        & .buttonName, & .buttonIcon svg {
+            color: $theme-txt;
+            fill: $theme-txt;
+        }
+
+        &.button-selected {
+            background: $theme-color;
+            color: $theme-txt-reverse;
+
+            & .buttonName, & .buttonIcon svg {
+                color: $theme-txt-reverse;
+                fill: $theme-txt-reverse;
+            }
+        }
+
+        &:active {
+            background: $theme-btn-default;
+        }
+
+        & .buttonLoader .circleLoader span {
+            border-color: $theme-color;
+        }
+
+        &:disabled {
+            color: $theme-btn-disabled-txt;
+            & .buttonName, & .buttonIcon svg {
+                color: $theme-btn-disabled-txt;
+                fill: $theme-btn-disabled-txt;
+            }
+        }
+    }
+    &.button-type-hover {
+        background: $theme-btn-default;
+        color: $theme-txt;
+
+        & .buttonName, & .buttonIcon svg {
+            color: $theme-txt;
+            fill: $theme-txt;
+        }
+
+        &:hover, &.button-selected {
+            background: $theme-color;
+            color: $theme-btn-txt;
+
+            & .buttonName, & .buttonIcon svg {
+                color: $theme-btn-txt;
+                fill: $theme-btn-txt;
+            }
+            & .buttonDescription {
+                color: $theme-txt-reverse;
+                opacity: .7;
+            }
+        }
+
+        &:disabled {
+            background: $theme-btn-disabled;
+            color: $theme-btn-disabled-txt;
+
+            border-color: transparent;
+    
+            & .buttonName, & .buttonIcon svg {
+                color: $theme-btn-disabled-txt;
+                fill: $theme-btn-disabled-txt;
+            }
+        }
+    }
+    &.button-type-hovertransparent {
+        background: transparent;
+        color: $theme-txt;
+
+        & .buttonName, & .buttonIcon svg {
+            color: $theme-txt;
+            fill: $theme-txt;
+        }
+
+        &:hover, &.button-selected {
+            background: $theme-btn-default;
+        }
+
+        & .buttonLoader .circleLoader span {
+            border-color: $theme-color;
+        }
+
+        &:disabled {
+            background: transparent;
+            color: $theme-btn-disabled-txt;
+
+            border-color: transparent;
+    
+            & .buttonName, & .buttonIcon svg {
+                color: $theme-btn-disabled-txt;
+                fill: $theme-btn-disabled-txt;
+            }
+        }
+    }
+
+
+    // sizes
+    &.button-size-min {
+        padding: $padding $padding * 2;
+        border-radius: $borderRadius * .5;
+
+        gap: $padding * 2;
+
+        & .buttonName {
+            font-size: $fontsize - 2px;
+            font-weight: 500;
+        }
+        & .buttonIcon svg {
+            font-size: $fontsize;
+        }
+    }
+    &.button-size-medium {
+        padding: $padding * 2.5 $padding * 4.5;
+        border-radius: $borderRadius * 1.2;
+
+        & .buttonName {
+            font-size: $fontsize + 2px;
+            font-weight: 500;
+        }
+        & .buttonIcon svg {
+            font-size: $fontsize + 4px;
+        }
+    }
+    &.button-size-normal {
+        padding: $padding * 2 $padding * 4;
+	    border-radius: $borderRadius;
+
+        & .buttonName {
+            font-size: $fontsize;
+        }
+        & .buttonIcon svg {
+            font-size: $fontsize + 4px;
+        }
+    }
+    &.button-size-big {
+        padding: $padding * 3 $padding * 10;
+        border-radius: $borderRadius * 1.5;
+
+        & .buttonName {
+            font-size: $fontsize + 4px;
+        }
+        & .buttonIcon svg {
+            font-size: $fontsize + 6px;
+        }
+    }
+    &.button-size-megabig {
+        padding: $padding * 5 $padding * 14;
+        border-radius: $borderRadius * 2;
+
+        & .buttonName {
+            font-size: $fontsize + 8px;
+            font-weight: 700;
+        }
+        & .buttonIcon svg {
+            font-size: $fontsize + 18px;
+        }
+    }
+
+
+
+    // other
+    &.button-icononly {
+        border-radius: 50%;
+
+        padding: 0;
+
+        &.button-size-min {
+            width: 20px;
+            height: 20px;
+        }
+        &.button-size-medium {
+            width: 50px;
+            height: 50px;
+        }
+        &.button-size-normal {
+            width: 40px;
+            height: 40px;
+        }
+        &.button-size-big {
+            width: 60px;
+            height: 60px;
+        }
+        &.button-size-megabig {
+            width: 80px;
+            height: 80px;
+        }
+    }
+    &.button-loader {
+        & .buttonWrapper, & .buttonDescription {
+            opacity: 0;
+            visibility: hidden;
+            z-index: -1;
+        }
+
+        position: relative;
+        & .buttonLoader {
+            position: absolute;
+
+            top: 0;
+            left: 0;
+
+            width: 100%;
+            height: 100%;
+
+            display: flex;
+            align-items: center;
+            justify-content: center;
+        }
+    }
+
+
+    // hoverinfo
+    position: relative;
+    & .buttonHoverInfo {
+        position: absolute;
+        display: inline-block;
+
+        bottom: 100%;
+        left: 50%;
+
+        transform: translateX(-50%);
+
+        font-size: $fontsize - 4px;
+        font-weight: 600;
+
+        white-space: nowrap;
+
+        background: inherit;
+        color: inherit;
+
+        padding: $padding / 2 $padding;
+        border-radius: $borderRadius;
+
+        transition: $transition bottom;
+
+        opacity: 0;
+        visibility: hidden;
+        z-index: -1;
+    }
+
+    &:hover .buttonHoverInfo {
+        bottom: calc(100% + $padding * 3);
+        opacity: 1;
+        visibility: visible;
+        z-index: $zindex_null;
+    }
+}

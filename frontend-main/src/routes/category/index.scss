@@ -1,0 +1,349 @@
+@import '../../rules/scss/themes.scss';
+@import '../../rules/scss/variables.scss';
+
+.route#routeCategory {
+    width: 100%;
+    height: 100%;
+
+    overflow: auto;
+
+    position: absolute;
+
+    top: 0;
+    left: 0;
+
+    padding: $padding * 6;
+
+    display: flex;
+    align-items: flex-start;
+    gap: $padding * 8;
+
+    & .body {
+        width: 100%;
+
+        & header.header {
+            display: flex;
+            align-items: center;
+            justify-content: space-between;
+            gap: $padding * 3;
+    
+            width: 100%;
+            margin-top: $margin * 4;
+
+            & .properties {
+                display: flex;
+                align-items: center;
+                gap: $padding * 3;
+
+                height: 100%;
+
+                & .sorting {
+                    background: $theme-bg-opacity;
+                    border-radius: $borderRadius * 2;
+
+                    & .select {
+                        margin: 0;
+                        & ul {
+                            transform: translateY(4px);
+                        }
+                    }
+                }
+                & .productViewType {
+                    display: flex;
+                    align-items: center;
+                    gap: $padding * .5;
+
+                    & .button {
+                        width: 46px;
+                        height: 46px;
+
+                        border-radius: $borderRadius * 2;
+                        padding: 0;
+
+                        &.selected {
+                            background: $theme-bg-opacity;
+                        }
+
+                        &:not(.button-selected) {
+                            & svg {
+                                fill: $theme-txt-opacity;
+                                color: $theme-txt-opacity;
+                            }
+                        }
+                    }
+
+                    @media screen and (max-width: 650px) {
+                        display: none;
+                    }
+                }
+                & .phoneFiltersBtn {
+                    height: 100%;
+
+                    display: none;
+
+                    & .button {
+                        height: 100%;
+                    }
+                }
+            }
+
+            @media screen and (max-width: 760px) {
+                & {
+                    flex-wrap: wrap;
+                    justify-content: center;
+                }
+            }
+        }
+
+        & .productsList {
+            margin-top: $margin * 6;
+            width: 100%;
+
+            &.type-grid {
+                & .list {
+                    display: flex;
+                    flex-wrap: wrap;
+                    gap: $padding * 3;
+
+                    width: 100%;
+
+                    & .adcart.vertical {
+                        width: calc(100% / 5 - $padding * 2.4);
+                        min-width: calc(100% / 5 - $padding * 2.4);
+
+                        @media screen and (max-width: 1430px) {
+                            width: calc(100% / 4 - $padding * 2.4);
+                            min-width: calc(100% / 4 - $padding * 2.4);
+                        }
+                        @media screen and (max-width: 1230px) {
+                            width: calc(100% / 3 - $padding * 2.4);
+                            min-width: calc(100% / 3 - $padding * 2.4);
+                        }
+                        @media screen and (max-width: 1050px) {
+                            width: calc(100% / 2 - $padding * 2.4);
+                            min-width: calc(100% / 2 - $padding * 2.4);
+                        }
+                        @media screen and (max-width: 650px) {
+                            width: calc(100% / 1 - $padding * 2.4);
+                            min-width: calc(100% / 1 - $padding * 2.4);
+                        }
+                    }
+                }
+            }
+
+            & .productsListTitle {
+                display: flex;
+                align-items: center;
+                justify-content: space-between;
+                gap: $padding * 2;
+
+                & h4 {
+                    font-size: $fontsize + 4px;
+                    font-weight: 700;
+                }
+                & .productsListTitleDesc {
+                    display: inline-block;
+                    margin-top: $margin;
+
+                    font-size: $fontsize + 1px;
+                    font-weight: 600;
+
+                    color: $theme-txt-opacity;
+                }
+
+                & .productsListSection {
+                    position: relative;
+                }
+                
+                & .changeMapRadius {
+                    position: absolute;
+                    z-index: $zindex_wrapper;
+
+                    right: calc(100% + $padding * 5);
+                    top: -$padding / 2;
+
+                    & .changeMapRadiusWrap {
+                        width: 370px;
+
+                        background: $theme-bg;
+                        box-shadow: $theme-shadow;
+
+                        border-radius: $borderRadius;
+                        padding: $padding * 4;
+
+                        position: relative;
+                        &:before {
+                            position: absolute;
+    
+                            display: block;
+                            content: "";
+    
+                            width: 18px;
+                            height: 18px;
+    
+                            background: inherit;
+                            transform: rotate(45deg);
+    
+                            right: -9px;
+                            top: $padding * 3;
+                        }
+                    }
+
+                    & .changeMapRadiusBtns {
+                        display: flex;
+                        flex-wrap: wrap;
+                        justify-content: center;
+                        gap: $padding * 2;
+                    }
+                    & .changeMapRadiusInput {
+                        margin-top: $margin * 6;
+
+                        display: flex;
+                        flex-direction: column;
+                        align-items: center;
+                        gap: $padding * 5;
+
+                        & .changeMapRadiusInputTitle {
+                            font-weight: 600;
+                            color: $theme-txt-opacity;
+                        }
+                        & .changeMapRadiusInputSection {
+                            display: flex;
+                            align-items: center;
+                            justify-content: space-between;
+                            gap: $padding * 4;
+
+                            width: 100%;
+
+                            & .input {
+                                width: 83px;
+                            }
+                            & .inputrange {
+                                width: 100%;
+                            }
+                        }
+
+                        & .button {
+                            width: 100%;
+                        }
+                    }
+                }
+
+                @media screen and (max-width: 620px) {
+                    & {
+                        width: 100%;
+                        flex-wrap: wrap;
+
+                        & .productsListSection:last-child {
+                            display: flex;
+                            justify-content: center;
+
+                            width: 100%;
+                            margin-top: $margin * 3;
+                        }
+                    }
+                }
+            }
+
+            & .list {
+                margin-top: $margin * 4;
+            }
+        }
+    }
+
+
+    & .noproducts {
+        width: 100%;
+        margin: $margin * 28 0;
+
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        gap: $padding * 8;
+
+        padding: 0 $padding * 4;
+
+        & .noproducts-image {
+            display: flex;
+            align-items: center;
+            justify-content: center;
+
+            & img {
+                width: 80%;
+                height: auto;
+
+                aspect-ratio: 1 / 1;
+            }
+        }
+        & .noproducts-title {
+            & h6 {
+                font-size: $fontsize + 6px;
+                font-weight: 700;
+
+                text-align: center;
+            }
+            & span {
+                display: flex;
+                align-items: center;
+                justify-content: center;
+                gap: $padding * 1.5;
+
+                margin-top: $margin * 2;
+
+                &, & * {
+                    font-size: $fontsize + 2px;
+                    font-weight: 600;    
+
+                    text-align: center;
+                }
+
+                color: $theme-txt-opacity;
+                & button {
+                    margin: 0;
+                    color: $theme-color;
+                }
+            }
+        }
+    }
+}
+
+
+
+.isPhone .route#routeCategory {
+    & .phoneFiltersBtn {
+        display: block !important;
+    }
+
+    & .body .productsList .productsListTitle .changeMapRadius {
+        position: fixed;
+        z-index: $zindex_modal;
+
+        top: 0;
+        left: 0;
+
+        background: $theme-modal-fullbg;
+
+        width: 100%;
+        height: 100%;
+
+        display: flex;
+        flex-direction: column;
+        justify-content: flex-end;
+
+        & .changeMapRadiusWrap {
+            &:before {
+                display: none;
+            }
+
+            & ._phoneTopHide_ {
+                margin-bottom: $margin * 4;
+            }
+
+            width: 100%;
+            border-radius: $borderRadius * 3 $borderRadius * 3 0 0;
+
+            transition: $transition;
+            transform: translateY(100%);
+        }
+    }
+}

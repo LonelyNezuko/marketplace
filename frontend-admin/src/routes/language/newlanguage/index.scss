@@ -1,0 +1,106 @@
+@import '../../../rules/scss/themes.scss';
+@import '../../../rules/scss/variables.scss';
+
+.route.languageeditorblock {
+    & .actions {
+        display: flex;
+        align-items: center;
+        gap: $padding * 3;
+
+        & .cancel:not(:disabled) {
+            background: $theme-color-red;
+        }
+        & .sync:not(:disabled) {
+            background: $theme-color-orange;
+        }
+
+        &.bottom {
+            margin-top: $margin * 8;
+            justify-content: flex-end;
+        }
+    }
+    & .header {
+        display: flex;
+        align-items: center;
+        justify-content: space-between;
+
+        border-bottom: 2px solid $theme-bg-opacity;
+        padding-bottom: $padding * 6;
+    }
+
+    & .border {
+        border-bottom: 2px solid $theme-bg-opacity;
+    }
+
+    & .params {
+        width: 850px;
+
+        margin: 0 auto;
+        margin-top: $margin * 6;
+
+        display: flex;
+        flex-direction: column;
+        gap: $padding * 6;
+
+        padding-bottom: $padding * 10;    
+
+        &.editor {
+            width: auto;
+            border-bottom: 2px solid $theme-bg-opacity;
+
+            & .section {
+                align-items: flex-start;
+                & .name {
+                    // width: 50%;
+                }
+            }
+        }
+        
+        & .section {
+            display: flex;
+            align-items: center;
+            justify-content: space-between;
+            gap: $padding * 4;
+
+            & .name {
+                font-size: $fontsize + 2px;
+                font-weight: 600;
+
+                display: flex;
+                align-items: center;
+                gap: $padding * 2;
+            }
+            & .params-value {
+                width: 50%;
+
+                display: flex;
+                align-items: center;
+
+                &.checkbox {
+                    display: flex;
+                    justify-content: center;
+                }
+
+                & .reset {
+                    & svg {
+                        font-size: $fontsize + 6px;
+                        
+                        color: $theme-txt-opacity;
+                        fill: $theme-txt-opacity;
+                    }
+                }
+
+                & .added {
+                    margin-right: $margin * 4;
+
+                    & svg {
+                        font-size: $fontsize + 8px;
+                        
+                        color: $theme-color;
+                        fill: $theme-color;
+                    }
+                }
+            }
+        }
+    }
+}

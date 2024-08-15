@@ -1,0 +1,84 @@
+@import '../../../rules/scss/themes.scss';
+@import '../../../rules/scss/variables.scss';
+
+#modalReport {
+    z-index: $zindex_notify;
+
+    & .modalWrapper {
+        width: 550px;
+    }
+
+    & #modalReportBody {
+        display: flex;
+        flex-direction: column;
+        gap: $padding * 4;
+
+        & section.section {
+            &.reportTypeEntity {
+                & h6 {
+                    margin-bottom: $margin * 2;
+
+                    font-weight: 600;
+                    font-size: $fontsize + 2px;
+                }
+            }
+            &.reportText {
+                & .textarea {
+                    & .textareainput {
+                        min-height: calc(22px * 4);
+                        max-height: calc(22px * 8);
+                    }
+                }
+            }
+        }
+
+        & .textarea label {
+            font-size: $fontsize + 2px;
+            font-weight: 600;
+        }
+    }
+
+    & #modalReportBodySuccess {
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        gap: $padding * 2;
+
+        & img {
+            width: 80px;
+            height: auto;
+        }
+
+        & section {
+            & h6 {
+                font-size: $fontsize + 6px;
+                font-weight: 700;
+
+                text-align: center;
+                margin-top: $margin * 2;
+            }
+            & span {
+                text-align: center;
+                font-weight: 600;
+
+                display: inline-block;
+                width: 100%;
+
+                margin-top: $margin;
+            }
+
+            &:last-child {
+                margin-top: $margin * 8;
+                & span {
+                    color: $theme-txt-opacity;
+                    margin: 0;
+                }
+
+                display: flex;
+                flex-direction: column;
+                align-items: center;
+                gap: $padding * 2;
+            }
+        }
+    }
+}

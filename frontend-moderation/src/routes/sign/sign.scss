@@ -1,0 +1,150 @@
+@import '../../rules/scss/themes.scss';
+@import '../../rules/scss/variables.scss';
+
+.route.sign {
+    position: absolute;
+    z-index: $zindex_hoverModal;
+
+    top: 0;
+    left: 0;
+
+    display: flex;
+    align-items: center;
+    justify-content: center;
+
+    width: 100%;
+    height: 100%;
+
+    & .generalError {
+        margin: $margin * 4 0;
+        margin-top: $margin * 2;
+
+        display: flex;
+        justify-content: flex-end;
+
+        & span {
+            color: $theme-color-red;
+
+            font-weight: 600;
+            font-size: $fontsize - 2px;
+        }
+    }
+
+    & .background {
+        width: 40%;
+        min-width: 40%;
+        height: 100%;
+
+        & img {
+            width: 100%;
+            height: 100%;
+
+            object-fit: cover;
+        }
+
+        position: relative;
+        & span {
+            position: absolute;
+
+            top: 50%;
+            left: 50%;
+
+            transform: translate(-50%, -50%);
+
+            font-size: $fontsize + 16px;
+            font-weight: 700;
+
+            color: white;
+            text-align: center;
+
+            text-transform: uppercase;
+        }
+    }
+    & .wrapper {
+        width: 500px;
+        height: 600px;
+
+        padding: $padding * 14;
+
+        border-radius: $borderRadius * 2;
+        box-shadow: $theme-shadow;
+
+        background: $theme-bg;
+        color: $theme-txt;
+
+        display: flex;
+        flex-direction: column;
+        justify-content: space-between;
+
+        & .title {
+            font-size: $fontsize + 12px;
+            font-weight: 700;
+        }
+        & .desc {
+            display: block;
+            margin-top: $margin;
+
+            font-family: 'Gotham Pro';
+            opacity: .7;
+        }
+
+        & .form {
+            margin-top: $margin * 12;
+        }
+        & .other {
+            margin-top: $margin * 2;
+
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            flex-wrap: wrap;
+
+            & a + a {
+                margin-top: $margin * 2;
+            }
+            & a {
+                width: 100%;
+                text-align: center;
+            }
+            & * {
+                font-size: $fontsize - 2px;
+                opacity: .8;
+            }
+        }
+
+        & .action {
+            display: flex;
+            align-items: center;
+            justify-content: flex-end;
+
+            & .btn {
+                font-size: $fontsize + 2px;
+                padding: $padding * 4 $padding * 8;
+            }
+        }
+
+        & .socialauth {
+            margin-top: $margin * 3;
+
+            & .title {
+                font-size: $fontsize;
+                font-weight: 600;
+            }
+            & .list {
+                display: flex;
+                align-items: center;
+                gap: $padding * 4;
+
+                margin-top: $margin * 2;
+
+                & .elem {
+                    cursor: pointer;
+                    & img {
+                        width: 38px;
+                        height: 38px;
+                    }
+                }
+            }
+        }
+    }
+}

@@ -1,0 +1,40 @@
+{
+    "compilerOptions": {
+      "module": "ES6",
+      "declaration": true,
+      "removeComments": true,
+      "allowSyntheticDefaultImports": true,
+      "target": "ES2022",
+      "sourceMap": true,
+      "outDir": "./dist",
+      "incremental": true,
+      "skipLibCheck": true,
+      "strictNullChecks": false,
+      "noImplicitAny": false,
+      "strictBindCallApply": false,
+      "forceConsistentCasingInFileNames": false,
+      "noFallthroughCasesInSwitch": false,
+      "esModuleInterop": true,
+      "moduleResolution": "Node",
+      "allowJs": true,
+      "jsx": "react-jsx",
+      "resolveJsonModule": true,
+      "strict": false,
+      "baseUrl": "./",
+      "paths": {
+          "@components/*": [ "src/components/*" ],
+          "@dto/*": [ "src/dto/*" ],
+          "@modules/*": [ "src/modules/*" ],
+          "@routes/*": [ "src/routes/*" ],
+          "@layouts/*": [ "src/layouts/*" ],
+          "@functions/*": [ "src/modules/functions/*" ],
+
+          "@src/*": [ "src/*" ],
+          "@assets/*": [ "public/assets/*" ],
+
+          "@config": [ "src/config.json" ],
+          "@config.server": [ "src/config.server.json" ]
+      }
+    }
+  }
+  

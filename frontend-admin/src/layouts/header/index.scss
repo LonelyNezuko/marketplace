@@ -1,0 +1,106 @@
+@import '../../rules/scss/variables.scss';
+@import '../../rules/scss/themes.scss';
+
+#header {
+    position: sticky;
+    top: 0;
+
+    z-index: $zindex_hover;
+
+    height: 90px;
+
+    padding: $padding * 4 $padding * 8;
+
+    background: $theme-bg-color;
+    border-bottom: 2px solid $theme-bg-opacity;
+
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+
+    & .section {
+        display: flex;
+        align-items: center;
+        gap: $padding * 3;
+    }
+
+    & .lastupdatebtn {
+        display: flex;
+        align-items: center;
+        gap: $padding * 3;
+
+        margin-right: $margin * 8;
+
+        background: $theme-color-gradient;
+        border-radius: $borderRadius * 2;
+
+        overflow: hidden;
+
+        padding: $padding * 2.5;
+        padding-right: $padding * 4;
+
+        & .btn {
+            padding: 0;
+            background: transparent;
+        }
+        & div {
+            display: flex;
+            flex-direction: column;
+            align-items: flex-start;
+
+            & h1 {
+                color: $theme-txt-reverse;
+                font-weight: 600;
+            }
+            & span {
+                font-size: $fontsize - 3px;
+                color: $theme-txt-reverse;
+            }
+        }
+    }
+
+    & .account {
+        & .wrap {
+            display: flex;
+            align-items: center;
+            gap: $padding * 4;
+
+            cursor: pointer;
+        }
+
+        & .dropdown-btn {
+            & svg {
+                font-size: $fontsize + 12px;
+            }
+        }
+
+        & .username {
+            display: flex;
+            flex-direction: column;
+            align-items: flex-end;
+
+            & *, & {
+                text-align: right;
+            }
+
+            & h1 {
+                font-size: $fontsize + 2px;
+                color: $theme-color-txt;
+            }
+            & span {
+                color: $theme-txt-opacity;
+
+                display: block;
+                margin-top: $margin;
+
+                text-transform: capitalize;
+            }
+        }
+
+        position: relative;
+        & .dropdownmenu {
+            top: calc(100% + $margin * 3);
+            right: 0;
+        }
+    }
+}

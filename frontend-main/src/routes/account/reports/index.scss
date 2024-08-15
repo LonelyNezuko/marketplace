@@ -1,0 +1,391 @@
+@import '../../../rules/scss/themes.scss';
+@import '../../../rules/scss/variables.scss';
+
+.route#routeAccountReports, .route#routeAccountReportsID {
+    & .report-type {
+        font-weight: 600;
+
+        &.report-type-user {
+            color: $theme-color-darkgreen;
+        }
+        &.report-type-product {
+            color: $theme-color-green;
+        }
+    }
+
+    & .report-status {
+        font-weight: 600;
+
+        &.report-status-open {
+            color: $theme-color-darkgreen;
+        }
+        &.report-status-closed {
+            color: $theme-color-darkred;
+        }
+    }
+}
+
+.route#routeAccountReports {
+    & #emailVerify {
+        margin-top: $margin * 3;
+    }
+    
+    & .noreports {
+        width: 100%;
+
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        flex-direction: column;
+
+        gap: $padding * 6;
+        padding: $padding * 26 0;
+
+        & svg {
+            font-size: $fontsize + 86px;
+            & path {
+                fill: $theme-txt-opacity;
+            }
+        }
+        & h1 {
+            color: $theme-txt-opacity;
+            font-size: $fontsize + 8px;
+        }
+    }
+
+    & .reportList {
+        & #accountReportList {
+            margin-top: $margin * 8;
+        }
+    }
+
+
+}
+
+
+.route#routeAccountReportsID {
+    height: calc(100vh - 85px - 64px - 1px);
+
+    & header.header {
+        display: flex;
+        align-items: center;
+        justify-content: space-between;
+        gap: $padding * 3;
+
+        & section.section {
+            display: flex;
+            align-items: center;
+            gap: $padding * 2;
+
+            & .backbtn {
+                padding: $padding * 2;
+            }
+        }
+    }
+
+    & .pageBody {
+        margin-top: $margin * 4;
+
+        width: 100%;
+        height: calc(100% - 34px - 16px);
+
+        display: flex;
+        align-items: flex-start;
+        gap: $padding * 3;
+
+        & .reportInfo {
+            background: $theme-bg;
+            box-shadow: $theme-shadow;
+
+            padding: $padding * 3;
+            border-radius: $borderRadius * 2;
+
+            display: flex;
+            flex-direction: column;
+
+            gap: $padding * 4;
+
+            & .reportInfoWrapper {
+                display: flex;
+                flex-wrap: wrap;
+                gap: $padding * 4 $padding * 3;
+
+                width: 100%;
+            }
+
+            width: 500px;
+            & .infoBlock {
+                width: calc(100% / 2 - $padding * 2);
+
+                display: flex;
+                flex-direction: column;
+                gap: $padding;
+
+                &:nth-child(2n + 2) {
+                    align-items: flex-end;
+                    & * {
+                        text-align: right;
+                    }
+                }
+
+                & .infoTitle {
+                    font-size: $fontsize - 2px;
+                    font-weight: 700;
+
+                    color: $theme-txt-opacity;
+                }
+                & .infoValue {
+                    &, & * {
+                        font-weight: 600;
+                    }
+                }
+            }
+            & .actionBlock {
+                & .closeReport {
+                    width: 100%;
+                    height: auto;
+
+                    padding: $padding * 3 $padding * 4;
+
+                    &:not(:disabled) {
+                        background: $theme-color-darkred;
+                    }
+                }
+            }
+        }
+
+        & .chatBody {
+            width: 100%;
+            height: 100%;
+
+            background: $theme-bg;
+            box-shadow: $theme-shadow;
+
+            border-radius: $borderRadius * 3;
+            padding: $padding * 4;
+
+            & .chatWrapper {
+                width: 100%;
+                height: 100%;
+
+                display: flex;
+                flex-direction: column;
+                gap: $padding * 3;
+
+                & .messages {
+                    width: 100%;
+                    height: 100%;
+
+                    overflow: auto;
+
+                    display: flex;
+                    flex-direction: column;
+                    gap: $padding * 6 $padding * 3;
+
+                    & .messageSection {
+                        display: flex;
+                        align-items: flex-end;
+                        gap: $padding * 3;
+
+                        &.reverse {
+                            flex-direction: row-reverse;
+                            
+                            & .messageInfo {
+                                border-radius: $borderRadius * 4 $borderRadius * 4 0 $borderRadius * 4;
+                            }
+                        }
+                        &.system {
+                            width: 100%;
+
+                            display: flex;
+                            align-items: center;
+                            justify-content: center;
+
+                            & .text {
+                                font-weight: 700;
+                                font-size: $fontsize - 2px;
+                            }
+
+                            & .messageInfo {
+                                border-radius: $borderRadius;
+                            }
+                        }
+
+                        & .messageInfo {
+                            max-width: 500px;
+                            background: $theme-bg-color;
+
+                            padding: $padding * 3;
+                            border-radius: $borderRadius * 4 $borderRadius * 4 $borderRadius * 4 0;
+
+                            display: flex;
+                            flex-direction: column;
+                            gap: $padding * 2;
+
+                            & .text {
+                                display: flex;
+                                flex-direction: column;
+                                gap: $padding * 2;
+
+                                width: 100%;
+
+                                & .attachmentsList {
+                                    width: 100%;
+
+                                    display: flex;
+                                    flex-wrap: wrap;
+                                    gap: $padding;
+
+                                    & .attachment {
+                                        width: calc(100% / 3 - $padding);
+                                        min-width: 40px;
+
+                                        border-radius: $borderRadius;
+                                        overflow: hidden;
+
+                                        & img {
+                                            width: auto;
+                                            height: auto;
+
+                                            max-width: 100%;
+                                            object-fit: cover;
+                                        }
+                                    }
+                                }
+
+                                & .value {
+                                    width: 100%;
+                                    display: inline-block;
+
+                                    white-space: pre-wrap;
+                                    word-wrap: break-word;
+                                }
+                            }
+                            & .bottom {
+                                display: flex;
+                                align-items: center;
+                                justify-content: space-between;
+                                gap: $padding * 6;
+
+                                & section.section {
+                                    display: flex;
+                                    align-items: center;
+                                    gap: $padding;
+                                }
+
+                                & .sendStatus {
+                                    display: flex;
+                                    align-items: center;
+
+                                    & svg {
+                                        font-size: $fontsize - 2px;
+                                    }
+
+                                    &.error svg {
+                                        color: $theme-color-red;
+                                        fill: $theme-color-red;
+                                    }
+                                    &.wait svg {
+                                        color: $theme-txt-opacity;
+                                        fill: $theme-txt-opacity;
+                                    }
+
+                                    position: relative;
+                                    &[data-alt]:before {
+                                        background: $theme-color-red;
+                                        color: $theme-txt-reverse;
+            
+                                        right: calc(100% - $margin * 3);
+                                        left: auto;
+            
+                                        transform: translateY(50%) translateY(-$margin * 2);
+                                    }
+                                }
+
+                                & .username {
+                                    font-size: $fontsize - 2px;
+                                    font-weight: 700;
+                                }
+                                & .createAt {
+                                    font-size: $fontsize - 2px;
+                                    font-weight: 700;
+
+                                    color: $theme-txt-opacity;
+                                }
+                            }
+                        }
+                    }
+                }
+            }
+
+            & .form {
+                & .cantSendMessage {
+                    width: 100%;
+
+                    display: flex;
+                    align-items: center;
+                    justify-content: center;
+
+                    & span {
+                        font-weight: 700;
+                        color: $theme-color-red;
+                        text-align: center;
+                    }
+                }
+            }
+        }
+    }
+
+    @media screen and (max-width: 1300px) {
+        & .pageBody {
+            flex-direction: column;
+            width: 70%;
+
+            margin: 0 auto;
+            & .reportInfo {
+                order: -1;
+                width: 100%;
+
+                & .infoBlock {
+                    width: calc(100% / 3 - $padding * 3);
+
+                    text-align: center !important;
+                    align-items: center !important;
+                }
+            }
+        }
+    }
+    @media screen and (max-width: 1000px) {
+        & .pageBody {
+            width: 100%;
+        }
+    }
+}
+
+
+.isPhone .route#routeAccountReportsID {
+    height: calc(100%);
+
+    display: flex;
+    flex-direction: column;
+
+    & .pageBody {
+        display: flex;
+        flex-direction: column;
+
+        height: calc(100% - 56px);
+
+        & .chatBody {
+            padding: 0;
+
+            background: transparent;
+            box-shadow: none;
+
+            border-radius: none;
+
+            & .messages {
+                gap: $padding * 3 !important;
+            }
+        }
+    }
+}

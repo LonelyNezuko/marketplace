@@ -1,0 +1,227 @@
+@import '../../rules/scss/themes.scss';
+@import '../../rules/scss/variables.scss';
+
+.table {
+    background: $theme-bg-color;
+    width: 100%;
+
+    &.design-new {
+        background: transparent;
+        & header {
+            margin-bottom: $margin * 4;
+            padding: $padding * 2 0;
+
+            & .title {
+                & h1 {
+                    display: flex;
+                    align-items: center;
+                }
+                & .description {
+                    display: inline-block;
+                    margin-top: $margin * 2;
+
+                    font-size: $fontsize - 2px;
+                    color: $theme-txt-opacity;
+
+                    white-space: pre-wrap;
+                }
+            }
+        }
+
+        & table {
+            & th {
+                background: transparent;
+                padding: 0;
+
+                color: $theme-txt-opacity;
+                text-align: center;
+
+                padding-bottom: $padding * 4;
+            }
+            & td {
+                text-align: center;
+                &, & * {
+                    font-weight: 600;
+                }
+            }
+            & tbody {
+                & tr {
+                    background: $theme-bg;
+                    border-radius: $borderRadius * 2;
+
+                    border: 0;
+                }
+            }
+
+            & tr.margin {
+                height: $margin * 2;
+            }
+        }
+    }
+
+    & header {
+        display: flex;
+        align-items: flex-start;
+        justify-content: space-between;
+
+        padding: $padding * 4 $padding * 8;
+
+        & .title {
+            & h1 {
+                font-size: $fontsize + 8px;
+                font-weight: 700;
+
+                color: $theme-color-txt;
+
+                display: flex;
+                    align-items: center;
+            }
+
+            & .description {
+                display: inline-block;
+                margin-top: $margin * 2;
+
+                font-size: $fontsize - 2px;
+                color: $theme-txt-opacity;
+
+                white-space: pre-wrap;
+            }
+        }
+
+        & .rightblock {
+            display: flex;
+            align-items: center;
+            gap: $padding * 3;
+
+            height: 40px;
+            min-height: 40px;
+
+            & .search {
+                height: 100%;
+                & .input {
+                    height: 100%;
+
+                    & .inputWrapper {
+                        padding: $padding * 2 $padding * 3;
+
+                        & .icon {
+                            margin-right: $margin * 3;
+                        }
+                    }
+                }
+            }
+
+            & .actions {
+                display: flex;
+                align-items: center;
+                gap: $padding * 2;
+
+                height: 100%;
+                & div {
+                    height: 100%;
+                    & .button {
+                        height: 100%;
+                    }
+                }
+            }
+        }
+    }
+
+    & table {
+        width: 100%;
+
+        & tr {
+            // display: flex;
+            width: 100%;
+        }
+
+        & th, & td {
+            padding: $padding * 4 $padding * 8;
+            table-layout: fixed;
+        }
+        border-collapse: collapse;
+
+        & th {
+            background: $theme-bg-footer;
+
+            text-align: left;
+
+            font-size: $fontsize + 2px;
+            font-weight: 600;
+
+            white-space: nowrap;
+
+            & .inputcheckbox {
+                & input {
+                    border-color: $theme-txt;
+                    &:checked:before {
+                        background: $theme-txt;
+                    }
+                }
+            }
+        }
+
+        & tr:not(:nth-child(1)) {
+            border-top: 1.5px solid $theme-bg-opacity;
+        }
+
+        & td {
+            white-space: nowrap;
+
+            & .td-dropdown {
+                position: relative;
+
+                & .dropdownmenu {
+                    right: 0;
+                }
+            }
+        }
+    }
+}
+
+
+.isPhone .table {
+    & .tableblock {
+        display: flex;
+        flex-direction: column;
+        gap: $padding * 3;
+
+        width: 100%;
+        
+        & .tableblock-element {
+            width: 100%;
+            
+            display: flex;
+            flex-direction: column;
+            gap: $padding * 2;
+
+            background: $theme-bg;
+            box-shadow: $theme-shadow;
+
+            padding: $padding * 4;
+            border-radius: $borderRadius * 2;
+
+            & .tableblock-element-item {
+                display: flex;
+                flex-direction: column;
+                gap: $padding * 3;
+
+                & .tableblock-element-item-values {
+                    display: flex;
+                    flex-direction: column;
+                    gap: $padding;
+
+                    & .tableblock-element-item-title {
+                        font-size: $fontsize;
+                        font-weight: 600;
+
+                        color: $theme-txt-opacity;
+                    }
+                    & .tableblock-element-item-values-value {
+                        font-weight: 700;
+                    }
+                }
+            }
+        }
+    }
+}

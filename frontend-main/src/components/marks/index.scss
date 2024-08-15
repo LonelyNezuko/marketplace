@@ -1,0 +1,48 @@
+@import '../../rules/scss/themes.scss';
+@import '../../rules/scss/variables.scss';
+
+.mark {
+	width: 20px;
+	height: 20px;
+
+	display: flex;
+	align-items: center;
+	justify-content: center;
+
+	&.checkmark {
+		& svg {
+			color: $theme-color-darkgreen;
+			fill: $theme-color-darkgreen;
+	
+			font-size: $fontsize + 100px;
+		}
+	}
+	&.xmark {
+		background: $theme-color-darkred;
+		border-radius: 50%;
+
+		width: 17px;
+		height: 17px;
+
+		& svg {
+			color: white;
+			fill: white;
+	
+			font-size: $fontsize - 1px;
+		}
+	}
+
+	&.medium {
+		width: 26px;
+		height: 26px;
+
+		&.xmark {
+			width: 22px;
+			height: 22px;
+
+			& svg {
+				font-size: $fontsize + 2px;
+			}
+		}
+	}
+}

@@ -1,0 +1,72 @@
+@import '../../../rules/scss/themes.scss';
+@import '../../../rules/scss/variables.scss';
+
+#modalFirstStart {
+    & .modalindex {
+        background: transparent;
+
+        & .modalWrapper {
+            position: absolute;
+            top: $padding * 12;
+        }
+    }
+
+    & .block {
+        & .desc {
+            display: block;
+            margin-top: $margin * 2;
+
+            &, & a {
+                font-size: $fontsize - 2px;
+                font-weight: 400;
+            }
+            & a {
+                font-weight: 500;
+            }
+        }
+    }
+    & .action {
+        display: flex;
+        justify-content: flex-end;
+        align-items: center;
+        gap: $padding * 4;
+
+        margin-top: $margin * 6;
+        
+        & .btn {
+            
+        }
+    }
+}
+
+
+.isPhone #modalFirstStart {
+    position: fixed;
+    z-index: $zindex_modal;
+
+    top: 0;
+    left: 0;
+
+    width: 100%;
+    height: 100dvh  ;
+
+    background: $theme-modal-fullbg;
+
+    & .modalindex {
+        position: static;
+
+        display: flex;
+        flex-direction: column;
+        justify-content: flex-end;
+
+        & .modalWrapper {
+            width: 100%;
+
+            position: static;
+            border-radius: $borderRadius * 3 $borderRadius * 3 0 0;
+
+            transform: translateY(100%);
+            transition: $transition;
+        }
+    }
+}

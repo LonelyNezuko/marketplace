@@ -1,0 +1,84 @@
+@import '../../rules/scss/variables.scss';
+@import '../../rules/scss/themes.scss';
+
+.usercart {
+    &.type-mini {
+        width: 100%;
+        height: 86px;
+
+        display: flex;
+        align-items: center;
+    
+        padding: $padding * 2;
+        border-radius: $borderRadius * 2;
+    
+        transition: $transition;
+    
+        &:hover {
+            background: $theme-bg-silver;
+        }
+    
+        & .avatar {
+            height: 100%;
+        }
+        
+        & .desc {
+            margin-left: $margin * 4;
+            width: 100%;
+            
+            & ._username_ {
+                & h5 {
+                    font-family: 'Akrobat';
+                    font-weight: 800;
+                    font-size: $fontsize + 2px;
+                }
+            }
+            & .onlinestatus {
+                margin-top: $margin;
+    
+                font-family: 'Akrobat';
+                font-weight: 800;
+                font-size: $fontsize + 2px;
+    
+                color: $theme-txt;
+                opacity: .4;
+    
+                &.online {
+                    color: $theme-color-online;
+                    opacity: 1;
+                }
+            }
+            & .rating {
+                margin-top: $margin * 2;
+    
+                display: flex;
+                align-items: center;
+    
+                & .count {
+                    font-family: 'Akrobat';
+                    font-weight: 700;
+    
+                    font-size: $fontsize + 6px;
+                    line-height: $fontsize;
+    
+                    transform: translateY(1px);
+                }
+                & .stars {
+                    display: flex;
+                    align-items: center;
+                    gap: $padding * 2;
+    
+                    margin-left: $margin * 3;
+    
+                    width: 100%;
+                    & span {
+                        & img {
+                            width: 20px;
+                            height: 20px;
+                        }
+                    }
+                }
+            }
+        }
+    }
+}

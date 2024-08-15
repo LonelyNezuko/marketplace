@@ -1,0 +1,506 @@
+@import '../../rules/scss/themes.scss';
+@import '../../rules/scss/variables.scss';
+
+.input, .textarea {
+	width: 100%;
+	position: relative;
+
+	user-select: none;
+
+	& label {
+		width: 100%;
+
+		margin-bottom: $margin * 2;
+
+		display: flex;
+		align-items: center;
+		justify-content: space-between;
+
+		& h1 {
+			white-space: nowrap;
+		}
+		& .error {
+			text-align: right;
+
+			font-size: $fontsize - 2px;
+			color: $theme-color-red;
+		}
+	}
+	& .hint {
+		display: block;
+		margin-top: $margin * 2;
+
+		&, & * {
+			font-size: $fontsize - 2px;
+			color: $theme-txt-opacity;
+
+			white-space: pre-wrap;
+		}
+	}
+
+	& .icon {
+		margin-right: $margin * 4;
+		align-self: flex-start;
+
+		& svg {
+			font-size: $fontsize + 6px;
+			
+			fill: $theme-input-border;
+			color: $theme-input-border;
+
+			transition: $transition;
+		}
+	}
+	& .send,
+	& .attachmentBtn {
+		&.attachmentBtn {
+			margin-right: $margin * 4;
+			background: transparent;
+
+			display: flex;
+			align-items: center;
+			justify-content: center;
+		}
+		&.send {
+			margin-left: $margin * 4;
+		}
+
+		&, &.send *, &.attachmentBtn * {
+			font-size: $fontsize + 10px;
+			cursor: pointer;
+
+			fill: $theme-input-border;
+			color: $theme-input-border;
+
+			// transition: $transition;
+		}
+	}
+	& .sendbtn {
+		margin-left: $margin * 4;
+	}
+
+	& .attachment {
+		right: auto;
+
+		left: $padding * 4;
+		bottom: $padding * 3;
+
+		font-size: $fontsize + 8px;
+
+		&:hover {
+			fill: $theme-txt;
+			color: $theme-txt;
+
+			opacity: .8;
+		}
+	}
+
+	& .mark-accept,
+	& .mark-error {
+		&:after {
+			margin-left: $margin * 4;
+
+			display: block;
+			content: "✔";
+
+			color: $theme-input-border-selected;
+		}
+
+		&.mark-error {
+			&:after {
+				content: "✖";
+				color: $theme-color-red;
+			}
+
+			border-color: $theme-color-red;
+			& .icon svg {
+				fill: $theme-color-red;
+				color: $theme-color-red;
+			}
+		}
+	}
+
+	&:not(.disabled) {
+		& .inputWrapper.value:not(.mark-error) {
+			border-color: $theme-input-border-selected;
+			& .send, & .send * {
+				fill: $theme-input-border-selected;
+				color: $theme-input-border-selected;
+			}
+			& .icon svg {
+				fill: $theme-input-border-selected;
+				color: $theme-input-border-selected;
+			}
+		}
+	}
+
+	& .inputGlobalWrapper {
+		display: flex;
+		align-items: center;
+
+		height: 100%;
+		width: 100%;
+
+		&.choicemenu-enable {
+			& .inputWrapper {
+				border-top-right-radius: 0;
+				border-bottom-right-radius: 0;
+
+				border-right: 0;
+			}
+		}
+		&.global-mark-error {
+			& .choicemenu {
+				& .choicemenu-selected, & .choicemenu-list {
+					background: $theme-color-red;
+					& * {
+						color: $theme-txt-reverse;
+					}
+				}
+			}
+		}
+	}
+
+	&.textarea {
+		& .inputWrapper {
+			align-items: flex-end;
+		}
+	}
+	& .inputWrapper {
+		display: flex;
+		align-items: center;
+
+		width: 100%;
+		height: 100%;
+
+		padding: $padding * 3 $padding * 4;
+
+		background: transparent;
+		border: 2px solid $theme-input-border;
+
+		border-radius: $borderRadius * 1.5;
+		transition: $transition;
+
+		cursor: text;
+
+		&.issendbtn {
+			padding-top: $padding * 2;
+			padding-bottom: $padding * 2;	
+		}
+	}
+	& input, & .textareainput {
+		&[type="number"] {
+			&::-webkit-outer-spin-button,
+			&::-webkit-inner-spin-button {
+				-webkit-appearance: none;
+			}
+			& {
+				-moz-appearance: textfield;
+			}
+		}
+
+		background: transparent !important;
+
+		width: 100%;
+		height: 100%;
+		
+		user-select: text;
+		cursor: text;
+
+		&::placeholder {
+			color: $theme-input-placeholder;
+		}
+		&.textareainput {
+			min-height: 22px;
+			height: 100%;
+
+			position: relative;
+			resize: none;
+
+			white-space: pre-wrap;
+			appearance: none;
+
+			line-height: $fontsize + 8px;
+
+			// &:before {
+			// 	position: absolute;
+
+			// 	display: block;
+			// 	content: attr(aria-placeholder);
+
+			// 	top: 0;
+			// 	left: 0;
+
+			// 	padding-left: inherit;
+			// 	color: $theme-input-placeholder;
+			// }
+
+			&.hideplaceholder {
+				&:before {
+					display: none;
+				}
+
+				border-color: $theme-input-border-selected;
+				& ~ .send {
+					fill: $theme-input-border-selected;
+					color: $theme-input-border-selected;
+				}
+			}
+
+			max-height: 370px;
+			overflow: auto;
+		}
+	}
+
+	&.password {
+		& .viewpassword {
+			margin-left: $margin * 4;
+
+			cursor: pointer;
+			font-size: $fontsize + 4px;
+
+			transition: $transition;
+
+			color: $theme-input-placeholder;
+			fill: $theme-input-placeholder;
+
+			&.view {
+				color: $theme-txt;
+				fill: $theme-txt;
+			}
+		}
+	}
+
+	&.disabled {
+		&:after {
+			position: absolute;
+
+			display: block;
+			content: "";
+
+			width: 100%;
+			height: 100%;
+
+			top: 0;
+			left: 0;
+
+			z-index: 2;
+
+			cursor: not-allowed;
+		}
+
+		& .inputWrapper {
+			background: $theme-btn-disabled;
+			border-color: transparent;
+		}
+
+		&.mark-accept,
+		&.mark-error {
+			&:before {
+				display: none;
+			}
+		}
+	}
+
+	& .value .choicemenu {
+		& .choicemenu-list, & .choicemenu-selected {
+			background-color: $theme-input-border-selected;
+			& * {
+				color: $theme-txt-reverse;
+			}
+		}
+	}
+	& .choicemenu {
+		cursor: pointer;
+
+		& .choicemenu-selected {
+			background: $theme-input-border;
+			padding: $padding * 2.7 $padding * 3;
+
+			border-radius: 0 $borderRadius * 2 $borderRadius * 2 0;
+
+			display: flex;
+			align-items: center;
+			gap: $padding;
+
+			transition: $transition;
+
+			& .choicemenu-arrow {
+				& svg {
+					font-size: $fontsize + 12px;
+					line-height: $fontsize;
+				}
+			}
+			& .choicemenu-title {
+				font-size: $fontsize + 4px;
+				line-height: $fontsize;
+
+				font-weight: 700;
+			}
+		}
+
+		&.choicemenu-show {
+			& .choicemenu-list {
+				display: block;
+			}
+			& .choicemenu-selected {
+				border-bottom-right-radius: 0;
+			}
+		}
+
+		position: relative;
+		& .choicemenu-list {
+			display: none;
+
+			position: absolute;
+			z-index: $zindex_wrapper;
+
+			top: 100%;
+			right: 0;
+
+			min-width: 100%;
+			max-height: 300px;
+
+			overflow: auto;
+			background: $theme-input-border-full !important;
+
+			border-radius: 0 0 $borderRadius * 2 $borderRadius * 2;
+			transition: $transition;
+
+			& .choicemenu-search {
+				min-width: 250px;
+				width: 100%;
+
+				padding: $padding * 3;
+				& .input {
+					width: 100%;
+
+					& .inputWrapper {
+						border-radius: $borderRadius;
+						border: 2px solid $theme-input-border;
+					}
+
+					& input {
+						color: $theme-txt !important;
+					}
+				}
+			}
+			& .choicemenu-elem {
+				padding: $padding * 3 $padding * 4;
+
+				color: $theme-txt !important;
+			}
+		}
+	}
+
+	&.autoCompleteListWrapper {
+		& .inputWrapper {
+			border-bottom-left-radius: 0;
+			border-bottom-right-radius: 0;
+		}
+	}
+	& .value .autoCompleteList {
+		border-color: $theme-input-border-selected;
+	}
+
+	& .autoCompleteList {
+		position: absolute;
+		z-index: $zindex_hover;
+
+		top: 100%;
+
+		background: $theme-bg;
+		box-shadow: $theme-shadow;
+
+		border: 2px solid $theme-input-border;
+		border-radius: 0 0 $borderRadius $borderRadius;
+
+		border-top: 0;
+
+		width: 100%;
+		max-height: 300px;
+
+		overflow: auto;
+
+		& .list {
+			display: flex;
+			flex-direction: column;
+
+			& .elem {
+				width: 100%;
+				padding: $padding * 3 $padding * 4;
+
+				cursor: pointer;
+				transition: $transition;
+
+				&:hover {
+					background: $theme-bg-opacity;
+				}
+
+				display: flex;
+				align-items: center;
+				justify-content: space-between;
+
+				& section {
+					display: flex;
+					align-items: center;
+					gap: $padding * 2;
+				}
+
+				& h1 {
+					font-weight: 600;
+				}
+				& span {
+					color: $theme-txt-opacity;
+					font-size: $fontsize - 2px;
+				}
+			}
+		}
+	}
+
+	&.attachmentMenuShow {
+		& .attachmentMenu {
+			bottom: calc(100% + $padding * 2);
+
+			opacity: 1;
+			visibility: visible;
+			z-index: 0;
+		}
+	}
+	& .attachmentMenu {
+		width: 450px;
+
+		position: absolute;
+
+		bottom: 100%;
+		left: 0;
+
+		background: $theme-bg;
+		box-shadow: $theme-shadow;
+
+		padding: $padding * 3;
+		border-radius: $borderRadius * 2;
+
+		transition: $transition;
+
+		opacity: 0;
+		visibility: hidden;
+		z-index: -1;
+	}
+
+	& .fileList {
+		display: flex;
+		flex-wrap: wrap;
+		gap: $padding;
+
+		width: 100%;
+		margin-top: $margin * 2;
+
+		& .blockfile {
+			width: calc(100% / 5 - $padding);
+			height: auto;
+
+			aspect-ratio: 1 / 1;
+		}
+	}
+}

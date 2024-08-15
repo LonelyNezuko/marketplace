@@ -1,0 +1,123 @@
+@import '../../rules/scss/variables.scss';
+@import '../../rules/scss/themes.scss';
+
+._sortFiles {
+	width: 100%;
+	height: 100%;
+
+	overflow: hidden;
+
+	display: flex;
+	gap: $padding;
+
+	$_gap: $padding / 2;
+
+	& ._sortFilesItem {
+		width: 100%;
+		height: 100%;
+
+		border-radius: $borderRadius;
+		overflow: hidden;
+
+		& ._sortFilesItem_img {
+			width: 100%;
+			height: 100%;
+
+			& img {
+				width: 100%;
+				height: 100%;
+
+				object-fit: cover;
+			}
+		}
+		& ._sortFilesItem_video {
+			width: 100%;
+			height: 100%;
+		}
+	}
+
+	&._sortFiles-2 {
+		flex-wrap: wrap;
+		& ._sortFilesItem {
+			height: calc(50% - $_gap);
+		}
+	}
+	&._sortFiles-3 {
+		flex-wrap: wrap;
+		& ._sortFilesItem {
+			height: calc(50% - $_gap);
+		}
+		& ._sortFilesItem:nth-child(2), & ._sortFilesItem:nth-child(3) {
+			width: calc(50% - $_gap);
+		}
+	}
+	&._sortFiles-4 {
+		flex-wrap: wrap;
+		& ._sortFilesItem {
+			height: calc(50% - $_gap);
+			width: calc(50% - $_gap);
+		}
+	}
+	&._sortFiles-5 {
+		flex-wrap: wrap;
+		& ._sortFilesItem:nth-child(1), & ._sortFilesItem:nth-child(2) {
+			height: calc(65% - $_gap);
+			width: calc(50% - $_gap);
+		}
+		& ._sortFilesItem {
+			height: calc(35% - $_gap);
+			width: calc(33% - $_gap);
+		}
+	}
+	&._sortFiles-6 {
+		flex-wrap: wrap;
+		& ._sortFilesItem:nth-child(1), & ._sortFilesItem:nth-child(2) {
+			height: calc(65% - $_gap);
+			width: calc(50% - $_gap);
+		}
+		& ._sortFilesItem {
+			height: calc(35% - $_gap);
+			width: calc(24.7% - $_gap);
+		}
+	}
+	&._sortFiles-7 {
+		flex-wrap: wrap;
+		& ._sortFilesItem:nth-child(1), & ._sortFilesItem:nth-child(2) {
+			height: calc(65% - $_gap);
+			width: calc(50% - $_gap);
+		}
+		& ._sortFilesItem {
+			height: calc(35% - $_gap);
+			width: calc(19.7% - $_gap);
+		}
+	}
+	&._sortFiles-8 {
+		flex-wrap: wrap;
+		& ._sortFilesItem {
+			height: calc(50% - $_gap);
+			width: calc(24.7% - $_gap);
+		}
+	}
+	&._sortFiles-9 {
+		flex-wrap: wrap;
+		& ._sortFilesItem {
+			height: calc(33% - $_gap);
+			width: calc(33% - $_gap);
+		}
+	}
+	&._sortFiles-10 {
+		flex-wrap: wrap;
+		& ._sortFilesItem:nth-child(1) {
+			height: calc(33% - $_gap);
+			width: calc(100% - $_gap);
+		}
+		& ._sortFilesItem:nth-child(2), & ._sortFilesItem:nth-child(3), & ._sortFilesItem:nth-child(4) {
+			height: calc(33% - $_gap);
+			width: calc(33% - $_gap);
+		}
+		& ._sortFilesItem {
+			height: calc(33% - $_gap);
+			width: calc(16.3% - $_gap);
+		}
+	}
+}

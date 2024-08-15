@@ -1,0 +1,1 @@
+export type StorageImageDTO = 1920 | 1600 | 1366 | 1024 | 720 | 360 | 180 | 90 | 45

@@ -1,0 +1,12 @@
+@import '../../rules/scss/themes.scss';
+@import '../../rules/scss/variables.scss';
+
+._calendar {
+    position: absolute;
+    z-index: $zindex_hoverModal;
+
+    background: $theme-bg;
+    box-shadow: $theme-shadow;
+
+    border-radius: $borderRadius;
+}

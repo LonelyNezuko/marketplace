@@ -1,0 +1,256 @@
+@import '../../rules/scss/themes.scss';
+@import '../../rules/scss/variables.scss';
+
+.modalindex {
+    position: fixed;
+    z-index: $zindex_modal;
+
+    top: 0;
+    left: 0;
+
+    width: 100vw;
+    height: 100vh;
+
+    display: flex;
+    align-items: center;
+    justify-content: center;
+
+    background-color: rgba(0, 0, 0, .4);
+
+    & .modalWrapper {
+        background-color: $theme-bg;
+        border-radius: $borderRadius;
+
+        padding: $padding * 6;
+
+        min-width: 350px;
+        max-width: 850px;
+
+        position: relative;
+        box-shadow: $theme-shadow;
+    }
+}
+
+
+.modalindex {
+    & .close {
+        position: absolute;
+        
+        top: $padding * 3;
+        right: $padding * 3;
+
+        cursor: pointer;
+        transition: $transition;
+
+        width: 28px;
+        height: 28px;
+
+        border-radius: 50%;
+
+        display: flex;
+        align-items: center;
+        justify-content: center;
+
+        & svg {
+            font-size: $fontsize + 4px;
+        }
+        &:hover {
+            background-color: #ffffff20;
+        }
+    }
+
+    & .modalHeader {
+        display: flex;
+        align-items: center;
+
+        margin-bottom: $margin * 4;
+
+        & .title {
+            margin-right: $margin * 18;
+            font-size: $fontsize;
+            
+            & h1 {
+                font-size: $fontsize + 4px;
+                font-weight: bold;
+            }
+            & span {
+                font-size: $fontsize - 2px;
+                opacity: .7;
+
+                white-space: pre-wrap;
+            }
+        }
+        & .icon {
+            margin-right: $margin * 4;
+
+            background-color: $theme-color;
+            border-radius: 50%;
+
+            width: 40px;
+            min-width: 40px;
+            height: 40px;
+
+            display: flex;
+            align-items: center;
+            justify-content: center;
+
+            & svg {
+                color: white;
+                fill: white;
+
+                font-size: $fontsize + 2px;
+            }
+        }
+    }
+
+    & .nav {
+        padding-top: $padding * 4;
+        padding-bottom: $padding * 2;
+
+        margin-bottom: $margin * 4;
+
+        display: flex;
+        align-items: center;
+        
+        & button + button {
+            margin-left: $margin * 6;
+        }
+        & button {
+            background-color: transparent;
+            border: 0;
+
+            font-size: $fontsize + 2px;
+            transition: $transition;
+
+            position: relative;
+            &:after {
+                position: absolute;
+
+                display: block;
+                content: "";
+
+                width: 0;
+                height: 4px;
+
+                background-color: $theme-color;
+                border-radius: $borderRadius;
+
+                bottom: -8px;
+                left: 50%;
+
+                transform: translateX(-50%);
+                transition: $transition;
+            }
+            
+            &.selected {
+                color: $theme-color;
+                &:after {
+                    width: 40%;
+                }
+            }
+        }
+    }
+
+    & .modalindexbody {
+        width: auto;
+        white-space: pre-wrap;
+
+        // margin-top: $margin * 4;
+        // padding: $padding 0;
+
+        padding: 1px 0;
+
+        max-height: 700px;
+        min-height: 50px;
+        
+        overflow: auto;
+
+        & .forminput {
+            & label {
+                font-size: $fontsize;
+            }
+        }
+
+        .form {
+            margin-top: $margin * 4;
+        }
+        & .modaltext {
+            margin-top: $margin * 4;
+
+            & h1 {
+                font-size: $fontsize + 2px;
+                margin-bottom: $margin * 2;
+            }
+            & section {
+                max-height: 350px;
+                overflow: auto;
+
+                margin-top: $margin;
+                padding: $padding * 1.5 $padding * 2;
+
+                background-color: $theme-bg;
+                border-radius: $borderRadius;
+
+                white-space: pre-wrap;
+                line-height: $fontsize + 4px;
+            }
+        }
+
+        & .modalAccount {
+            display: flex;
+            align-items: center;
+
+            & h1 {
+                margin: 0;
+                margin-left: $margin * 2;
+
+                display: flex;
+                align-items: center;
+                flex-wrap: wrap;
+
+                & h2 {
+                    width: 100%;
+                    font-size: $fontsize - 2px;
+                    
+                    opacity: .7;
+                }
+            }
+        }
+    }
+
+    & .buttons {
+        margin-top: $margin * 4;
+
+        display: flex;
+        align-items: center;
+        justify-content: flex-end;
+        gap: $padding * 4;
+
+        & .button {
+            &.modalbtncancel {
+                opacity: .6;
+
+                &:hover {
+                    opacity: 1;
+                    background-color: transparent;
+                }
+            }
+        }
+    }
+}
+
+
+.isPhone .modalindex {
+    & .modalWrapper {
+        padding: $padding * 3;
+
+        &.phoneHideBtn {
+            & .close {
+                display: none;
+            }
+            & ._phoneTopHide_ {
+                margin-bottom: $margin * 3;
+            }
+        }
+    }
+}

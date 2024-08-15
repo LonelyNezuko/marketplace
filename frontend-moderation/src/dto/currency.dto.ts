@@ -1,0 +1,1 @@
+export type CurrencyDTO = 'USD' | 'EUR' | 'GBP' | 'RUB' | ''

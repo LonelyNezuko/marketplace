@@ -1,0 +1,71 @@
+@import '../../rules/scss/themes.scss';
+@import '../../rules/scss/variables.scss';
+
+.accountMenu {
+    position: sticky;
+    top: 0;
+
+    margin-right: $margin * 6;
+
+    width: 250px;
+    min-width: 250px;
+
+    background: $theme-bg-color;
+    box-shadow: $theme-shadow;
+    
+    border-radius: $borderRadius * 2;
+
+    & .nav + .nav {
+        border-top: 1px solid $theme-txt-opacity;
+    }
+    & .nav {
+        width: 100%;
+        padding: $padding * 3 0;
+
+        &.main {
+            & .li {
+                padding: $padding * 4 $padding * 6;
+                &, & * {
+                    font-size: $fontsize;
+                }
+            }
+        }
+
+        & .li {
+            display: flex;
+            align-items: center;
+            gap: $padding * 3;
+
+            padding: $padding * 3;
+
+            &, & * {
+                font-size: $fontsize - 2px;
+            }
+
+            & svg {
+                font-size: $fontsize + 4px;
+            }
+
+            &.blockcount[data-count] {
+                &:after {
+                    right: $padding * 3;
+                }
+            }
+
+            &.selected {
+                background: $theme-color-gradient;
+                &, & * {
+                    color: $theme-txt-reverse;
+                    fill: $theme-txt-reverse;
+                }
+
+                &.blockcount[data-count] {
+                    &:after {
+                        background: $theme-txt-reverse;
+                        color: $theme-txt;
+                    }
+                }
+            }
+        }
+    }
+}

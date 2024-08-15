@@ -1,0 +1,273 @@
+@import '../../rules/scss/variables.scss';
+@import '../../rules/scss/themes.scss';
+
+.select {
+    width: 100%;
+    min-width: 75px;
+
+    margin-top: $margin * 2;
+
+    cursor: pointer;
+    user-select: none;
+
+    & .selectWrapper {
+        min-height: 45px;
+        height: 45px;
+
+        width: 100%;
+        min-width: 75px;
+
+        position: relative;
+        transition: .2s;
+
+        display: flex;
+        align-items: center;
+
+        background-color: $theme-bg-select;
+        border: 2px solid $theme-input-border;
+
+        // box-shadow: $theme-shadow;
+
+        border-radius: $borderRadius;
+        font-size: $fontsize + 2px;
+
+        color: $theme-txt;
+        padding: $padding * 3 $padding * 4;
+
+        &, & * {
+            white-space: nowrap;
+        }
+
+        // &:after {
+        //     display: block;
+        //     content: attr(data-title);
+    
+        //     width: 100%;
+        //     white-space: nowrap;
+    
+        //     font-size: $fontsize - 1px;
+        // }
+        &:after {
+            display: inline-block;
+            content: "";
+    
+            width: 8px;
+            height: 8px;
+    
+            border: 2px solid $theme-txt-opacity;
+            border-right: none;
+            border-bottom: none;
+    
+            transform: translateY(25%) rotate(45deg);
+            transition: transform $transition;   
+        }
+
+        &.show {
+            &:after {
+                transform: translateY(-10%) rotate(225deg);
+                border-color: $theme-input-border-selected;
+            }
+    
+            & ul {
+                opacity: 1;
+                visibility: visible;
+                z-index: $zindex_hoverModal;
+            }
+
+            border-color: $theme-input-border-selected;
+
+            & input {
+                cursor: text;
+                user-select: text;
+            }
+        }
+
+        &.ulbottom {
+            &.show {
+                border-radius: $borderRadius $borderRadius 0 0;
+            }
+            & ul {
+                top: calc(100% + 2px);
+                border-radius: 0 0 $borderRadius $borderRadius;
+                border-top: none;
+            }
+        }
+        &.ultop {
+            &.show {
+                border-radius: 0 0 $borderRadius $borderRadius;
+            }
+            & ul {
+                bottom: calc(100% + 2px);
+                border-radius: $borderRadius $borderRadius 0 0;
+                border-bottom: none;
+            }
+        }
+        &.ulleft ul {
+            left: -$padding / 2;
+        }
+        &.ulright ul {
+            right: -$padding / 2;
+        }
+    }
+
+    & .selectTitle {
+        margin-bottom: $margin * 2;
+
+        font-size: $fontsize + 2px;
+        font-weight: 600;
+    }
+
+    &.disabled {
+        cursor: not-allowed;
+        opacity: .6;
+    }
+
+    & .icon {
+        & svg {
+            margin-right: $margin * 3;
+            transform: translateY(1px);
+
+            position: static;
+            opacity: 1;
+
+            font-size: $fontsize - 1px;
+        }
+    }
+    & h6 {
+        margin-right: $margin * 3;
+
+        background-color: $theme-txt;
+        color: $theme-txt-reverse;
+        
+        opacity: .4;
+
+        padding: $padding;
+        font-size: $fontsize - 2px;
+
+        border-radius: $borderRadius;
+    }
+
+    & .selectValue {
+        width: 100%;
+        height: 100%;
+
+        padding-right: $padding * 3;
+
+        display: flex;
+        align-items: center;
+
+        & input {
+            width: 100%;
+            height: 100%;
+
+            overflow: hidden;
+            text-overflow: ellipsis;
+            white-space: nowrap;
+
+            cursor: pointer;
+            background: transparent;
+
+            user-select: none;
+        }
+    }
+
+    & ul {
+        position: absolute;
+        z-index: $zindex_hoverModal;
+
+        background-color: $theme-bg;
+        color: $theme-txt;
+
+        width: calc(100% + $padding);
+        max-height: 350px;
+
+        overflow: auto;
+        display: none;
+
+        // box-shadow: 0 15px 15px 1px rgba(0, 0, 0, .1);
+        border: inherit;
+
+        & li {
+            min-height: 45px;
+            
+            padding: $padding * 3 $padding * 4;
+            transition: $transition;
+
+            display: flex;
+            align-items: center;
+
+            position: relative;
+            font-size: $fontsize - 1px;
+
+            &.searchNotfound {
+                justify-content: center;
+
+                color: $theme-txt-opacity;
+                font-weight: 700;
+
+                height: 60px;
+                display: none !important;
+
+                &.show {
+                    display: flex !important;
+                }
+            }
+
+            &.invert {
+                justify-content: space-between;
+                & svg {
+                    margin: 0;
+                }
+            }
+            &:hover {
+                background-color: $theme-bg-select-hover;
+            }
+            &.selected {
+                background: $theme-color-50;
+                &, & * {
+                    color: $theme-txt-reverse;
+                    fill: $theme-txt-reverse;
+                }
+            }
+
+            & svg {
+                position: static;
+                opacity: 1;
+
+                margin-right: $margin * 3;
+                
+                fill: $theme-txt;
+                color: $theme-txt;
+
+                font-size: $fontsize - 1px;
+            }
+            & span {
+                font-size: $fontsize - 1px;
+            }
+        }
+    }
+
+
+
+
+    &.hidebg {
+        & .selectWrapper {
+            background: transparent;
+            border: none;
+
+            &:after {
+                border-color: $theme-txt;
+            }
+
+            & ul {
+                border: 2px solid $theme-input-border-selected;
+                border-radius: $borderRadius * 3;
+            }
+        }
+    }
+    &.ulnonwidth {
+        & ul {
+            width: auto;
+        }
+    }
+}

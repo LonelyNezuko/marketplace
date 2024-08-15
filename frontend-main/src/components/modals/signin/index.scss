@@ -1,0 +1,214 @@
+@import '../../../rules/scss/themes.scss';
+@import '../../../rules/scss/variables.scss';
+
+.modal.signin {
+    position: fixed;
+    z-index: $zindex_modal;
+
+    top: 0;
+    left: 0;
+
+    width: 100%;
+    height: 100%;
+
+    background: $theme-modal-fullbg;
+    
+    display: flex;
+    align-items: center;
+    justify-content: center;
+
+    & .wrapper {
+        box-shadow: $theme-shadow;
+        background: $theme-bg;
+
+        border-radius: $borderRadius * 2;
+        overflow: hidden;
+
+        width: 520px;
+
+        & .wrap {
+            padding: $padding * 8;
+            &:last-child {
+                background: $theme-bg-silver;
+            }
+        }
+
+        & .header {
+            width: 100%;
+
+            display: flex;
+            align-items: center;
+            justify-content: space-between;
+
+            & .title {
+                & h1 {
+                    font-size: $fontsize + 18px;
+                    font-weight: 700;
+                    font-family: 'Akrobat';
+                }
+                span {
+                    display: block;
+                    margin-top: $margin * 2;
+                }
+            }
+            & .close {
+                cursor: pointer;
+
+                & svg {
+                    font-size: $fontsize + 18px;
+                }
+            }
+        }
+        & .form {
+            margin-top: $margin * 8;
+
+            & .flex {
+                display: flex;
+                align-items: center;
+                justify-content: space-between;
+                gap: $padding * 2;
+
+                & .input {
+                    margin: 0;
+                }
+            }
+        }
+        & .other {
+            margin-top: $margin * 4;
+
+            & .linkblock + .linkblock {
+                margin-top: $margin * 2;
+            }
+            & .linkblock {
+                display: block;
+                margin-top: $margin * 6;
+
+                opacity: .4;
+            }
+        }
+        & .action {
+            margin-top: $margin * 8;
+
+            display: flex;
+            justify-content: flex-end;
+            align-items: center;
+        }
+    }
+
+    & .bottom {
+        & .block + .block {
+            margin-top: $margin * 4;
+        }
+        & .block {
+            & .title {
+                font-size: $fontsize + 2px;
+                font-weight: 600;
+            }
+
+            &.socialsignin {
+                & .list {
+                    margin-top: $margin * 2;
+
+                    display: flex;
+                    align-items: center;
+                    gap: $padding * 3;
+
+                    & img {
+                        width: 32px;
+                        height: 32px;
+
+                        cursor: pointer;
+                    }
+                }
+            }
+            &.signup {
+                display: flex;
+                flex-direction: column;
+                align-items: flex-start;
+
+                & .button {
+                    margin-top: $margin * 2;
+
+                    background: $theme-bg-footer;
+                    & .buttonName {
+                        color: $theme-txt;
+                    }
+                }
+            }
+        }
+    }
+
+    & .saveaccounts {
+        margin-top: $margin * 8;
+
+        & .list {
+            display: flex;
+            flex-direction: column;
+            gap: $padding * 3;
+        }
+        & .other {
+            & button {
+                background: transparent;
+                color: $theme-txt-opacity;
+            }
+        }
+    }
+
+    & .saveAccountBlock {
+        display: flex;
+        align-items: center;
+        justify-content: space-between;
+
+        background: $theme-bg;
+        box-shadow: $theme-shadow;
+
+        padding: $padding * 3;
+        border-radius: $borderRadius * 2;
+
+        cursor: pointer;
+
+        & section {
+            display: flex;
+            align-items: center;
+            gap: $padding * 3;
+
+            & svg {
+                font-size: $fontsize + 8px;
+                margin-right: $margin * 3;
+            }
+
+            & .name {
+                font-size: $fontsize + 2px;
+                font-weight: 600;
+            }
+            & .email {
+                display: block;
+                margin-top: $margin;
+
+                color: $theme-txt-opacity;
+            }
+        }
+    }
+}
+
+
+.isPhone .modal.signin {
+    align-items: flex-end;
+
+    &.show .wrapper {
+        transform: none;
+    }
+    & .wrapper {
+        border-radius: $borderRadius * 3 $borderRadius * 3 0 0;
+
+        transition: $transition;
+        transform: translateY(100%);
+
+        & ._phoneTopHide_ {
+            margin-top: $margin * 4;
+        }
+        & .wrap {
+            padding: $padding * 4;
+        }
+    }
+}

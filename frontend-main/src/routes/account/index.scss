@@ -1,0 +1,311 @@
+@import '../../rules/scss/themes.scss';
+@import '../../rules/scss/variables.scss';
+
+.route#account,
+.route#routeProfile {
+    width: 80%;
+
+    margin: 0 auto;
+
+    @media screen and (max-width: 1550px) {
+        & {
+            width: 100%;
+            margin: 0;
+        }
+    }
+
+    & .blocktitle {
+        &, & h1 {
+            font-size: $fontsize + 8px;
+            font-weight: 700;
+
+            color: $theme-color;
+        }
+    }
+    & .blockdesc {
+        display: block;
+        margin-top: $margin;
+
+        white-space: pre-wrap;
+
+        &, & span {
+            font-size: $fontsize;
+            color: $theme-txt-opacity;
+        }
+    }
+
+
+    & .nohtingElements {
+        width: 100%;
+
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        justify-content: center;
+        gap: $padding;
+
+        padding: $padding * 8;
+
+        & h5 {
+            margin-top: $margin * 4;
+
+            font-size: $fontsize + 4px;
+            font-weight: 700;
+
+            text-align: center;
+        }
+        & span {
+            color: $theme-txt-opacity;
+            font-weight: 600;
+
+            text-align: center;
+            white-space: pre-wrap;
+        }
+        & img {
+            width: 144px;
+            height: auto;
+        }
+    }
+
+
+    & .accountPageHeaderFlex {
+        width: 100%;
+
+        display: flex;
+        align-items: center;
+        justify-content: space-between;
+
+        & section {
+            display: flex;
+            align-items: center;
+            gap: $padding * 2;
+        }
+
+        & a + a {
+            display: flex;
+            align-items: center;
+            gap: $padding * 2;
+
+            &:before {
+                display: block;
+                content: "";
+
+                width: 6px;
+                height: 6px;
+
+                background: $theme-txt-opacity;
+                border-radius: 50%;
+            }
+        }
+
+        & a {
+            color: $theme-txt-opacity;
+            font-size: $fontsize - 2px;
+        }
+    }
+
+    & .accountWrapper {
+        width: 100%;
+        height: 100%;
+
+        display: flex;
+        align-items: flex-start;
+        justify-content: space-between;
+
+        position: relative;
+
+        & .accountBody {
+            width: 100%;
+            height: 100%;
+
+            & .accountPageBody {
+                & .block + .block {
+                    margin-top: $margin * 6;
+                }
+                & .block {
+                    & .blocktitle {
+                        margin-bottom: $margin * 3;
+                    }
+
+                    &.blockads {
+                        & .list {
+                            background: $theme-bg;
+                            box-shadow: $theme-shadow;
+            
+                            border-radius: $borderRadius * 2;
+                            padding: $padding * 2;
+            
+                            display: flex;
+                            gap: $padding * 3;
+
+                            &.wrap {
+                                flex-wrap: wrap;
+                            }
+                            &.transparent {
+                                background: transparent;
+                                box-shadow: none;
+
+                                padding: 0;
+                            }
+
+                            & .moreads {
+                                padding: $padding * 8 $padding * 3;
+                                margin: $margin * 2;
+                    
+                                display: flex;
+                                align-items: center;
+                                justify-content: center;
+                                flex-wrap: wrap;
+                    
+                                background: $theme-bg-opacity;
+                                border-radius: $borderRadius * 3;
+                    
+                                width: 100%;
+                    
+                                & * {
+                                    text-align: center;
+                                }
+                                & h1 {
+                                    font-weight: 600;
+                                }
+                                & span {
+                                    display: block;
+                                    margin-top: $margin * 2;
+                    
+                                    font-size: $fontsize - 3px;
+                                    color: $theme-txt-opacity;
+                                }
+                            }
+
+
+                            @media screen and (max-width: 1780px) {
+                                & {
+                                    flex-wrap: wrap;
+                                }
+                                & .adcart, & .moreads {
+                                    width: calc(100% / 2 - $padding * 3);
+                                    min-width: calc(100% / 2 - $padding * 3);
+
+                                    &.moreads {
+                                        width: calc(100% / 2 - $padding * 3 - $margin * 4);
+                                        min-width: calc(100% / 2 - $padding * 3 - $margin * 4);
+                                    }
+                                }
+                            }
+                        }
+                    }
+                }
+            }
+        }
+    }
+
+
+    & .accountBannedBlock {
+        width: 100%;
+
+        display: flex;
+        align-items: flex-start;
+        gap: $padding * 4;
+
+        background: $theme-color-red;
+        padding: $padding * 4;
+
+        border-radius: $borderRadius;
+        margin-bottom: $margin * 4;
+
+        & .icon {
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            
+            & svg {
+                font-size: $fontsize + 28px;
+
+                color: white;
+                fill: white;
+            }
+        }
+        & .wrapper {
+            & .title {
+                font-size: $fontsize + 4px;
+                font-weight: 700;
+
+                color: white;
+            }
+            & .description {
+                margin-top: $margin * 2;
+
+                display: flex;
+                flex-direction: column;
+                gap: $padding;
+
+                & span {
+                    display: block;
+                    color: white;
+
+                    & span {
+                        font-weight: 700;
+                        display: inline;
+                    }
+                }
+            }
+            & .help {
+                margin-top: $margin * 4;
+
+                display: flex;
+                flex-direction: column;
+                gap: $padding * 2;
+
+                & span {
+                    display: block;
+                    color: white;
+                }
+
+                & .button {
+                    background: white;
+                    &, & * {
+                        color: black;
+                    }
+                }
+            }
+        }
+    }
+}
+
+
+.isPhone .route#account {
+    & .accountBannedBlock {
+        flex-direction: column;
+        align-items: center;
+        justify-content: center;
+
+        margin: 0;
+        border-radius: 0;
+
+        &:not(.outBodyPadding) {
+            transform: translate(-$padding * 3, -$padding * 4);
+            width: calc(100% + $padding * 6);
+        }
+
+        & .icon {
+            & svg {
+                font-size: $fontsize + 54px;
+            }
+        }
+        & .wrapper {
+            & .title {
+                font-size: $fontsize !important;
+            }
+            & .description {
+                & span {
+                    font-size: $fontsize - 2px !important;
+                }
+            }
+            & .help {
+                & span {
+                    font-size: $fontsize - 2px !important;
+                }
+            }
+        }
+    }
+}

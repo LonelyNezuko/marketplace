@@ -1,0 +1,140 @@
+@import '../../../rules/scss/themes.scss';
+@import '../../../rules/scss/variables.scss';
+
+.route#accountPageIndex,
+.route#routeProfile {
+    width: 100%;
+
+    & .accountPageBody {
+        // margin-top: $margin * 8;
+    }
+
+    & .block {
+        & .noelems {
+            width: 100%;
+            padding: $padding * 14 0;
+
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            flex-wrap: wrap;
+
+            background: $theme-bg;
+            box-shadow: $theme-shadow;
+
+            border-radius: $borderRadius * 2;
+
+            &.transparent {
+                background: transparent;
+                box-shadow: none;
+
+                & h1 {
+                    opacity: .6;
+                }
+            }
+
+            &.actions {
+                padding: $padding * 10 0;
+            }
+
+            & h1 {
+                font-size: $fontsize + 14px;
+                font-weight: 800;
+
+                color: $theme-txt-opacity;
+                opacity: .5;
+
+                text-transform: uppercase;
+            }
+
+            & .actionsblock {
+                width: 100%;
+                margin-top: $margin * 4;
+
+                display: flex;
+                justify-content: center;
+            }
+        }
+    }
+
+    & .block.recommendations {
+        margin-bottom: $margin * 12;
+        & .list {
+            display: flex;
+            flex-wrap: wrap;
+            gap: $padding * 3;
+
+            & .elem {
+                width: calc(100% / 4 - $padding * 2.3);
+
+                background: $theme-bg;
+                box-shadow: $theme-shadow;
+
+                border-radius: $borderRadius * 4;
+                padding: $padding * 6;
+
+                &.banned {
+                    background: linear-gradient(135deg, #FF887F, #DB4C72);
+                    & * {
+                        color: white;
+                        fill: white;
+                    }
+
+                    & span {
+                        opacity: .8;
+                        & a {
+                            text-decoration: underline;
+                        }
+                    }
+                }
+
+                & h1 {
+                    font-weight: 600;
+                    color: $theme-color;
+                }
+                & span {
+                    display: block;
+                    margin-top: $margin * 1.5;
+
+                    color: $theme-txt-opacity;
+
+                    &, & * {
+                        font-size: $fontsize - 2px;
+                        line-height: $fontsize;
+                    }
+                }
+
+                & section {
+                    display: flex;
+                    align-items: center;
+                    justify-content: space-between;
+                }
+
+                & .close {
+                    cursor: pointer;
+                    & svg {
+                        font-size: $fontsize + 2px;
+                        transform: translateY(1px);
+                    }
+                }
+            }
+        }
+    }
+
+    & .block.lastreactions {
+        & .list {
+            display: flex;
+            flex-wrap: wrap;
+            gap: $padding * 3;
+
+            & .reactioncart, & .moreads {
+                width: calc(100% / 2 - $padding * 1.5);
+            }
+
+            & .moreads {
+                background: $theme-bg-color;
+                box-shadow: $theme-shadow;
+            }
+        }
+    }
+}

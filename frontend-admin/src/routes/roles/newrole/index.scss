@@ -1,0 +1,258 @@
+@import '../../../rules/scss/themes.scss';
+@import '../../../rules/scss/variables.scss';
+
+.route#routeNewRole,
+.route#routeEditRole {
+    & header.header {
+        display: flex;
+        align-items: flex-start;
+        justify-content: space-between;
+
+        & .actions {
+            margin: 0;
+            padding: 0;
+
+            border: none;
+        }
+    }
+
+    & .actions {
+        display: flex;
+        justify-content: flex-end;
+        gap: $padding * 2;
+
+        margin-top: $margin * 10;
+        padding-top: $padding * 10;
+
+        border-top: 1px solid $theme-bg-opacity;
+
+        & .btn.cancel {
+            background: $theme-color-red;
+        }
+    }
+
+    & .body {
+        margin: 0 auto;
+        margin-top: $margin * 8;
+
+        width: 1000px;
+
+        & .form + .form {
+            margin-top: $margin * 8;
+        }
+        & .form {
+            display: flex;
+            align-items: center;
+            justify-content: space-between;
+            gap: $padding * 6;
+
+            & .formtitle, & .formoutput {
+                width: 50%;
+            }
+
+            &.formtranslatename {
+                & .translatename-list {
+                    width: 100%;
+                }
+            }
+
+            & .formtitle {
+                display: flex;
+                flex-direction: column;
+                align-items: flex-start;
+                gap: $padding * 2;
+
+                & h1 {
+                    font-weight: 700;
+                    font-size: $fontsize + 2px;
+
+                    display: flex;
+                    align-items: center;
+                }
+
+                & .coloreditor {
+                    width: 100%;
+                    position: relative;
+
+                    border-radius: $borderRadius * 2.5;
+                    overflow: hidden;
+
+                    & .disabled {
+                        position: absolute;
+
+                        top: 0;
+                        left: 0;
+
+                        width: 100%;
+                        height: 100%;
+
+                        background: rgba(0, 0, 0, .2);
+                        cursor: not-allowed;
+                    }
+                }
+            }
+            & .formoutput {
+                display: flex;
+                align-items: flex-end;
+                flex-direction: column;
+            }
+        }
+
+
+        & .privileges {
+            margin-top: $margin * 10;
+            padding-top: $padding * 10;
+
+            border-top: 1px solid $theme-bg-opacity;
+
+            & .block + .block {
+                margin-top: $margin * 12;
+            }
+            & .block {
+                & .title {
+                    font-size: $fontsize + 8px;
+                    font-weight: 700;
+                }
+                & .list {
+                    margin-top: $margin * 4;
+
+                    display: flex;
+                    flex-direction: column;
+                    align-items: flex-start;
+                    gap: $padding * 4;
+
+                    & .elem {
+                        display: flex;
+                        align-items: center;
+                        justify-content: space-between;
+                        gap: $padding * 8;
+
+                        width: 550px;
+                        cursor: pointer;
+
+                        user-select: none;
+
+                        &.disabled {
+                            cursor: not-allowed;
+                            
+                            position: relative;
+                            &:before {
+                                content: "";
+                                display: block;
+
+                                position: absolute;
+
+                                top: 0;
+                                left: 0;
+                                
+                                width: 100%;
+                                height: 100%;
+
+                                background: rgba(0, 0, 0, .2);
+                            }
+                        }
+
+                        background: $theme-bg;
+                        box-shadow: $theme-shadow;
+                        border-radius: $borderRadius * 2;
+
+                        padding: $padding * 2.5 $padding * 3;
+                        overflow: hidden;
+
+                        &.selected {
+                            background: $theme-btn;
+
+                            &, & * {
+                                color: $theme-txt-reverse;
+                            }
+                            & .section:first-child {
+                                & span {
+                                    color: $theme-txt-reverse;
+                                    opacity: .6;
+                                }
+                            }
+                            & .section:last-child {
+                                & input {
+                                    border-color: $theme-txt-reverse;
+                                    &:before {
+                                        background: $theme-txt-reverse;
+                                    }
+                                }
+                            }
+
+                            &.important {
+                                background: $theme-color-red;
+                            }
+                        }
+
+                        & .section:first-child {
+                            & h1 {
+                                font-size: $fontsize + 2px;
+
+                                display: flex;
+                                align-items: center;
+                                justify-content: flex-start;
+                                gap: $padding * 2;
+
+                                & span {
+                                    font-size: $fontsize - 4px;
+                                }
+                            }
+                            & span {
+                                font-size: $fontsize - 2px;
+                                color: $theme-txt-opacity;
+
+                                display: inline-block;
+                                margin-top: $margin * 1.5;
+                            }
+                        }
+                    }
+                }
+            }
+        }
+
+
+        & .users {
+            margin-top: $margin * 10;
+            padding-top: $padding * 10;
+
+            width: 550px;
+
+            border-top: 1px solid $theme-bg-opacity;
+
+            & .title {
+                font-size: $fontsize + 6px;
+                font-weight: 700;
+            }
+
+            & .list {
+                display: flex;
+                flex-direction: column;
+                gap: $padding * 3;
+
+                margin-top: $margin * 4;
+
+                & .elem {
+                    display: flex;
+                    align-items: center;
+                    justify-content: space-between;
+
+                    & section {
+                        display: flex;
+                        align-items: center;
+                        gap: $padding * 3;
+                    }
+
+                    & .btn:not(:disabled) {
+                        background: $theme-color-red;
+                    }
+                }
+            }
+
+            & .nousers {
+                font-weight: 600;
+                color: $theme-txt-opacity;
+            }
+        }
+    }
+}

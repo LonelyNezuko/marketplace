@@ -1,0 +1,104 @@
+@import '../../../rules/scss/themes.scss';
+@import '../../../rules/scss/variables.scss';
+
+.route#routeContentStorage {
+    & header.header {
+        display: flex;
+        align-items: center;
+        justify-content: space-between;
+    }
+
+    & #uploadModal {
+        width: 800px;
+
+        & .uploadDropFile {
+            margin-bottom: $margin * 4;
+        }
+        & .previewfiles {
+            & .previewfiles-file {
+                width: calc(100% / 5 - $padding * 3.2);
+                min-width: calc(100% / 5 - $padding * 3.2);
+            }
+        }
+
+        & .uploadModal-settings {
+            width: 100%;
+
+            display: flex;
+            align-items: flex-start;
+            justify-content: space-between;
+            gap: $padding * 4;
+            
+            margin-bottom: $margin * 4;
+
+            & .form {
+                width: 100%;
+                margin: 0;
+
+                & .input label h1 {
+                    font-size: $fontsize + 2px;
+                    font-weight: 600;
+                }
+                & .select {
+                    margin: 0;
+                }
+            }
+        }
+    }
+
+    & #viewModal {
+        width: 700px;
+
+        & .viewModal-info {
+            display: flex;
+            flex-direction: column;
+            gap: $padding * 3;
+
+            width: 70%;
+            margin: 0 auto;
+
+            & .section {
+                display: flex;
+                justify-content: space-between;
+                align-items: center;
+
+                & .name {
+                    font-size: $fontsize + 2px;
+                    font-weight: 600;
+                }
+                & .value {
+                    color: $theme-txt-opacity;
+                }
+            }
+        }
+
+        & .viewModal-title {
+            display: flex;
+            flex-direction: column;
+            gap: $padding;
+
+            & h6 {
+                font-size: $fontsize + 4px;
+                font-weight: 700;
+
+                color: $theme-color;
+            }
+            & span {
+                font-size: $fontsize - 2px;
+                color: $theme-txt-opacity;
+            }
+        }
+
+        & .viewModal-files {
+            margin-top: $margin * 8;
+
+            & .previewfiles {
+                margin-top: $margin * 4;
+
+                & .previewfiles-file {
+                    width: calc(100% / 5 - $padding * 3.2);
+                }
+            }
+        }
+    }
+}

@@ -1,0 +1,65 @@
+@import '../../rules/scss/variables.scss';
+@import '../../rules/scss/themes.scss';
+
+.inputupdown {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+
+    height: 40px;
+
+    background: $theme-bg;
+    box-shadow: $theme-shadow;
+
+    border-radius: $borderRadius;
+    overflow: hidden;
+
+    & input {
+        &[type="number"] {
+			&::-webkit-outer-spin-button,
+			&::-webkit-inner-spin-button {
+				-webkit-appearance: none;
+			}
+			& {
+				-moz-appearance: textfield;
+			}
+		}
+
+        padding: 0 $padding * 3;
+
+        font-size: $fontsize + 2px;
+        font-weight: 600;
+
+        min-width: 60px;
+        width: 60px;
+
+        height: 100%;
+        background: $theme-bg-opacity;
+    }
+
+    & .arrows {
+        display: flex;
+        align-items: center;
+        justify-content: center;
+
+        height: 100%;
+
+        & button {
+            background: transparent;
+            transition: $transition;
+
+            display: flex;
+            align-items: center;
+            justify-content: center;
+
+            min-width: 40px;
+            width: 40px;
+
+            height: 100%;
+
+            &:hover {
+                background: $theme-bg-footer;
+            }
+        }
+    }
+}

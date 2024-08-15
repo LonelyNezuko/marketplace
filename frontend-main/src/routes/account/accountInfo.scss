@@ -1,0 +1,164 @@
+@import '../../rules/scss/themes.scss';
+@import '../../rules/scss/variables.scss';
+
+.accountInfo {
+    // position: sticky;
+    // top: 0;
+
+    margin-left: $margin * 6;
+    
+    width: 270px;
+    min-width: 270px;
+
+    background: $theme-bg-color;
+    box-shadow: $theme-shadow;
+
+    border-radius: $borderRadius * 3;
+    overflow: hidden;
+
+    position: sticky;
+    top: 0;
+
+    & .avatar {
+        width: 270px;
+        min-width: 270px;
+
+        border-bottom-left-radius: 0;
+        border-bottom-right-radius: 0;
+    }
+
+    & .sectionpadding {
+        padding: $padding * 3;
+    }
+
+    & .title {
+        display: flex;
+        align-items: center;
+        justify-content: space-between;
+
+        & .name {
+            font-size: $fontsize + 2px;
+            font-weight: 700;
+        }
+    }
+    & .signatureText {
+        & svg {
+            color: $theme-txt-opacity;
+            fill: $theme-txt-opacity;
+
+            margin-right: $margin;
+            transform: translateY(3px);
+        }
+        & .text {
+            display: inline;
+
+            font-size: $fontsize - 2px;
+            color: $theme-txt-opacity;
+        }
+    }
+    & .descinfo {
+        margin-top: $margin * 4;
+
+        & section + section {
+            margin-top: $margin;
+        }
+        & section {
+            display: flex;
+            align-items: center;
+            justify-content: space-between;
+
+            & span {
+                text-align: right;
+            }
+
+            &.rating {
+                flex-wrap: wrap;
+                margin: $margin * 2 0;
+
+                & span {
+                    display: flex;
+                    justify-content: center;
+
+                    width: 100%;
+                }
+                & .ratingstars {
+                    margin-top: $margin;
+                }
+            }
+        }
+    }
+
+    & .actions {
+        margin-top: $margin * 4;
+
+        display: flex;
+        flex-direction: column;
+        gap: $padding;
+
+        & .button {
+            width: 100%;
+            padding: $padding * 4;
+
+            justify-content: flex-start;
+
+            &.report, &.block {
+                padding: $padding * 2 $padding * 4;
+            }
+
+            &.unblock {
+                background: $theme-color-orange;
+            }
+            &.block {
+                background: $theme-txt-opacity;
+            }
+            &.report {
+                background: $theme-color-red;
+            }
+        }
+    }
+
+
+    &.isMenu {
+        & .sectionTop {
+            display: flex;
+            align-items: center;
+            gap: $padding * 3;
+
+            padding: $padding * 4;
+            & section {
+                display: flex;
+                flex-direction: column;
+                align-items: flex-start;
+
+                gap: $padding;
+
+                & ._onlinestatus_ {
+                    margin-left: $margin * 2;
+                }
+                & .signatureText {
+                    & .text {
+                        font-size: $fontsize;
+                    }
+                    & svg {
+                        display: none;
+                    }
+                }
+            }
+
+            & .avatar {
+                width: 80px !important;
+                min-width: 80px !important;
+                height: 80px !important;
+
+                border-radius: 50% !important;
+            }
+        }
+
+        & .sectionpadding {
+            padding-top: 0;
+        }
+        & .descinfo {
+            margin: 0;
+        }
+    }
+}

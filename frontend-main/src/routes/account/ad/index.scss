@@ -1,0 +1,40 @@
+@import '../../../rules/scss/themes.scss';
+@import '../../../rules/scss/variables.scss';
+
+.route#accountPageAds {
+    & .noads {
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        gap: $padding * 4;
+
+        padding: $padding * 32 0;
+
+        & h1 {
+            font-size: $fontsize + 10px;
+            font-weight: 700;
+        }
+        & section {
+            & .btn {
+                & span {
+                    text-transform: uppercase;
+                    font-weight: 600;
+                }
+            }
+        }
+    }
+
+    & .adcart {
+        width: calc(100% / 4 - $padding * 2.7);
+        min-width: calc(100% / 4 - $padding * 2.7);
+
+        @media screen and (max-width: 1400px) {
+            width: calc(100% / 3 - $padding * 2.7);
+            min-width: calc(100% / 3 - $padding * 2.7);
+        }
+        @media screen and (max-width: 1160px) {
+            width: calc(100% / 2 - $padding * 2.7);
+            min-width: calc(100% / 2 - $padding * 2.7);
+        }
+    }
+}

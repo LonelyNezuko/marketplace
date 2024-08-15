@@ -1,0 +1,138 @@
+@import '../../../rules/scss/themes.scss';
+@import '../../../rules/scss/variables.scss';
+
+.route#accountPageNotifications {
+    & header {
+        & .blocktitle {
+            display: flex;
+            align-items: center;
+            justify-content: space-between;
+        }
+    }
+
+    & .list {
+        display: flex;
+        flex-direction: column;
+        gap: $padding * 4;
+
+        margin-top: $margin * 6;
+        & .notifycart {
+            background: $theme-bg;
+            box-shadow: $theme-shadow;
+
+            padding: $padding * 3 $padding * 4;
+            border-radius: $borderRadius * 2;
+
+            display: flex;
+            align-items: flex-start;
+            gap: $padding * 4;
+
+            & .info {
+                width: 100%;
+                padding: $padding * 2 0;
+
+                & .text {
+                    display: flex;
+                    align-items: flex-start;
+                    justify-content: space-between;
+                    gap: $padding * 3;
+
+                    & .textbody {
+                        width: 100%;
+                        white-space: pre-wrap;
+
+                        &, & * {
+                            font-size: $fontsize + 2px;
+                            font-weight: 600;
+                        }
+                    }
+                    & .readstatus {
+                        display: flex;
+                        align-items: center;
+                        gap: $padding * 2;
+
+                        & .date {
+                            font-weight: 600;
+                            font-size: $fontsize - 2px;
+
+                            color: $theme-txt-opacity;
+                            white-space: nowrap;
+                        }
+                        & .status {
+                            width: 16px;
+                            height: 16px;
+
+                            border-radius: 50%;
+
+                            display: flex;
+                            align-items: center;
+                            justify-content: center;
+
+                            &.read {
+                                background: $theme-color;
+                                & svg {
+                                    color: white;
+                                    fill: white;
+
+                                    font-size: $fontsize - 4px;
+                                }
+                            }
+                        }
+
+                        & .unreadstatus {
+                            width: 8px;
+                            height: 8px;
+
+                            border-radius: 50%;
+                            background: $theme-color;
+                        }
+                    }
+                }
+
+                & .attachedItems {
+                    margin-top: $margin * 2;
+
+                    display: flex;
+                    flex-direction: column;
+                    gap: $padding * 3;
+
+                    & .adcart {
+                        background: transparent;
+                        box-shadow: none;
+                        
+                        transition: $transition;
+
+                        &:hover {
+                            background: $theme-bg-color;
+                        }
+                    }
+
+                    & .attachedImages {
+                        & .attachedImagesList {
+                            display: flex;
+                            flex-wrap: wrap;
+                            gap: $padding * 2;
+
+                            & .image {
+                                width: calc(100% / 5 - $padding * 1.6);
+                                height: auto;
+
+                                aspect-ratio: 1 / 1;
+
+                                border-radius: $borderRadius * 2;
+                                overflow: hidden;
+
+                                & img {
+                                    width: 100%;
+                                    height: 100%;
+
+                                    object-fit: cover;
+                                }
+                            }
+                        }
+                    }
+                }
+            }
+        }
+    }
+}

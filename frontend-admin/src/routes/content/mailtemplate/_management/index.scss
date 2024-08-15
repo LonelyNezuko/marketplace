@@ -1,0 +1,106 @@
+@import '../../../../rules/scss/themes.scss';
+@import '../../../../rules/scss/variables.scss';
+
+.route#routeContentMailtemplateCreate {
+    & header.header {
+        display: flex;
+        align-items: center;
+        justify-content: space-between;
+
+        & .section {
+            &:last-child {
+                display: flex;
+                align-items: center;
+                gap: $padding * 3;
+            }
+
+            & .copyothermailtemplate {
+                background: $theme-color-orange;
+            }
+            & .cancel {
+                background: $theme-color-darkred;
+            }
+        }
+    }
+
+    & .page {
+        margin-top: $margin * 6;
+
+        & .settings {
+            display: flex;
+            align-items: flex-start;
+            justify-content: center;
+            gap: $padding * 3;
+
+            & .block {
+                width: calc(100% / 3 - $padding * 3);
+            }
+
+            & .input {
+                & label {
+                    font-size: $fontsize + 2px;
+                    font-weight: 600;
+
+                    margin-bottom: $margin * 4;
+                }
+            }
+
+            & .mailtype {
+                & .description {
+                    margin-top: $margin * 3;
+    
+                    & h6 {
+                        font-size: $fontsize + 2px;
+                        font-weight: 600;
+    
+                        margin-bottom: $margin * 2;
+                        display: inline-block;
+                    }
+                    & span {
+                        display: block;
+                        
+                        font-weight: 600;
+                        color: $theme-txt-opacity;
+    
+                        margin-top: $margin;
+                    }
+                }
+            }
+
+            & .language {
+
+            }
+
+            & .subject {
+
+            }
+        }
+
+        & .editor {
+            margin-top: $margin * 6;
+
+            position: relative;
+
+            & .editor-disabled {
+                position: absolute;
+                z-index: $zindex_wrapper;
+
+                top: 0;
+                left: 0;
+
+                width: 100%;
+                height: 100%;
+
+                background: $theme-modal-fullbg;
+                opacity: .6;
+            }
+            & .editor-loader {
+                background: transparent;
+
+                display: flex;
+                align-items: center;
+                justify-content: center;
+            }
+        }
+    }
+}

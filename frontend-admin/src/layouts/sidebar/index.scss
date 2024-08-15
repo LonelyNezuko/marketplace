@@ -1,0 +1,116 @@
+@import '../../rules/scss/themes.scss';
+@import '../../rules/scss/variables.scss';
+
+#sidebar {
+    width: 350px;
+    min-width: 350px;
+
+    height: 100%;
+
+    background: $theme-bg-color;
+    border-right: 2px solid $theme-bg-opacity;
+
+    position: fixed;
+    z-index: $zindex_wrapper;
+
+    top: 0;
+    left: 0;
+
+    display: flex;
+    flex-direction: column;
+
+    & .header {
+        height: 90px;
+        min-height: 90px;
+
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        
+
+        padding: 0 $padding * 8;
+        background: $theme-color-gradient;
+
+        & * {
+            color: white;
+        }
+
+        & .logo {
+            & .logoicon {
+                height: 46px;
+            }
+        }
+    }
+
+    & .nav {
+        padding: $padding * 3;
+
+        display: flex;
+        flex-direction: column;
+        gap: $padding * 4;
+
+        height: 100%;
+
+        overflow: hidden;
+        overflow-y: auto;
+
+        & .ul {
+            display: flex;
+            flex-direction: column;
+            gap: $padding * 2;
+
+            & .ul.dropdown {
+                padding-left: $padding * 8;
+
+                gap: $padding * 3;
+                & .li {
+                    & span, & {
+                        font-size: $fontsize;
+                    }
+                    & svg {
+                        font-size: $fontsize + 4px;
+                    }
+                }
+
+                display: none;
+                &.show {
+                    display: flex;
+                }
+            }
+
+            & .li {
+                padding: $padding * 4;
+                
+                border-radius: $borderRadius * 2;
+
+                display: flex;
+                align-items: center;
+                gap: $padding * 3;
+
+                & span, & {
+                    font-size: $fontsize + 2px;
+                    font-weight: 600;
+                }
+                & svg {
+                    font-size: $fontsize + 6px;
+                }
+
+                &.selected {
+                    background: $theme-color-gradient;
+                    & *, & {
+                        color: $theme-txt-reverse;
+                        fill: $theme-txt-reverse;
+                    }
+
+                    &.hidden {
+                        display: flex;
+                    }
+                }
+
+                &.hidden {
+                    display: none;
+                }
+            }
+        }
+    }
+}

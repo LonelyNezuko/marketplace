@@ -1,0 +1,177 @@
+@import '../../rules/scss/themes.scss';
+@import '../../rules/scss/variables.scss';
+
+#nav {
+    background: $theme-bg-nav;
+
+    width: 380px;
+    min-width: 380px;
+    height: 100%;
+
+    padding: $padding * 4;
+
+    position: sticky;
+    top: 0;
+
+    &.loaded {
+        & .account, & nav .elem {
+            transform: none;
+        }
+    }
+
+    & .account {
+        background: $theme-bg-nav;
+        box-shadow: $theme-shadow;
+
+        border-radius: $borderRadius * 2;
+        padding: $padding * 2;
+
+        display: flex;
+        align-items: center;
+        justify-content: space-between;
+
+        transition: $transition + .2;
+        transform: translateY(-150%);
+
+        & .wrap:first-child {
+            display: flex;
+            align-items: center;
+
+            & .avatar {
+                margin-left: $margin * 2;
+            }
+            & .title {
+                margin-left: $margin * 3;
+
+                & .name {
+                    font-size: $fontsize + 6px;
+                    font-weight: 600;
+                }
+                & .myaccount {
+                    display: inline-block;
+                    margin-top: $margin * 2;
+
+                    font-size: $fontsize - 2px;
+                }
+            }
+        }
+    }
+
+    & nav {
+        margin-top: $margin * 8;
+
+        & .elem + .elem {
+            margin-top: $margin * 4;
+        }
+        & .elem {
+            & .title {
+                display: flex;
+                align-items: center;
+    
+                & svg {
+                    font-size: $fontsize + 11px;
+                }
+                & span {
+                    font-size: $fontsize + 4px;
+                    font-weight: 700;
+    
+                    margin-left: $margin * 2;
+                }
+            }
+
+            transition: $transition;
+            transform: translateX(-150%);
+            
+            &:nth-child(1) {
+                transition: $transition + .4;
+            }
+            &:nth-child(2) {
+                transition: $transition + .5;
+            }
+            &:nth-child(3) {
+                transition: $transition + .6;
+            }
+            &:nth-child(4) {
+                transition: $transition + .7;
+            }
+
+            border-radius: $borderRadius * 2;
+            padding: $padding * 2;
+
+            &.selected {
+                & ul {
+                    opacity: 1;
+                    visibility: visible;
+                    z-index: 0;
+                    position: static;
+                }
+            }
+
+            & ul {
+                margin-top: $margin * 4;
+                margin-left: $margin * 8;
+
+                opacity: 0;
+                visibility: hidden;
+                z-index: -1;
+                position: absolute;
+
+                & .li + .li {
+                    margin-top: $margin * 2;
+                }
+                & .li {
+                    display: block;
+
+                    padding: $padding * 3 $padding * 3;
+                    border-radius: $borderRadius;
+
+                    transition: $transition - .1s;
+
+                    &.selected {
+                        color: $theme-txt-reverse;
+                        background: $theme-color;
+                    }
+                }
+            }
+        }
+    }
+
+
+    & .lastupdatebtn {
+        display: flex;
+        align-items: center;
+        gap: $padding * 3;
+
+        margin: 0 auto;
+        margin-top: $margin * 4;
+
+        width: calc(100% - $padding * 8);
+
+        background: $theme-color-gradient;
+        border-radius: $borderRadius * 2;
+
+        overflow: hidden;
+
+        padding: $padding * 2 $padding * 2.5;
+        padding-right: $padding * 4;
+
+        & .btn {
+            padding: 0;
+            background: transparent;
+        }
+        & div {
+            display: flex;
+            flex-direction: column;
+            align-items: flex-start;
+
+            & h1 {
+                color: $theme-txt-reverse;
+                font-weight: 600;
+            }
+            & span {
+                font-size: $fontsize - 3px;
+                color: $theme-txt-reverse;
+            }
+        }
+    }
+}

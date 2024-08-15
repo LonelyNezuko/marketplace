@@ -1,0 +1,40 @@
+@import '../../rules/scss/themes.scss';
+@import '../../rules/scss/variables.scss';
+
+.routeNavigateHeader {
+    display: flex;
+    align-items: center;
+    flex-wrap: wrap;
+    gap: $padding * 2 $padding * 5;
+
+    width: 100%;
+
+    & .routeNavigateHeader_link {
+        & + .routeNavigateHeader_link:before {
+            content: "›";
+            display: block;
+
+            color: $theme-txt-opacity;
+
+            font-size: $fontsize + 12px;
+            line-height: $fontsize;
+            font-weight: 500;
+
+            transform: translateY(-2px);
+        }
+
+        display: flex;
+        align-items: center;
+        gap: $padding * 5;
+
+        color: $theme-txt-opacity;
+        font-weight: 600;
+
+        font-size: $fontsize + 2px;
+
+        &.bold {
+            font-weight: 700;
+            color: $theme-txt;
+        }
+    }
+}

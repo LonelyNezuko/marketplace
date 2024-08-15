@@ -1,0 +1,37 @@
+@import '../../rules/scss/themes.scss';
+@import '../../rules/scss/variables.scss';
+
+.route#routeFeed {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+
+    width: 100%;
+    height: 100%;
+
+    overflow: auto;
+    padding: $padding * 6 0;
+
+    & .routeFeedWrapper {
+        width: 550px;
+
+        display: flex;
+        flex-direction: column;
+        gap: $padding * 4;
+    }
+
+    @media screen and (min-width: 2000px) {
+        & .routeFeedWrapper {
+            width: 35%;
+        }
+    }
+    @media screen and (max-width: 600px) {
+        & .routeFeedWrapper {
+            width: 100%;
+        }
+    }
+}
+
+.isPhone .route#routeFeed {
+    gap: $padding * 2;
+}

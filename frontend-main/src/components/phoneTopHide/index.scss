@@ -1,0 +1,26 @@
+@import '../../rules/scss/variables.scss';
+@import '../../rules/scss/themes.scss';
+
+._phoneTopHide_ {
+    width: 100%;
+
+    display: flex;
+    align-items: center;
+    justify-content: center;
+
+    position: sticky;
+    top: 0;
+
+    z-index: $zindex_wrapper;
+    background: $theme-bg;
+
+    padding: $padding * 4 0;
+
+    & section {
+        width: 70%;
+        min-height: 8px;
+
+        background: $theme-bg-silver;
+        border-radius: $borderRadius;
+    }
+}

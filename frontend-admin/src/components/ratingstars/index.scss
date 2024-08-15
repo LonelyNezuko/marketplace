@@ -1,0 +1,59 @@
+@import '../../rules/scss/themes.scss';
+@import '../../rules/scss/variables.scss';
+
+.ratingstars {
+    display: flex;
+    align-items: center;
+    gap: $padding * 2;
+
+    & .ratingstars-count {
+        font-size: $fontsize + 4px;
+        line-height: $fontsize;
+
+        font-weight: 600;
+        transform: translateY(1.5px);
+    }
+    & .ratingstars-stars {
+        display: flex;
+        align-items: center;
+        gap: $padding * 2;
+
+        & .ratingstars-image-wrap {
+            min-width: 22px;
+            width: 22px;
+
+            height: 22px;
+            min-height: 22px;
+
+            position: relative;
+        }
+        & .ratingstars-image {
+            width: 100%;
+            height: 100%;
+
+            // &.ratingstars-image-half {
+            //     position: absolute;
+
+            //     top: 0;
+            //     left: 0;
+            //     bottom: 0;
+            //     right: 0;
+
+            //     object-fit: fill;
+            // }
+        }
+    }
+
+    &.size-min {
+        & .ratingstars-count {
+            font-size: $fontsize + 2px;
+        }
+        & .ratingstars-stars .ratingstars-image-wrap {
+            min-width: 16px;
+            width: 16px;
+
+            height: 16px;
+            min-height: 16px;
+        }
+    }
+}
